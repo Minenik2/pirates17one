@@ -6,9 +6,6 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 
-var interact_key = "interact" # The key for interaction, usually set to "E" or "Enter"
-var interaction_radius = 10
-
 func _ready():
 	update_animation_parameters(starting_direction)
 
@@ -27,10 +24,7 @@ func _physics_process(_delta):
 func update_animation_parameters(move_input : Vector2):
 	if(move_input != Vector2.ZERO):
 		animation_tree.set("parameters/walk/blend_position", move_input)
-		animation_tree.set("parameters/idle/blend_position", move_input)
 		
 func pick_new_state():
 	if(velocity != Vector2.ZERO):
 		state_machine.travel("walk")
-	else:
-		state_machine.travel("idle")
