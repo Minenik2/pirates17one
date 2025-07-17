@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://du6vavag3aihq"]
+[gd_scene load_steps=6 format=4 uid="uid://du6vavag3aihq"]
 
 [ext_resource type="Texture2D" uid="uid://1xdjctvrmh2r" path="res://art/Wood floor board.png" id="1_8uh7m"]
 [ext_resource type="Texture2D" uid="uid://n8i7ucddejr6" path="res://art/tablesmall.png" id="2_6uqi0"]
+[ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="3_6uqi0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppyta"]
 texture = ExtResource("1_8uh7m")
@@ -21,3 +22,6 @@ tile_set = SubResource("TileSet_ykrsh")
 texture_filter = 1
 position = Vector2(173, 66)
 texture = ExtResource("2_6uqi0")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_6uqi0")]
+position = Vector2(78, 78)
