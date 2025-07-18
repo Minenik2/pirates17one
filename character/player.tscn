@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dtj68veqtvcfo"]
+[gd_scene load_steps=10 format=3 uid="uid://dtj68veqtvcfo"]
 
 [ext_resource type="Texture2D" uid="uid://dgfxvix2b14mu" path="res://art/dalian-Sheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b3ssxw5nbhe04" path="res://character/player.gd" id="1_monf5"]
@@ -38,6 +38,23 @@ tracks/0/keys = {
 "values": [1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_qe16m"]
+resource_name = "walk_left"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.628014),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 3, 5]
+}
+
 [sub_resource type="Animation" id="Animation_monf5"]
 resource_name = "walk_right"
 length = 0.8
@@ -72,23 +89,6 @@ tracks/0/keys = {
 "values": [6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_qe16m"]
-resource_name = "walk_left"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.628014),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [3, 4, 3, 5]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bdyh8"]
 _data = {
 &"RESET": SubResource("Animation_aypkh"),
@@ -97,39 +97,6 @@ _data = {
 &"walk_right": SubResource("Animation_monf5"),
 &"walk_up": SubResource("Animation_bdyh8")
 }
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pw6nv"]
-animation = &"walk_down"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tpic6"]
-animation = &"walk_right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b6pse"]
-animation = &"walk_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i6sb3"]
-animation = &"walk_left"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hn1kw"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_pw6nv")
-blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_tpic6")
-blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_b6pse")
-blend_point_2/pos = Vector2(0, -1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_i6sb3")
-blend_point_3/pos = Vector2(-1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ps75u"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xqqx8"]
-states/walk/node = SubResource("AnimationNodeBlendSpace2D_hn1kw")
-states/walk/position = Vector2(329, 94)
-transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_ps75u")]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_monf5")
@@ -147,8 +114,3 @@ shape = SubResource("RectangleShape2D_4flbx")
 libraries = {
 &"": SubResource("AnimationLibrary_bdyh8")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_xqqx8")
-anim_player = NodePath("../AnimationPlayer")
-parameters/walk/blend_position = Vector2(0.0781499, 0.448879)
