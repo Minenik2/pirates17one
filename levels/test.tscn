@@ -51,5 +51,11 @@ tile_set = SubResource("TileSet_ykrsh")
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_pnvjf")]
 position = Vector2(78, 78)
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(-0.666667, 2.66666)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
 [node name="StaticBody2D" parent="." instance=ExtResource("3_ny0t1")]
 position = Vector2(173.667, 85.3333)
