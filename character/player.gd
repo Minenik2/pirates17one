@@ -22,7 +22,7 @@ func _physics_process(_delta):
 
 func update_animation(move_input: Vector2):
 	if move_input == Vector2.ZERO:
-		animation_player.stop()
+		animation_player.pause()
 		return
 
 	if abs(move_input.x) > abs(move_input.y):
