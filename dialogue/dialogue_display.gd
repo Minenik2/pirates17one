@@ -1,9 +1,15 @@
-extends Node2D
+extends CanvasLayer
 
-@export var dialogue_json: JSON
+#@export var dialogue_json: JSON
 @onready var state = {}
 
-func _ready() -> void:
+signal dialogue_ended
+
+#func _ready() -> void:
+	
+	
+func start_dialogue(dialogue_json: JSON):
+	$DialogueBox.is_dialogue_done = false
 	($EzDialogue as EzDialogue).start_dialogue(dialogue_json, state)
 
 func _on_ez_dialogue_dialogue_generated(response: DialogueResponse) -> void:
@@ -26,3 +32,4 @@ func _on_ez_dialogue_custom_signal_received(value: Variant) -> void:
 
 func _on_ez_dialogue_end_of_dialogue_reached() -> void:
 	$DialogueBox.is_dialogue_done = true
+	dialogue_ended.emit()

@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 const CHAR_READ_RATE = 0.02
 
@@ -50,16 +50,19 @@ func add_choice(choice_text: String):
 
 func _on_choice_selected(choice_index: int):
 	if !is_dialogue_done:
+		if tween:
+			tween.stop()
 		($"../EzDialogue" as EzDialogue).next(choice_index)
 	else:
 		clear_dialogue_box()
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only advance if no choices are visible
-	if current_state == State.READING and Input.is_action_just_pressed("interact"):
-		textBox.visible_characters = -1
-		tween.stop()
-		$VBoxContainer/TextboxContainer/MarginContainer/HBoxContainer/EndSymbol.text = "v"
-		current_state = State.FINISHED
-	elif choice_buttons.size() == 1 and choice_buttons[0].text.strip_edges() == "..." and Input.is_action_just_pressed("interact") and current_state == State.FINISHED:
-		($"../EzDialogue" as EzDialogue).next(-1)
+	if !is_dialogue_done:
+		if current_state == State.READING and Input.is_action_just_pressed("interact") and tween:
+			textBox.visible_characters = -1
+			tween.stop()
+			$VBoxContainer/TextboxContainer/MarginContainer/HBoxContainer/EndSymbol.text = "v"
+			current_state = State.FINISHED
+		elif choice_buttons.size() == 1 and choice_buttons[0].text.strip_edges() == "..." and Input.is_action_just_pressed("interact") and current_state == State.FINISHED:
+			($"../EzDialogue" as EzDialogue).next(0)
