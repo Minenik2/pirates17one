@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://du6vavag3aihq"]
+[gd_scene load_steps=9 format=4 uid="uid://du6vavag3aihq"]
 
 [ext_resource type="Texture2D" uid="uid://1xdjctvrmh2r" path="res://art/Wood floor board.png" id="1_j5jx5"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://ca7apex6snhgp" path="res://furniture/tablesmall.tscn" id="3_at5dv"]
-[ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://furniture/tablesmall.gd" id="4_jcd4p"]
+[ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="4_jcd4p"]
+[ext_resource type="JSON" path="res://dialogue/chair.json" id="5_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://cxfg35c27c2yi" path="res://dialogue/dialogue_display.tscn" id="5_uacia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppyta"]
@@ -67,6 +68,7 @@ editor_draw_limits = true
 [node name="StaticBody2D" parent="." instance=ExtResource("3_at5dv")]
 position = Vector2(173.667, 85.3333)
 script = ExtResource("4_jcd4p")
+dialogue_resource = ExtResource("5_lpvoh")
 
 [node name="DialogueDisplay" parent="." instance=ExtResource("5_uacia")]
 visible = false
