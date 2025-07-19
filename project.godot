@@ -35,6 +35,10 @@ mouse_cursor/custom_image="uid://dasnb7wrxop8k"
 
 enabled=PackedStringArray("res://addons/ez_dialogue/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [gui]
 
 theme/custom="uid://o6lxivbby83b"

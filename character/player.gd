@@ -34,6 +34,8 @@ func _physics_process(delta):
 			print("pressed")
 		if Input.is_action_just_pressed(interact_key) and can_interact:
 			interact()
+	else:
+		animation_player.pause()
 	
 
 func update_animation(move_input: Vector2):
@@ -62,7 +64,6 @@ func play_animation(name: String):
 		animation_player.play(name)
 
 func interact():
-	print("pressed!")
 	var space_state = get_world_2d().direct_space_state
 	var query_shape = CircleShape2D.new()
 	query_shape.radius = interaction_radius
@@ -75,7 +76,6 @@ func interact():
 	for collider in result:
 		if collider.collider.has_method("on_interact"):
 			collider.collider.on_interact()
-			animation_player.pause()
 			break # Stop after the first interaction
 
 

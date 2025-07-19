@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://du6vavag3aihq"]
+[gd_scene load_steps=12 format=4 uid="uid://du6vavag3aihq"]
 
 [ext_resource type="Texture2D" uid="uid://1xdjctvrmh2r" path="res://art/Wood floor board.png" id="1_j5jx5"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_lpvoh"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="4_jcd4p"]
 [ext_resource type="JSON" path="res://dialogue/chair.json" id="5_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://cxfg35c27c2yi" path="res://dialogue/dialogue_display.tscn" id="5_uacia"]
+[ext_resource type="PackedScene" uid="uid://bkj8kjy44kn6b" path="res://dialogue/standingEvent.tscn" id="7_jcd4p"]
+[ext_resource type="JSON" path="res://dialogue/dialogue.json" id="8_uacia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppyta"]
 texture = ExtResource("1_j5jx5")
@@ -82,6 +84,9 @@ texture = ExtResource("1_j5jx5")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ppyta")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcd4p"]
+size = Vector2(100, 20)
+
 [node name="test" type="Node2D"]
 y_sort_enabled = true
 scale = Vector2(3, 3)
@@ -118,4 +123,14 @@ dialogue_resource = ExtResource("5_lpvoh")
 
 [node name="DialogueDisplay" parent="." instance=ExtResource("5_uacia")]
 
+[node name="standingEvent" parent="." instance=ExtResource("7_jcd4p")]
+position = Vector2(202.333, 204.667)
+dialogue_resource = ExtResource("8_uacia")
+
+[node name="CollisionShape2D" parent="standingEvent" index="0"]
+position = Vector2(4.66667, -1.33333)
+shape = SubResource("RectangleShape2D_jcd4p")
+
 [connection signal="dialogue_ended" from="DialogueDisplay" to="CharacterBody2D" method="_on_dialogue_display_dialogue_ended"]
+
+[editable path="standingEvent"]
