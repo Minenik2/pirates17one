@@ -1,6 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://hhr5fhyhxf52"]
+[gd_scene load_steps=11 format=3 uid="uid://hhr5fhyhxf52"]
 
+[ext_resource type="Shader" uid="uid://c76ikk43nfobl" path="res://scenes/blurShader.gdshader" id="1_8ln24"]
 [ext_resource type="Script" uid="uid://dwcywp1ch542b" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://dtciysp1era1k" path="res://scenes/title.gd" id="2_ekxnf"]
+[ext_resource type="Shader" uid="uid://coiocedbtnni5" path="res://scenes/main_menu.gdshader" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://6o2sg8h8qdb3" path="res://art/menuArtDestroyed.jpg" id="3_rtw2f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ln24"]
+shader = ExtResource("2_wu84c")
+shader_parameter/viewport_size = Vector2(0, 0)
+shader_parameter/mouse_pos = Vector2(0, 0)
+shader_parameter/time = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.133333, 0.137255, 0.137255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.584314, 0.0117647, 0.109804, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75"]
 bg_color = Color(0.133333, 0.137255, 0.137255, 1)
@@ -18,17 +44,39 @@ expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
-[node name="Main Menu" type="Control"]
-layout_mode = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.133333, 0.137255, 0.137255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.941176, 0.964706, 0.941176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtw2f"]
+shader = ExtResource("1_8ln24")
+shader_parameter/blur_amount = 5.0
+
+[node name="Main Menu" type="CanvasLayer"]
+script = ExtResource("1_l6cm7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_8ln24")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l6cm7")
+texture = ExtResource("3_rtw2f")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -38,11 +86,33 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 100
+text = "HUBRIS"
+horizontal_alignment = 1
+script = ExtResource("2_ekxnf")
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vue75")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 text = "< S T A R T >"
+
+[node name="blur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_rtw2f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_rtw2f")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
