@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cx5hwyhjw1iya"]
+[gd_scene load_steps=16 format=4 uid="uid://cx5hwyhjw1iya"]
 
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="1_cr8hn"]
 [ext_resource type="Texture2D" uid="uid://dr74uctmejgsk" path="res://art/Triple tile sized wall dithering.png" id="2_drp42"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxfg35c27c2yi" path="res://dialogue/dialogue_display.tscn" id="6_drp42"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="7_c0v2q"]
 [ext_resource type="JSON" path="res://dialogue/1St meet lady Gremory.json" id="8_s5ket"]
+[ext_resource type="PackedScene" uid="uid://btdjf2xexm50" path="res://scenes/teleporter_spawn.tscn" id="10_s5ket"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0crb"]
 texture = ExtResource("2_drp42")
@@ -71,7 +72,7 @@ position = Vector2(0, -512)
 scale = Vector2(4, 4)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_cr8hn")]
-position = Vector2(352, 154.5)
+position = Vector2(471, 175.25)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
@@ -86,5 +87,9 @@ script = ExtResource("7_c0v2q")
 dialogue_resource = ExtResource("8_s5ket")
 
 [node name="DialogueDisplay" parent="." instance=ExtResource("6_drp42")]
+
+[node name="teleporter_spawn" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_s5ket")]
+position = Vector2(351.5, 154.25)
+player = NodePath("../CharacterBody2D")
 
 [connection signal="dialogue_ended" from="DialogueDisplay" to="CharacterBody2D" method="_on_dialogue_display_dialogue_ended"]
