@@ -59,7 +59,7 @@ func interact():
 	query_shape.radius = interaction_radius
 	var query_params = PhysicsShapeQueryParameters2D.new()
 	query_params.set_shape(query_shape)
-	query_params.set_transform(global_transform)
+	query_params.set_transform(global_transform.translated(Vector2(0, 20)))
 	query_params.set_collision_mask(1)
 	var result = space_state.intersect_shape(query_params)
 	
