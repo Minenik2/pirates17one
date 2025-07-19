@@ -19,5 +19,5 @@ func _process(_delta):
 	shader_mat.set_shader_parameter("time", Time.get_ticks_msec() / 1000.0)
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/test.tscn")
+	get_tree().change_scene_to_file("res://scenes/floor_main.tscn")
 	SfXplayer.playDialogueClick()
