@@ -63,6 +63,7 @@ shape = SubResource("RectangleShape2D_jcd4p")
 [node name="teleporter" parent="." instance=ExtResource("9_uacia")]
 position = Vector2(222.667, 110)
 target_scene = "uid://cx5hwyhjw1iya"
+code = "lol"
 
 [node name="CollisionShape2D" parent="teleporter" index="0"]
 position = Vector2(1, -1)

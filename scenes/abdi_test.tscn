@@ -90,6 +90,7 @@ dialogue_resource = ExtResource("8_s5ket")
 
 [node name="teleporter_spawn" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_s5ket")]
 position = Vector2(351.5, 154.25)
+code = "lol"
 player = NodePath("../CharacterBody2D")
 
 [connection signal="dialogue_ended" from="DialogueDisplay" to="CharacterBody2D" method="_on_dialogue_display_dialogue_ended"]
