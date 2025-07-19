@@ -17,6 +17,15 @@ enum State {
 
 var current_state = State.READING
 
+var step_timer := 0.0
+var step_interval := 0.09  # Time between step sounds, adjust as needed
+
+func _physics_process(delta):
+	step_timer -= delta
+	if(step_timer <= 0.0 and current_state == State.READING and $VBoxContainer/TextboxContainer/MarginContainer/HBoxContainer/EndSymbol.text != "v"):
+		SfXplayer.playDialogueTalk()
+		step_timer = step_interval
+
 func clear_dialogue_box():
 	textBox.text = ""
 	for choice in choice_buttons:

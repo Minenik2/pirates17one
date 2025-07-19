@@ -12,13 +12,13 @@ var is_interacting = false
 var can_interact = true
 
 var step_timer := 0.0
-var step_interval := 0.3  # Time between step sounds, adjust as needed
+var step_interval := 0.4  # Time between step sounds, adjust as needed
 
 func _ready():
 	update_animation(Vector2.ZERO)  # Default to idle
 
-func _physics_process(_delta):
-	step_timer -= _delta
+func _physics_process(delta):
+	step_timer -= delta
 	
 	if !is_interacting:
 		var input_direction = Vector2(

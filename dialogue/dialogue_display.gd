@@ -13,6 +13,7 @@ func start_dialogue(dialogue_json: JSON):
 	($EzDialogue as EzDialogue).start_dialogue(dialogue_json, state)
 
 func _on_ez_dialogue_dialogue_generated(response: DialogueResponse) -> void:
+	SfXplayer.playDialogueClick()
 	$DialogueBox.clear_dialogue_box()
 	$DialogueBox.add_text(response.text)
 	if response.choices.is_empty():

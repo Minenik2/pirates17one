@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxd6if28mxnqp"]
+[gd_scene load_steps=5 format=3 uid="uid://dxd6if28mxnqp"]
 
 [ext_resource type="AudioStream" uid="uid://c43bkn40mrm87" path="res://audio/steps2.wav" id="1_4srey"]
+[ext_resource type="Script" uid="uid://chq6kbqqnne7c" path="res://audio/sfx_player.gd" id="2_w7mmr"]
+[ext_resource type="AudioStream" uid="uid://cbcw5g4lgean0" path="res://audio/dialogue-click.wav" id="2_yqj1e"]
+[ext_resource type="AudioStream" uid="uid://b5fvqwnudruup" path="res://audio/talk-typewriter.wav" id="4_8lo4j"]
 
 [node name="SFXplayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_4srey")
 volume_db = -10.0
 pitch_scale = 0.9
+script = ExtResource("2_w7mmr")
+
+[node name="dialogueClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yqj1e")
+pitch_scale = 1.8
+
+[node name="dialogueTalk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8lo4j")
+volume_db = -13.0
