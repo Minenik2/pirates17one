@@ -106,7 +106,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 text = "< S T A R T >"
 
 [node name="blur" type="TextureRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_rtw2f")
 anchors_preset = 15
 anchor_right = 1.0
