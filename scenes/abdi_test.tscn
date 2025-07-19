@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cx5hwyhjw1iya"]
+[gd_scene load_steps=15 format=4 uid="uid://cx5hwyhjw1iya"]
 
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="1_cr8hn"]
 [ext_resource type="Texture2D" uid="uid://dr74uctmejgsk" path="res://art/Triple tile sized wall dithering.png" id="2_drp42"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ca0v8hambpci0" path="res://art/Wall DIthering.png" id="4_82fw6"]
 [ext_resource type="Texture2D" uid="uid://cn7g5nulmpyg4" path="res://art/Door.png" id="4_c0v2q"]
 [ext_resource type="PackedScene" uid="uid://bmhstkm0tu2g7" path="res://character/single_mother.tscn" id="4_miw8g"]
-[ext_resource type="Script" uid="uid://c4wi53o0f4lyv" path="res://character/single_mother.gd" id="5_c0v2q"]
 [ext_resource type="PackedScene" uid="uid://cxfg35c27c2yi" path="res://dialogue/dialogue_display.tscn" id="6_drp42"]
+[ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="7_c0v2q"]
+[ext_resource type="JSON" path="res://dialogue/1St meet lady Gremory.json" id="8_s5ket"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0crb"]
 texture = ExtResource("2_drp42")
@@ -81,9 +82,9 @@ tile_set = SubResource("TileSet_hqehb")
 [node name="SingleMother" parent="." instance=ExtResource("4_miw8g")]
 z_index = -1
 position = Vector2(57.5, 138.5)
-script = ExtResource("5_c0v2q")
+script = ExtResource("7_c0v2q")
+dialogue_resource = ExtResource("8_s5ket")
 
 [node name="DialogueDisplay" parent="." instance=ExtResource("6_drp42")]
-visible = false
 
 [connection signal="dialogue_ended" from="DialogueDisplay" to="CharacterBody2D" method="_on_dialogue_display_dialogue_ended"]

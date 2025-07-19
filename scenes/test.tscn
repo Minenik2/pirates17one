@@ -71,6 +71,5 @@ script = ExtResource("4_jcd4p")
 dialogue_resource = ExtResource("5_lpvoh")
 
 [node name="DialogueDisplay" parent="." instance=ExtResource("5_uacia")]
-visible = false
 
 [connection signal="dialogue_ended" from="DialogueDisplay" to="CharacterBody2D" method="_on_dialogue_display_dialogue_ended"]

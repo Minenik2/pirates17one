@@ -13,6 +13,7 @@ border_width_bottom = 2
 border_color = Color(0.941176, 0.964706, 0.941176, 1)
 
 [node name="DialogueDisplay" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_ycikt")
 
 [node name="DialogueBox" type="Control" parent="."]
