@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxd6if28mxnqp"]
+
+[ext_resource type="AudioStream" uid="uid://c43bkn40mrm87" path="res://audio/steps2.wav" id="1_4srey"]
+
+[node name="SFXplayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_4srey")
+volume_db = -10.0
+pitch_scale = 0.9
