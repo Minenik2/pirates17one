@@ -15,6 +15,7 @@ var step_timer := 0.0
 var step_interval := 0.4  # Time between step sounds, adjust as needed
 
 func _ready():
+	DialogueDisplay.dialogue_ended.connect(_on_dialogue_display_dialogue_ended)
 	update_animation(Vector2.ZERO)  # Default to idle
 
 func _physics_process(delta):
@@ -80,7 +81,7 @@ func interact():
 
 
 func _on_dialogue_display_dialogue_ended() -> void:
-	$"../DialogueDisplay".hide()
+	DialogueDisplay.hide()
 	is_interacting = false
 	can_interact = false
 	await get_tree().create_timer(0.2).timeout

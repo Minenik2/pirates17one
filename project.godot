@@ -21,6 +21,7 @@ general/default_playback_type.web=0
 
 [autoload]
 
+DialogueDisplay="*res://dialogue/dialogue_display.tscn"
 SfXplayer="*res://audio/sf_xplayer.tscn"
 Database="*res://scenes/database.tscn"
 TransitionScreen="*res://scenes/transition_screen.tscn"
