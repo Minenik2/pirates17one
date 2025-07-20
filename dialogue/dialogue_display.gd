@@ -1,7 +1,9 @@
 extends CanvasLayer
 
-#@export var dialogue_json: JSON
-@onready var state = {}
+@onready var state = {
+	"spokenToBeleth": false,
+	"keyToBody": false
+}
 
 signal dialogue_ended
 

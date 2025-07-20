@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://du6vavag3aihq"]
+[gd_scene load_steps=19 format=4 uid="uid://du6vavag3aihq"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_umyxb"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_defln"]
@@ -12,6 +12,7 @@
 [ext_resource type="JSON" path="res://dialogue/door.json" id="10_dwjiw"]
 [ext_resource type="Texture2D" uid="uid://6ksuubr74tqy" path="res://art/dalian.png" id="11_dwjiw"]
 [ext_resource type="JSON" path="res://dialogue/beleth.json" id="11_gys8b"]
+[ext_resource type="JSON" path="res://dialogue/nabella1.json" id="13_ynp5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcd4p"]
 size = Vector2(100, 20)
@@ -22,6 +23,8 @@ size = Vector2(24.63, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umyxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_defln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gys8b"]
 
 [node name="floor_main" type="Node2D"]
 y_sort_enabled = true
@@ -109,6 +112,18 @@ player = NodePath("../CharacterBody2D")
 shape = SubResource("RectangleShape2D_defln")
 
 [node name="Sprite2D" type="Sprite2D" parent="beleth"]
+texture = ExtResource("11_dwjiw")
+
+[node name="Nabella" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(50.6667, 142)
+script = ExtResource("4_gys8b")
+dialogue_resource = ExtResource("13_ynp5j")
+player = NodePath("../CharacterBody2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nabella"]
+shape = SubResource("RectangleShape2D_gys8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nabella"]
 texture = ExtResource("11_dwjiw")
 
 [editable path="standingEvent"]
