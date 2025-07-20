@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dkds2t0667xjc"]
+[gd_scene load_steps=12 format=4 uid="uid://dkds2t0667xjc"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_ydpo5"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_4jyo6"]
@@ -6,9 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="4_kji5w"]
 [ext_resource type="Texture2D" uid="uid://bi8if0baxa6we" path="res://art/scholar.png" id="5_3os2r"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="5_cjv0t"]
+[ext_resource type="JSON" path="res://dialogue/scholarAstaroth.json" id="6_q0yum"]
+[ext_resource type="Texture2D" uid="uid://6ksuubr74tqy" path="res://art/dalian.png" id="8_6lvpw"]
+[ext_resource type="JSON" path="res://dialogue/Marchosias.json" id="8_lx8wg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjv0t"]
 size = Vector2(9, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lvpw"]
 
 [node name="floor_upper" type="Node2D"]
 y_sort_enabled = true
@@ -45,9 +50,11 @@ position = Vector2(207.667, 178.333)
 target_scene = "uid://du6vavag3aihq"
 code = "upper"
 
-[node name="scholar" type="StaticBody2D" parent="."]
+[node name="scholar" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(215, 63.6667)
 script = ExtResource("5_cjv0t")
+dialogue_resource = ExtResource("6_q0yum")
+player = NodePath("../player")
 
 [node name="Sprite2D" type="Sprite2D" parent="scholar"]
 texture = ExtResource("5_3os2r")
@@ -55,3 +62,15 @@ texture = ExtResource("5_3os2r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scholar"]
 position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_cjv0t")
+
+[node name="Marchosias" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(29, 62.3333)
+script = ExtResource("5_cjv0t")
+dialogue_resource = ExtResource("8_lx8wg")
+player = NodePath("../player")
+
+[node name="Sprite2D" type="Sprite2D" parent="Marchosias"]
+texture = ExtResource("8_6lvpw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marchosias"]
+shape = SubResource("RectangleShape2D_6lvpw")

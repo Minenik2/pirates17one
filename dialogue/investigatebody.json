@@ -1,12 +1,1 @@
-[
-	{
-		"commands_raw": "You kneel beside the lifeless form sprawled awkwardly on the cold floorboard. The dim candlelight flickers, casting twitsted shadows over the still figure.\n---\nThe body seems to have fallen naturally. No signs of any dragging.\n---",
-		"gnode_name": "start",
-		"id": 0.0,
-		"name": "start",
-		"position": [
-			1460.0,
-			300.0
-		]
-	}
-]
+[{"commands_raw":"You kneel beside the lifeless form sprawled awkwardly on the cold floorboard. The dim candlelight flickers, casting twitsted shadows over the still figure.\nsignal(set,bodyInvestigated,true)\n---\nThe body seems to have fallen naturally. No signs of any dragging.\n---","gnode_name":"start","id":0,"name":"start","position":[1460.0,300.0]}]
