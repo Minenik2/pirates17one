@@ -86,7 +86,6 @@ size_flags_horizontal = 3
 mouse_filter = 2
 bbcode_enabled = true
 text = "test"
-autowrap_mode = 1
 
 [node name="EndSymbol" type="Label" parent="DialogueBox/VBoxContainer/TextboxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(9, 0)

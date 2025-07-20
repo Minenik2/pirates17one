@@ -1,1 +1,62 @@
-[{"commands_raw":"Knock Knock\n?>Knock again-> Knock ","gnode_name":"start","id":0,"name":"start","position":[380.0,460.0]},{"commands_raw":"Lady Gremory: …......\n---\nLady Gremory: …Is this about Apartment 2B?\n?> YES -> YES\n?> NO -> NO\n","gnode_name":"knock","id":1,"name":"Knock","position":[540.0,460.0]},{"commands_raw":"Lady Gremory: Figures. \n---\nLady Gremory: Let me guess \n---\nLady Gremory: you’re here about Mr. S’s death?\n?> May I come in for a moment?-> I GUESS\n","gnode_name":"yes","id":2,"name":"YES","position":[700.0,380.0]},{"commands_raw":"Lady Gremory: You don’t have to lie\n---\nLady Gremory: No one ever visits anyway.\n---\nLady Gremory: So, what do you want? \n?> May I come in for a moment? -> I GUESS","gnode_name":"no","id":3,"name":"NO","position":[680.0,540.0]},{"commands_raw":"Lady Gremory: ..........\n---\nLady Gremory: ..... I guess, Miss Detective.\n---\nLady Gremory: But make it quick.\n---\nLady Gremory: My child is sleeping \n---\nLady Gremory: so DON'T make a sound.\n?> I’ll be quick.-> END\n","gnode_name":"i guess","id":4,"name":"I GUESS","position":[820.0,460.0]},{"commands_raw":"Dalian: ........\n---","gnode_name":"end","id":5,"name":"END","position":[960.0,460.0]}]
+[
+	{
+		"commands_raw": "Knock Knock\n?>Knock again-> Knock ",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			380.0,
+			460.0
+		]
+	},
+	{
+		"commands_raw": "Lady Gremory: …......\n---\nLady Gremory: …Is this about Apartment 2B?\n?> YES -> YES\n?> NO -> NO\n",
+		"gnode_name": "knock",
+		"id": 1.0,
+		"name": "Knock",
+		"position": [
+			540.0,
+			460.0
+		]
+	},
+	{
+		"commands_raw": "Lady Gremory: Figures. \n---\nLady Gremory: Let me guess \n---\nLady Gremory: you’re here about Mr. S’s death?\n?> May I come in for a moment?-> I GUESS\n",
+		"gnode_name": "yes",
+		"id": 2.0,
+		"name": "YES",
+		"position": [
+			700.0,
+			380.0
+		]
+	},
+	{
+		"commands_raw": "Lady Gremory: You don’t have to lie\n---\nLady Gremory: No one ever visits anyway.\n---\nLady Gremory: So, what do you want?  \n?> May I come in for a moment? -> I GUESS",
+		"gnode_name": "no",
+		"id": 3.0,
+		"name": "NO",
+		"position": [
+			680.0,
+			540.0
+		]
+	},
+	{
+		"commands_raw": "Lady Gremory: ..........\n---\nLady Gremory: ..... I guess, Miss Detective.\n---\nLady Gremory: But make it quick.\n---\nLady Gremory: My child is sleeping \n---\nLady Gremory: so DON'T make a sound.\n?> I’ll be quick.-> END\n",
+		"gnode_name": "i guess",
+		"id": 4.0,
+		"name": "I GUESS",
+		"position": [
+			820.0,
+			460.0
+		]
+	},
+	{
+		"commands_raw": "Dalian: ........\n---",
+		"gnode_name": "end",
+		"id": 5.0,
+		"name": "END",
+		"position": [
+			960.0,
+			460.0
+		]
+	}
+]

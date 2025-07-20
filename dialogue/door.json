@@ -1,0 +1,72 @@
+[
+	{
+		"commands_raw": "You meet face-to-face with the entrance door.\n---\nIt has a strange symbol carved into the wood in the form of an eye.\n\n?> Can I open the door? -> can\n?> leave",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			240.0,
+			300.0
+		]
+	},
+	{
+		"commands_raw": "The times has not yet arrived, you must first find the truth about the murder.\n\n?> But I really want to know what's outside. -> really\n?> leave",
+		"gnode_name": "can",
+		"id": 1.0,
+		"name": "can",
+		"position": [
+			440.0,
+			280.0
+		]
+	},
+	{
+		"commands_raw": "Suffering...\n---\nEternal suffering\n\n?> There must be something more -> more\n?> Eternal suffering..? How does that feel? -> feel",
+		"gnode_name": "really",
+		"id": 2.0,
+		"name": "really",
+		"position": [
+			680.0,
+			300.0
+		]
+	},
+	{
+		"commands_raw": "It feels like an egg, hatching, laying another egg, and then being reborn.\n---\nThere it is. The cycle of life and death. Hatch and lay. Impermanence, the sky of dark muddied water, followed by the etherial wind. Nothingness turned into fullness. \n---",
+		"gnode_name": "feel",
+		"id": 3.0,
+		"name": "feel",
+		"position": [
+			820.0,
+			260.0
+		]
+	},
+	{
+		"commands_raw": "Streets, lamposts, complex victorian architecture\n---\nPeople walking by, drenched in last night's rain. Fog, thick fog devouring the souls of fleeting happiness. There's nothing to find on these streets.\n---\nOnly black and brown horses, meddling on the mossy cobblestone and the sound of a broken bell clock ringing more than twice a day\n\n?> This doesn't sound like eternal suffering at all, I love this! -> love\n?> Must be horrible I am glad to be inside of this place -> inside",
+		"gnode_name": "more",
+		"id": 4.0,
+		"name": "more",
+		"position": [
+			820.0,
+			400.0
+		]
+	},
+	{
+		"commands_raw": "This place is no better, broken timber walls, creeked stairwells that has certainly seen better days. Candlelights are smelting by the worthless tiny flames burning on top of their stalk. \n---\nThe air hangs heavy with mildew and old regret. Wallpaper peels like skin from bone, revealing strange markings etched directly into the foundation. Perhaps they're runes, or scratches, or something that wanted out.\n---\n",
+		"gnode_name": "inside",
+		"id": 5.0,
+		"name": "inside",
+		"position": [
+			1080.0,
+			500.0
+		]
+	},
+	{
+		"commands_raw": "Ah... then you haven’t looked closely enough.\n---\nBeauty decays. So do horses, buildings, and men.\n---\nLove it if you must. You’ll get tired of it soon enough.\n---",
+		"gnode_name": "love",
+		"id": 6.0,
+		"name": "love",
+		"position": [
+			1080.0,
+			380.0
+		]
+	}
+]

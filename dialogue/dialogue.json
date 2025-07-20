@@ -1,6 +1,6 @@
 [
 	{
-		"commands_raw": "Dalian: This does not look like an apartment...\n---\nDalian: More of a complicated mansion\n---\nDalian: Should I go upstairs or downstairs?\n\n?> Upstairs -> choice number one node\n?> Downstairs -> choice number two node",
+		"commands_raw": "Dalian: This does not look like an apartment...\n---\nDalian: More of a complicated mansion\n---\nDalian: Should I go upstairs or downstairs?\n\n?> Upstairs -> choice number one node\n?> Downstairs -> downstairs",
 		"gnode_name": "start",
 		"id": 0.0,
 		"name": "start",
@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "you chose number 1!!!\nyay\n---\n->  test",
+		"commands_raw": "Dalian: Upstairs looks like the perfect place to commit a crime.\n---",
 		"gnode_name": "choice number one node",
 		"id": 1.0,
 		"name": "choice number one node",
@@ -20,43 +20,13 @@
 		]
 	},
 	{
-		"commands_raw": "you chose 2\nbooo!",
-		"gnode_name": "choice number two node",
-		"id": 2.0,
-		"name": "choice number two node",
+		"commands_raw": "Dalian: Downstairs. Always the worst place to start.\n---",
+		"gnode_name": "downstairs",
+		"id": 6.0,
+		"name": "downstairs",
 		"position": [
-			460.0,
-			340.0
-		]
-	},
-	{
-		"commands_raw": "I'll be testing this much more often\n\n?> are you sure? -> you sure?\n?> I don't believe you -> don't belive",
-		"gnode_name": "test",
-		"id": 3.0,
-		"name": "test",
-		"position": [
-			760.0,
-			220.0
-		]
-	},
-	{
-		"commands_raw": "then don't believe me 4head",
-		"gnode_name": "don't belive",
-		"id": 4.0,
-		"name": "don't belive",
-		"position": [
-			920.0,
-			300.0
-		]
-	},
-	{
-		"commands_raw": "yes i am certain",
-		"gnode_name": "you sure?",
-		"id": 5.0,
-		"name": "you sure?",
-		"position": [
-			920.0,
-			200.0
+			480.0,
+			360.0
 		]
 	}
 ]

@@ -163,7 +163,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Lower Floor"
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="grimory" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 focus_mode = 0
 text = "Grimory"
@@ -229,3 +229,4 @@ texture = ExtResource("1_wvjo1")
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/victim" to="." method="_on_victim_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/alibis" to="." method="_on_alibis_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/suspects" to="." method="_on_suspects_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer3/grimory" to="." method="_on_grimory_pressed"]

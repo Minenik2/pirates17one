@@ -1,0 +1,62 @@
+[
+	{
+		"commands_raw": "Belethera: Hello...\n---\nBelethera: May I help you?\n\n?> My name is Dalian I am here investigating the murder -> pre-choices",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			440.0,
+			320.0
+		]
+	},
+	{
+		"commands_raw": "?> Where is the body? -> body\n?> Do you know the name of the victim? -> name\n?> Did anyone hear anything? -> hear\n?> Leave",
+		"gnode_name": "choices",
+		"id": 1.0,
+		"name": "choices",
+		"position": [
+			1300.0,
+			320.0
+		]
+	},
+	{
+		"commands_raw": "Belethera: Ahh... Yes that loud man downstairs.\n---\nBelethera: What would you like to know?\n\n-> choices",
+		"gnode_name": "pre-choices",
+		"id": 2.0,
+		"name": "pre-choices",
+		"position": [
+			880.0,
+			320.0
+		]
+	},
+	{
+		"commands_raw": "I found the body first in the morning at around 8:12 AM. Called the police and waited here for someone to arrive. \n---\nHowever the cleaning lady named Nabella, was supposed to clean all the rooms at 7:30 AM.\n---\nI haven't confronted her about the fact, but I'm very mad at her. These servants should learn their place.\n\n-> choices",
+		"gnode_name": "hear",
+		"id": 3.0,
+		"name": "hear",
+		"position": [
+			1500.0,
+			460.0
+		]
+	},
+	{
+		"commands_raw": "Belethera: He preffered to be refered as Mr. S, but he wrote down Solomon on the receipt.\n---\nBelethera: He was a very weird little fella, I can tell you that. One night he said the walls talked to him. I told him it was just the plumbing.\n-> choices\n",
+		"gnode_name": "name",
+		"id": 4.0,
+		"name": "name",
+		"position": [
+			1500.0,
+			320.0
+		]
+	},
+	{
+		"commands_raw": "Belethera: Right where you'd expect it. The bottom floor, crumpled like a marionette with it's strings cut.\n---\nBelethera: He died in his aparment, I locked the door so nobody would come in.\n\n-> choices",
+		"gnode_name": "body",
+		"id": 5.0,
+		"name": "body",
+		"position": [
+			1500.0,
+			160.0
+		]
+	}
+]

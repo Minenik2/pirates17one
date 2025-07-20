@@ -31,12 +31,12 @@ func _physics_process(delta):
 		move_and_slide()
 
 		update_animation(input_direction)
-		if Input.is_action_just_pressed(interact_key):
-			print("pressed")
-		if Input.is_action_just_pressed(interact_key) and can_interact:
-			interact()
 	else:
 		animation_player.pause()
+
+func _unhandled_input(event):
+	if event.is_action_pressed(interact_key) and can_interact and !is_interacting and !TabMenu.visible:
+		interact()
 	
 
 func update_animation(move_input: Vector2):
@@ -85,5 +85,4 @@ func _on_dialogue_display_dialogue_ended() -> void:
 	is_interacting = false
 	can_interact = false
 	await get_tree().create_timer(0.2).timeout
-	print("you can interact!")
 	can_interact = true
