@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxd6if28mxnqp"]
+[gd_scene load_steps=8 format=3 uid="uid://dxd6if28mxnqp"]
 
 [ext_resource type="AudioStream" uid="uid://c43bkn40mrm87" path="res://audio/steps2.wav" id="1_4srey"]
 [ext_resource type="Script" uid="uid://chq6kbqqnne7c" path="res://audio/sfx_player.gd" id="2_w7mmr"]
 [ext_resource type="AudioStream" uid="uid://cbcw5g4lgean0" path="res://audio/dialogue-click.wav" id="2_yqj1e"]
 [ext_resource type="AudioStream" uid="uid://b5fvqwnudruup" path="res://audio/talk-typewriter.wav" id="4_8lo4j"]
 [ext_resource type="AudioStream" uid="uid://ouvk642t0hpw" path="res://audio/music/intro.wav" id="5_g8xmw"]
+[ext_resource type="AudioStream" uid="uid://dk4uqfpa2ort8" path="res://audio/stairs.wav" id="6_6i1a7"]
+[ext_resource type="AudioStream" uid="uid://cysf1tv8ruknu" path="res://audio/stairs2.wav" id="7_jklwm"]
 
 [node name="SFXplayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_4srey")
@@ -27,3 +29,11 @@ stream = ExtResource("5_g8xmw")
 volume_db = -10.0
 autoplay = true
 bus = &"music"
+
+[node name="stairs" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6i1a7")
+volume_db = -19.0
+
+[node name="stairs2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jklwm")
+volume_db = -13.0

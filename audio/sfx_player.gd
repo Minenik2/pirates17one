@@ -6,3 +6,9 @@ func playDialogueClick():
 
 func playDialogueTalk():
 	$dialogueTalk.play()
+
+func playStairs():
+	$stairs.play()
+
+func playStairs2():
+	$stairs2.play()
