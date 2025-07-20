@@ -10,6 +10,7 @@ var interact_key = "interact" # The key for interaction, usually set to "E" or "
 var interaction_radius = 10
 var is_interacting = false
 var can_interact = true
+var animateCutscene = false
 
 var step_timer := 0.0
 var step_interval := 0.4  # Time between step sounds, adjust as needed
@@ -31,7 +32,7 @@ func _physics_process(delta):
 		move_and_slide()
 
 		update_animation(input_direction)
-	else:
+	elif !animateCutscene:
 		animation_player.pause()
 
 func _unhandled_input(event):
@@ -86,3 +87,18 @@ func _on_dialogue_display_dialogue_ended() -> void:
 	can_interact = false
 	await get_tree().create_timer(0.2).timeout
 	can_interact = true
+
+func walk_for_seconds(direction, duration):
+	var time_elapsed = 0.0
+	animateCutscene = true
+
+	while time_elapsed < duration:
+		var delta = await get_tree().create_timer(0.01).timeout
+		velocity = direction * move_speed
+		move_and_slide()
+		update_animation(direction)
+		time_elapsed += 0.01
+
+	velocity = Vector2.ZERO
+	move_and_slide()
+	animateCutscene = false

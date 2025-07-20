@@ -62,3 +62,9 @@ func _on_grimory_pressed() -> void:
 	textureSprite.texture = load("res://art/grimory.png")
 	profile.text = "Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
 	
+
+
+func _on_astaroth_pressed() -> void:
+	SfXplayer.playDialogueClick()
+	textureSprite.texture = load("res://art/scholar.png")
+	profile.text = "Mohammed has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
