@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://caf1pui883e4g"]
+[gd_scene load_steps=4 format=3 uid="uid://caf1pui883e4g"]
 
+[ext_resource type="Script" uid="uid://dqj87f4nxemx5" path="res://scenes/tab_menu.gd" id="1_loes4"]
 [ext_resource type="Texture2D" uid="uid://6ksuubr74tqy" path="res://art/dalian.png" id="1_wvjo1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvjo1"]
@@ -20,6 +21,7 @@ expand_margin_bottom = 4.0
 
 [node name="tab_menu" type="CanvasLayer"]
 visible = false
+script = ExtResource("1_loes4")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
