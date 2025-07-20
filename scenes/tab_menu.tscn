@@ -19,6 +19,7 @@ expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
 [node name="tab_menu" type="CanvasLayer"]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
