@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://caf1pui883e4g"]
+[gd_scene load_steps=6 format=3 uid="uid://caf1pui883e4g"]
 
 [ext_resource type="Script" uid="uid://dqj87f4nxemx5" path="res://scenes/tab_menu.gd" id="1_loes4"]
 [ext_resource type="Texture2D" uid="uid://6ksuubr74tqy" path="res://art/dalian.png" id="1_wvjo1"]
+[ext_resource type="Texture2D" uid="uid://6o2sg8h8qdb3" path="res://art/menuArtDestroyed.jpg" id="3_tqsr2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvjo1"]
 bg_color = Color(0.133333, 0.137255, 0.137255, 1)
@@ -19,9 +20,29 @@ expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqsr2"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+bg_color = Color(0.133333, 0.137255, 0.137255, 0.588235)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.941176, 0.964706, 0.941176, 1)
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+
 [node name="tab_menu" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_loes4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.949346, 0.86223, 0.838549, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_tqsr2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -29,38 +50,182 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_wvjo1")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="top_menu" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="alibis" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="info" type="Button" parent="MarginContainer/VBoxContainer/top_menu"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+focus_mode = 0
 theme_type_variation = &"UImenuButton"
-theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_wvjo1")
+text = "Info"
+
+[node name="victim" type="Button" parent="MarginContainer/VBoxContainer/top_menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"UImenuButton"
+theme_override_styles/normal = SubResource("StyleBoxFlat_wvjo1")
+text = "Victim"
+
+[node name="alibis" type="Button" parent="MarginContainer/VBoxContainer/top_menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_mode = 0
+theme_type_variation = &"UImenuButton"
 text = "Alibis"
 
-[node name="suspects" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="suspects" type="Button" parent="MarginContainer/VBoxContainer/top_menu"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+focus_mode = 0
 theme_type_variation = &"UImenuButton"
-theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_wvjo1")
 text = "Suspects"
+
+[node name="Suspects" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Suspects"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="floor_above" type="Label" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Upper Floor"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Marchosias"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Astaroth"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="floor_middle" type="Label" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Middle Floor"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+focus_mode = 0
+text = "Belethara"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+focus_mode = 0
+text = "Nabella"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="floor_lower" type="Label" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Lower Floor"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+focus_mode = 0
+text = "Grimory"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_wvjo1")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+
+[node name="profile" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_tqsr2")
+bbcode_enabled = true
+text = "Click on a character on the left to read their profile."
+
+[node name="Alibis" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Alibis"]
+modulate = Color(1, 0.294118, 1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_wvjo1")
+
+[node name="Victim" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Victim"]
+modulate = Color(0.390454, 0.460261, 0.795632, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_wvjo1")
+
+[node name="Info" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Info"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_wvjo1")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/victim" to="." method="_on_victim_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/alibis" to="." method="_on_alibis_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/suspects" to="." method="_on_suspects_pressed"]
