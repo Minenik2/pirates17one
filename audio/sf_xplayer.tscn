@@ -1,18 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxd6if28mxnqp"]
+[gd_scene load_steps=9 format=3 uid="uid://dxd6if28mxnqp"]
 
 [ext_resource type="AudioStream" uid="uid://c43bkn40mrm87" path="res://audio/steps2.wav" id="1_4srey"]
 [ext_resource type="Script" uid="uid://chq6kbqqnne7c" path="res://audio/sfx_player.gd" id="2_w7mmr"]
 [ext_resource type="AudioStream" uid="uid://cbcw5g4lgean0" path="res://audio/dialogue-click.wav" id="2_yqj1e"]
+[ext_resource type="AudioStream" uid="uid://br41hwjburg3k" path="res://audio/music/g78.wav" id="3_oied0"]
 [ext_resource type="AudioStream" uid="uid://b5fvqwnudruup" path="res://audio/talk-typewriter.wav" id="4_8lo4j"]
 [ext_resource type="AudioStream" uid="uid://ouvk642t0hpw" path="res://audio/music/intro.wav" id="5_g8xmw"]
 [ext_resource type="AudioStream" uid="uid://dk4uqfpa2ort8" path="res://audio/stairs.wav" id="6_6i1a7"]
 [ext_resource type="AudioStream" uid="uid://cysf1tv8ruknu" path="res://audio/stairs2.wav" id="7_jklwm"]
 
-[node name="SFXplayer" type="AudioStreamPlayer"]
+[node name="SFXplayer" type="AudioStreamPlayer" node_paths=PackedStringArray("music_player")]
 stream = ExtResource("1_4srey")
 volume_db = -10.0
 pitch_scale = 0.9
 script = ExtResource("2_w7mmr")
+music_player = NodePath("MusicPlayer")
+songs = Array[AudioStream]([ExtResource("3_oied0")])
 
 [node name="dialogueClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_yqj1e")
@@ -37,3 +40,7 @@ volume_db = -19.0
 [node name="stairs2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_jklwm")
 volume_db = -13.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+pitch_scale = 0.6
