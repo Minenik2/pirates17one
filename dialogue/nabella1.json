@@ -1,1 +1,32 @@
-[{"commands_raw":"Nabella: If it's about the stains, I’m getting to them. Takes time, y'know, when they’re this... stubborn.\n\n$if spokenToBeleth {\n---\nDalian: I'm not here about the floor. I'm looking into what happened last night. The man downstairs...\n---\n    -> down\n}\n$else {\n    ?> are you the owner of this house? -> owner\n}\n\n","gnode_name":"start","id":0,"name":"start","position":[1400.0,320.0]},{"commands_raw":"Nabella: have you searched his body yet?\n---\nNabella: you should go do that\n---","gnode_name":"down","id":1,"name":"Down","position":[1740.0,280.0]},{"commands_raw":"Nabella: No, the owner is the old lady above the counter.\n---","gnode_name":"owner","id":2,"name":"owner","position":[1740.0,400.0]}]
+[
+	{
+		"commands_raw": "Nabella: If it's about the stains, I’m getting to them. Takes time, y'know, when they’re this... stubborn.\n\n$if keyToBody {\n---\nDalian: I'm not here about the floor. I'm looking into what happened last night. The man downstairs...\n---\n    -> down\n}\n$else {\n    ?> are you the owner of this house? -> owner\n}\n\n",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			1400.0,
+			320.0
+		]
+	},
+	{
+		"commands_raw": "Nabella: have you searched his body yet?\n---\nNabella: you should go do that\n---",
+		"gnode_name": "down",
+		"id": 1.0,
+		"name": "Down",
+		"position": [
+			1740.0,
+			280.0
+		]
+	},
+	{
+		"commands_raw": "Nabella: No, the owner is the old lady above the counter.\n---",
+		"gnode_name": "owner",
+		"id": 2.0,
+		"name": "owner",
+		"position": [
+			1740.0,
+			400.0
+		]
+	}
+]

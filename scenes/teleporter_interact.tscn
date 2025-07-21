@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5h4p64to1ect"]
+
+[sub_resource type="GDScript" id="GDScript_0aqab"]
+script/source = "extends StaticBody2D
+
+@export_file(\"*.tscn\") var target_scene: String
+@export var player: CharacterBody2D
+
+func on_interact():
+	if DialogueDisplay.state[check]:
+		SfXplayer.playStairs()
+		Database.teleportCode = code
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
+		get_tree().change_scene_to_file(target_scene)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oidpc"]
+
+[node name="teleporter_interact" type="StaticBody2D"]
+script = SubResource("GDScript_0aqab")
+target_scene = null
+code = null
+check = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oidpc")

@@ -1,9 +1,10 @@
 extends CanvasLayer
 
 @onready var state = {
-	"spokenToBeleth": false,
 	"keyToBody": false,
-	"bodyInvestigated": false
+	"bodyInvestigated": false,
+	"bodyDiscoveredTimeKnown": false,
+	"NabellaSaidMarchoCanConfirm": false
 }
 
 signal dialogue_ended

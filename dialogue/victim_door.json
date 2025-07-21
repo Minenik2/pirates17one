@@ -1,0 +1,22 @@
+[
+	{
+		"commands_raw": "This door, seems to be locked shut\n$if keyToBody {\n    ?> Unlock door -> unlock\n}\n$else {\n    ---\n    Dalian: Seems like I should ask someone before barging into doors\n    ---\n}\n",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			1540.0,
+			300.0
+		]
+	},
+	{
+		"commands_raw": "",
+		"gnode_name": "unlock",
+		"id": 1.0,
+		"name": "unlock",
+		"position": [
+			1680.0,
+			260.0
+		]
+	}
+]

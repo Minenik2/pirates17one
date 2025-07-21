@@ -50,7 +50,7 @@
 		]
 	},
 	{
-		"commands_raw": "Belethera: Right where you'd expect it. The bottom floor, crumpled like a marionette with it's strings cut.\n---\nBelethera: He died in his aparment, I locked the door so nobody would come in.\nsignal(set,spokenToBeleth,true)\n\n-> choices",
+		"commands_raw": "Belethera: Right where you'd expect it. The bottom floor, crumpled like a marionette with it's strings cut.\n---\nBelethera: He died in his aparment, I locked the door so nobody would come in.\n---\nBelethera: This is the key to his aparment.\nsignal(set,keyToBody, true)\n---\nShe hands you over the key\n---\nBelethera: I haven't touched anything down there.\n---\nDalian: After the body investiagtion I'll be talking to the suspects.\n---\nBelethera: No problem.\n\n-> choices",
 		"gnode_name": "body",
 		"id": 5.0,
 		"name": "body",

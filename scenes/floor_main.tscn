@@ -42,10 +42,10 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAANAAQAAAABAAMAAAAOAAQAAAABAAMAAAAOAAUAAAAHAAEAAAANAAUAAAAHAAEAAAAOAAYAAAAHAAEAAAANAAYAAAAHAAEAAAAJAAkAAAAFAAMAAAAJAAgAAAAFAAMAAAAJAAcAAAAFAAMAAAAJAAYAAAAFAAMAAAAJAAUAAAAFAAMAAAAJAAQAAAAAAAQAAAAKAAQAAAABAAMAAAALAAQAAAADAAQAAAAPAAQAAAADAAQAAAAQAAQAAAAEAAIAAAAMAAQAAAACAAQAAAA=")
 tile_set = ExtResource("1_umyxb")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_defln")]
+[node name="player" parent="." instance=ExtResource("2_defln")]
 position = Vector2(209.667, 233)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="player"]
 texture_filter = 1
 position = Vector2(-0.666664, 2.66667)
 limit_left = -38
@@ -65,7 +65,7 @@ dialogue_resource = ExtResource("5_ynp5j")
 position = Vector2(202.667, 156)
 dialogue_resource = ExtResource("8_mjx5b")
 trigger_id = "entrance"
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="CollisionShape2D" parent="standingEvent" index="0"]
 position = Vector2(4.66667, -1.33333)
@@ -84,7 +84,7 @@ debug_color = Color(0.854744, 0.350992, 0.300288, 0.42)
 [node name="teleporter_spawn" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_defln")]
 position = Vector2(223, 121.333)
 code = "lol"
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="teleporter2" parent="." instance=ExtResource("9_ea672")]
 position = Vector2(23.6667, 30)
@@ -94,12 +94,12 @@ code = "upper"
 [node name="teleporter_spawn2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_defln")]
 position = Vector2(55.3333, 47.6667)
 code = "upper"
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="door" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("4_gys8b")
 dialogue_resource = ExtResource("10_dwjiw")
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
 position = Vector2(209, 266.667)
@@ -109,7 +109,7 @@ shape = SubResource("RectangleShape2D_umyxb")
 position = Vector2(105, 21)
 script = ExtResource("4_gys8b")
 dialogue_resource = ExtResource("11_gys8b")
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="beleth"]
 shape = SubResource("RectangleShape2D_defln")
@@ -121,7 +121,7 @@ texture = ExtResource("11_dwjiw")
 position = Vector2(50.6667, 142)
 script = ExtResource("4_gys8b")
 dialogue_resource = ExtResource("13_ynp5j")
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nabella"]
 shape = SubResource("RectangleShape2D_gys8b")
@@ -134,7 +134,7 @@ position = Vector2(52, 54)
 dialogue_resource = ExtResource("14_26b08")
 trigger_id = "seeBodyFirst"
 repeating = true
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 walk_right = true
 
 [editable path="standingEvent"]
