@@ -40,7 +40,7 @@
 		]
 	},
 	{
-		"commands_raw": "Belethera: He preffered to be refered as Mr. S, but he wrote down Solomon on the receipt.\n---\nBelethera: He was a very weird little fella, I can tell you that. One night he said the walls talked to him. I told him it was just the plumbing.\n-> choices\n",
+		"commands_raw": "Belethera: He preffered to be referred as Mr. S, but he wrote down Solomon on the receipt.\n---\nBelethera: He was a very weird little fella, I can tell you that. One night he said the walls talked to him. I told him it was just the plumbing.\n-> choices\n",
 		"gnode_name": "name",
 		"id": 4.0,
 		"name": "name",
@@ -50,7 +50,7 @@
 		]
 	},
 	{
-		"commands_raw": "Belethera: Right where you'd expect it. The bottom floor, crumpled like a marionette with it's strings cut.\n---\nBelethera: He died in his aparment, I locked the door so nobody would come in.\n\n-> choices",
+		"commands_raw": "Belethera: Right where you'd expect it. The bottom floor, crumpled like a marionette with it's strings cut.\n---\nBelethera: He died in his aparment, I locked the door so nobody would come in.\n---\nBelethera: This is the key to his aparment.\nsignal(set,keyToBody, true)\n---\nShe hands you over the key\n---\nBelethera: I haven't touched anything down there.\n---\nDalian: After the body investiagtion I'll be talking to the suspects.\n---\nBelethera: No problem.\n\n-> choices",
 		"gnode_name": "body",
 		"id": 5.0,
 		"name": "body",

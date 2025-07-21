@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://du6vavag3aihq"]
+[gd_scene load_steps=20 format=4 uid="uid://du6vavag3aihq"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_umyxb"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_defln"]
@@ -12,6 +12,8 @@
 [ext_resource type="JSON" path="res://dialogue/door.json" id="10_dwjiw"]
 [ext_resource type="Texture2D" uid="uid://6ksuubr74tqy" path="res://art/dalian.png" id="11_dwjiw"]
 [ext_resource type="JSON" path="res://dialogue/beleth.json" id="11_gys8b"]
+[ext_resource type="JSON" path="res://dialogue/nabella1.json" id="13_ynp5j"]
+[ext_resource type="JSON" path="res://dialogue/seeBodyFirst.json" id="14_26b08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcd4p"]
 size = Vector2(100, 20)
@@ -22,6 +24,8 @@ size = Vector2(24.63, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umyxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_defln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gys8b"]
 
 [node name="floor_main" type="Node2D"]
 y_sort_enabled = true
@@ -38,10 +42,10 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAANAAQAAAABAAMAAAAOAAQAAAABAAMAAAAOAAUAAAAHAAEAAAANAAUAAAAHAAEAAAAOAAYAAAAHAAEAAAANAAYAAAAHAAEAAAAJAAkAAAAFAAMAAAAJAAgAAAAFAAMAAAAJAAcAAAAFAAMAAAAJAAYAAAAFAAMAAAAJAAUAAAAFAAMAAAAJAAQAAAAAAAQAAAAKAAQAAAABAAMAAAALAAQAAAADAAQAAAAPAAQAAAADAAQAAAAQAAQAAAAEAAIAAAAMAAQAAAACAAQAAAA=")
 tile_set = ExtResource("1_umyxb")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_defln")]
+[node name="player" parent="." instance=ExtResource("2_defln")]
 position = Vector2(209.667, 233)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="player"]
 texture_filter = 1
 position = Vector2(-0.666664, 2.66667)
 limit_left = -38
@@ -57,9 +61,11 @@ position = Vector2(220.667, 42.3333)
 script = ExtResource("4_gys8b")
 dialogue_resource = ExtResource("5_ynp5j")
 
-[node name="standingEvent" parent="." instance=ExtResource("7_u37v1")]
+[node name="standingEvent" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_u37v1")]
 position = Vector2(202.667, 156)
 dialogue_resource = ExtResource("8_mjx5b")
+trigger_id = "entrance"
+player = NodePath("../player")
 
 [node name="CollisionShape2D" parent="standingEvent" index="0"]
 position = Vector2(4.66667, -1.33333)
@@ -78,7 +84,7 @@ debug_color = Color(0.854744, 0.350992, 0.300288, 0.42)
 [node name="teleporter_spawn" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_defln")]
 position = Vector2(223, 121.333)
 code = "lol"
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="teleporter2" parent="." instance=ExtResource("9_ea672")]
 position = Vector2(23.6667, 30)
@@ -88,12 +94,12 @@ code = "upper"
 [node name="teleporter_spawn2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_defln")]
 position = Vector2(55.3333, 47.6667)
 code = "upper"
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="door" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("4_gys8b")
 dialogue_resource = ExtResource("10_dwjiw")
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
 position = Vector2(209, 266.667)
@@ -103,13 +109,33 @@ shape = SubResource("RectangleShape2D_umyxb")
 position = Vector2(105, 21)
 script = ExtResource("4_gys8b")
 dialogue_resource = ExtResource("11_gys8b")
-player = NodePath("../CharacterBody2D")
+player = NodePath("../player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="beleth"]
 shape = SubResource("RectangleShape2D_defln")
 
 [node name="Sprite2D" type="Sprite2D" parent="beleth"]
 texture = ExtResource("11_dwjiw")
+
+[node name="Nabella" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(50.6667, 142)
+script = ExtResource("4_gys8b")
+dialogue_resource = ExtResource("13_ynp5j")
+player = NodePath("../player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nabella"]
+shape = SubResource("RectangleShape2D_gys8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nabella"]
+texture = ExtResource("11_dwjiw")
+
+[node name="seeBodyFirst" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_u37v1")]
+position = Vector2(52, 54)
+dialogue_resource = ExtResource("14_26b08")
+trigger_id = "seeBodyFirst"
+repeating = true
+player = NodePath("../player")
+walk_right = true
 
 [editable path="standingEvent"]
 [editable path="teleporter"]

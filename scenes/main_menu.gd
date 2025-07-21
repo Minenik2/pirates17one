@@ -21,3 +21,5 @@ func _process(_delta):
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/floor_main.tscn")
 	SfXplayer.playDialogueClick()
+	SfXplayer.stopIntro()
+	SfXplayer.play_random_song()

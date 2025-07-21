@@ -33,6 +33,7 @@ corner_radius_top_left = 5
 corner_radius_bottom_left = 5
 
 [node name="tab_menu" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_loes4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -128,7 +129,7 @@ layout_mode = 2
 focus_mode = 0
 text = "Marchosias"
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="astaroth" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 text = "Astaroth"
@@ -229,4 +230,5 @@ texture = ExtResource("1_wvjo1")
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/victim" to="." method="_on_victim_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/alibis" to="." method="_on_alibis_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/suspects" to="." method="_on_suspects_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer/astaroth" to="." method="_on_astaroth_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer3/grimory" to="." method="_on_grimory_pressed"]
