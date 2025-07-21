@@ -1,1 +1,82 @@
-[{"commands_raw":"Marchosias: What do you want?\n-> choices","gnode_name":"start","id":0,"name":"start","position":[140.0,320.0]},{"commands_raw":"Marchosias: You see... Nabella is a cleaning maid.\n---\nMarchosias: She start cleaning at 7:30, not finishes, and she always start cleaning upper floor first.\n---\nMarchosias: I know this because I always hear footsteps the the upper floor.\n---","gnode_name":"ask about nabella 730","id":1,"name":"ask about nabella 730","position":[480.0,220.0]},{"commands_raw":"Marchosias: I was on the upper flow, inside my room. \n---\nMarchosias: I saw shadows true the door, calling my name.\n---\nMarchosias: A female voice knocked on the door saying \"room service\".\n---\nMarchosias: It was the cleaning lady for sure I can recognize her name instantly.\n---\nMarchosias: For reasons you don't need to know...\n-> choices\n","gnode_name":"where were you?","id":2,"name":"where were you?","position":[500.0,400.0]},{"commands_raw":"$if bodyDiscoveredTimeKnown {\n    ?> Where where you when the body was discovered 8:12 AM? -> where were you?\n}\n$if NabellaSaidMarchoCanConfirm {\n    ?> Nabella says you hear her knocking on your room -> ask about nabella 730\n}\n\n?> Could you tell me about yourself? -> war\n?> Leave -> leave","gnode_name":"choices","id":3,"name":"choices","position":[320.0,320.0]},{"commands_raw":"Marchosias: Long time ago... I fought in a war\n---\nMarchosias: I fought for georgism.\n---\nMarchosias: People do not argue with the teaching of George; they simply do not know it. And it is impossible to do otherwise with his teaching, for he who becomes acquainted with it cannot but agree.\n---\n?> If it’s so convincing, why didn’t the world change? -> skeptical\n?> What was it like? Fighting for land justice? -> curious","gnode_name":"war","id":4,"name":"war","position":[520.0,500.0]},{"commands_raw":"","gnode_name":"leave","id":5,"name":"leave","position":[520.0,620.0]},{"commands_raw":"Ah, but the world rarely moves on truth. It moves on convenience, on fear, on property. George did not oppose these ideas he merely sought fairness.\n---\nBut fairness... fairness does not enrich kings.\n-> choices\n","gnode_name":"skeptical","id":6,"name":"skeptical","position":[740.0,440.0]},{"commands_raw":"","gnode_name":"curious","id":7,"name":"curious","position":[740.0,540.0]}]
+[
+	{
+		"commands_raw": "Marchosias: What do you want?\n-> choices",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			140.0,
+			320.0
+		]
+	},
+	{
+		"commands_raw": "Marchosias: Yes, I can confirm that.\n---\nMarchosias: I was on the upper floor, inside my room. \n---\nMarchosias: I saw a shadow true the door, calling my name.\n---\nMarchosias: A female voice knocked on the door saying \"room service\".\n---\nMarchosias: It was the cleaning lady for sure I can recognize her name instantly.\n---\nDalian: Was this around 8:12 AM when the body was discovered?\n---\nMachosias: Yes I confirm my statement, this was at the same time.\n---\nMachosias: You see Nabella is a cleaning maid.\n---\nMarchosias: She start cleaning at 7:30, not finishes cleaning at 7:30, and she always start cleaning upper floor first.\n---\nMarchosias: I know this because I always hear footsteps in the upper floor. Every day, and there hasn't been a day where I haven't heard them.\nsignal(set,dayWithoutFootSteps,true)\n-> choices\n",
+		"gnode_name": "ask about nabella 730",
+		"id": 1.0,
+		"name": "ask about nabella 730",
+		"position": [
+			540.0,
+			240.0
+		]
+	},
+	{
+		"commands_raw": "",
+		"gnode_name": "where were you?",
+		"id": 2.0,
+		"name": "where were you?",
+		"position": [
+			540.0,
+			320.0
+		]
+	},
+	{
+		"commands_raw": "$if NabellaSaidMarchoCanConfirm {\n    ?> Nabella says she cleaned your room -> ask about nabella 730\n}\n\n?> Could you tell me about yourself? -> war\n?> Leave -> leave",
+		"gnode_name": "choices",
+		"id": 3.0,
+		"name": "choices",
+		"position": [
+			320.0,
+			320.0
+		]
+	},
+	{
+		"commands_raw": "Marchosias: Long time ago... I fought in a war\n---\nMarchosias: I fought for georgism.\n---\nMarchosias: People do not argue with the teaching of George; they simply do not know it. And it is impossible to do otherwise with his teaching, for he who becomes acquainted with it cannot but agree.\n?> If it’s so convincing, why didn’t the world change? -> skeptical\n?> What was it like? Fighting for land justice? -> curious",
+		"gnode_name": "war",
+		"id": 4.0,
+		"name": "war",
+		"position": [
+			520.0,
+			500.0
+		]
+	},
+	{
+		"commands_raw": "",
+		"gnode_name": "leave",
+		"id": 5.0,
+		"name": "leave",
+		"position": [
+			520.0,
+			620.0
+		]
+	},
+	{
+		"commands_raw": "Ah, but the world rarely moves on truth. It moves on convenience, on fear, on property. George did not oppose these ideas he merely sought fairness.\n---\nBut fairness... fairness does not enrich kings.\n-> choices\n",
+		"gnode_name": "skeptical",
+		"id": 6.0,
+		"name": "skeptical",
+		"position": [
+			740.0,
+			440.0
+		]
+	},
+	{
+		"commands_raw": "I've met and lost countless of friends, their souls forever haunting me - even to this day.\n---\nI can still hear their names when I go to sleep, their screames when I wake  up and their deaths when I live.\n-> choices",
+		"gnode_name": "curious",
+		"id": 7.0,
+		"name": "curious",
+		"position": [
+			740.0,
+			540.0
+		]
+	}
+]

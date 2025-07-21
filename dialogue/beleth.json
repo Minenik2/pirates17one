@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"commands_raw": "I found the body first in the morning at around 8:12 AM. Called the police and waited here for someone to arrive. \n---\nHowever the cleaning lady named Nabella, was supposed to clean all the rooms at 7:30 AM.\n---\nI haven't confronted her about the fact, but I'm very mad at her. These servants should learn their place.\n\n-> choices",
+		"commands_raw": "I found the body first in the morning at around 8:12 AM. Called the police and waited here for someone to arrive. \nsignal(set,bodyDiscoveredTimeKnown,true) \n---\nHowever the cleaning lady named Nabella, was supposed to clean all the rooms at 7:30 AM.\n---\nI haven't confronted her about the fact, but I'm very mad at her. These servants should learn their place.\n\n-> choices",
 		"gnode_name": "hear",
 		"id": 3.0,
 		"name": "hear",

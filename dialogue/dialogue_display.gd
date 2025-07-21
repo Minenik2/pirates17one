@@ -3,8 +3,10 @@ extends CanvasLayer
 @onready var state = {
 	"keyToBody": false,
 	"bodyInvestigated": false,
+	"thornPaperFound": false,
 	"bodyDiscoveredTimeKnown": false,
-	"NabellaSaidMarchoCanConfirm": false
+	"NabellaSaidMarchoCanConfirm": false,
+	"dayWithoutFootSteps": false
 }
 
 signal dialogue_ended

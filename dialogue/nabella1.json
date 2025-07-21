@@ -1,6 +1,6 @@
 [
 	{
-		"commands_raw": "Nabella: If it's about the stains, I’m getting to them. Takes time, y'know, when they’re this... stubborn.\n\n$if keyToBody {\n---\nDalian: I'm not here about the floor. I'm looking into what happened last night. The man downstairs...\n---\n    -> down\n}\n$else {\n    ?> are you the owner of this house? -> owner\n}\n\n",
+		"commands_raw": "Nabella: If it's about the stains, I’m getting to them. Takes time, y'know, when they’re this... stubborn.\n\n$if keyToBody {\n---\nDalian: I'm not here about the floor. I'm looking into what happened last night. The man downstairs...\n---\n    -> down\n} \n$else {\n    ?> are you the owner of this house? -> owner\n}\n\n",
 		"gnode_name": "start",
 		"id": 0.0,
 		"name": "start",
@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "Nabella: have you searched his body yet?\n---\nNabella: you should go do that\n---",
+		"commands_raw": "$if bodyInvestigated {\n    Dalian: I've searched his body.\n    ---\n    Nabella: Fine, what can I help you with?\n    -> choices\n}\n$else {\n    Nabella: have you searched his body yet?\n    ---\n    Nabella: you should go do that\n    ---\n}",
 		"gnode_name": "down",
 		"id": 1.0,
 		"name": "Down",
@@ -27,6 +27,26 @@
 		"position": [
 			1740.0,
 			400.0
+		]
+	},
+	{
+		"commands_raw": "$if bodyDiscoveredTimeKnown {\n ?> Were where you during 7:30 AM today? -> beleth\n}\n?> ",
+		"gnode_name": "choices",
+		"id": 3.0,
+		"name": "choices",
+		"position": [
+			1620.0,
+			160.0
+		]
+	},
+	{
+		"commands_raw": "Dalian: According to Belethera you did not clean the victims room today. \n---\nNabella: I was busy in the upper floor, it was quite a mess, Marchosias made it much worse than usual.\n---\nNabella: You can ask him for clarification...\n---\nNabella: Now I'm currently cleaning the middle floor, and I will clean the lower floor after that\n-> choices",
+		"gnode_name": "beleth",
+		"id": 4.0,
+		"name": "Beleth",
+		"position": [
+			1820.0,
+			140.0
 		]
 	}
 ]
