@@ -56,6 +56,7 @@ vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0.949346, 0.86223, 0.838549, 1)
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,6 +66,7 @@ grow_vertical = 2
 texture = ExtResource("3_tqsr2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -215,6 +217,7 @@ bbcode_enabled = true
 text = "Click on a character on the left to read their profile."
 
 [node name="Alibis" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 5
@@ -537,7 +540,6 @@ text = "This is your clue list, as you progress true the game you will find clue
 Click on a clue on the left side to find out more about it."
 
 [node name="Info" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 5
