@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://caf1pui883e4g"]
+[gd_scene load_steps=8 format=3 uid="uid://caf1pui883e4g"]
 
 [ext_resource type="Script" uid="uid://dqj87f4nxemx5" path="res://scenes/tab_menu.gd" id="1_loes4"]
 [ext_resource type="Texture2D" uid="uid://6ksuubr74tqy" path="res://art/dalian.png" id="1_wvjo1"]
 [ext_resource type="Texture2D" uid="uid://6o2sg8h8qdb3" path="res://art/menuArtDestroyed.jpg" id="3_tqsr2"]
+[ext_resource type="Texture2D" uid="uid://c61cqv1c4rp12" path="res://art/file.png" id="4_4nsdf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvjo1"]
 bg_color = Color(0.133333, 0.137255, 0.137255, 1)
@@ -55,7 +56,6 @@ vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 modulate = Color(0.949346, 0.86223, 0.838549, 1)
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +65,6 @@ grow_vertical = 2
 texture = ExtResource("3_tqsr2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -145,7 +144,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Upper Floor"
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="marchosias" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 text = "Marchosias"
@@ -165,12 +164,12 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Middle Floor"
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="belethara" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 focus_mode = 0
 text = "Belethara"
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="nabella" type="Button" parent="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 focus_mode = 0
 text = "Nabella"
@@ -216,17 +215,6 @@ bbcode_enabled = true
 text = "Click on a character on the left to read their profile."
 
 [node name="Alibis" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Alibis"]
-modulate = Color(1, 0.294118, 1, 1)
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("1_wvjo1")
-
-[node name="Victim" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 5
@@ -234,12 +222,196 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Victim"]
-visible = false
-modulate = Color(0.390454, 0.460261, 0.795632, 1)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Alibis"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_wvjo1")
+current_tab = 0
+tab_focus_mode = 0
+
+[node name="Belethara" type="PanelContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara/MarginContainer"]
+layout_mode = 2
+
+[node name="scene" type="Label" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 4
+text = "Belethara - Building Owner"
+horizontal_alignment = 1
+
+[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+allow_search = false
+
+[node name="Nabella" type="PanelContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella/MarginContainer"]
+layout_mode = 2
+
+[node name="scene" type="Label" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 4
+text = "Nabella - Cleaning Maid"
+horizontal_alignment = 1
+
+[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+allow_search = false
+
+[node name="Marchosias" type="PanelContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias/MarginContainer"]
+layout_mode = 2
+
+[node name="scene" type="Label" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 4
+text = "Marchosias - War Veteran"
+horizontal_alignment = 1
+
+[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+allow_search = false
+
+[node name="Astaroth" type="PanelContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth/MarginContainer"]
+layout_mode = 2
+
+[node name="scene" type="Label" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Astaroth - Scholar"
+horizontal_alignment = 1
+
+[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+allow_search = false
+
+[node name="Grimory" type="PanelContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer"]
+layout_mode = 2
+
+[node name="scene" type="Label" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Grimory - Old Lady"
+horizontal_alignment = 1
+
+[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+allow_search = false
+
+[node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/PanelContainer4"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/PanelContainer4/MarginContainer"]
+layout_mode = 2
+
+[node name="info" type="Label" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 4
+text = "Info"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tqsr2")
+text = "This is your alibi list, as you progress true the game you will find testemonies, they are stored here.
+
+Click on a testemony on the left side to find out more about it."
+
+[node name="Victim" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Victim"]
 layout_mode = 2
@@ -249,6 +421,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 current_tab = 0
+tab_focus_mode = 0
 
 [node name="Crime Scene" type="PanelContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -274,6 +447,7 @@ horizontal_alignment = 1
 [node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Crime Scene/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 allow_search = false
 
 [node name="Dead Body" type="PanelContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer"]
@@ -301,6 +475,7 @@ horizontal_alignment = 1
 [node name="bodyList" type="ItemList" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Dead Body/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 allow_search = false
 
 [node name="???" type="PanelContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer"]
@@ -328,6 +503,7 @@ horizontal_alignment = 1
 [node name="occultList" type="ItemList" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/???/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 allow_search = false
 
 [node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer"]
@@ -347,31 +523,86 @@ layout_mode = 2
 [node name="info" type="Label" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_constants/outline_size = 4
 text = "Info"
 horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/outline_size = 4
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tqsr2")
-text = "test"
+text = "This is your clue list, as you progress true the game you will find clues, they are stored here.
+
+Click on a clue on the left side to find out more about it."
 
 [node name="Info" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Info"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Info"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Info/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_wvjo1")
+texture = ExtResource("4_4nsdf")
+
+[node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/VBoxContainer/Info/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Info/HBoxContainer/PanelContainer4"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Info/HBoxContainer/PanelContainer4/MarginContainer"]
+layout_mode = 2
+
+[node name="info" type="Label" parent="MarginContainer/VBoxContainer/Info/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 4
+text = "Journal Entry - July 20th"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Info/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tqsr2")
+text = "Another month, another case. This one seems to be rather mysterious, the report says it happened inside that crumbling apartment complex near Williams Street. A place not really known for it's beauty.
+
+Who in their right mind would commit such a murder there? Or perhaps, that's the answer - no one in their right mind did. The Loen police force was quick to chalk it up as another tragic incident. Filed, stamped, shelved. But I know better. I always do.
+
+I'm the only one willing to descend into that place. The only one with the patience to peel back their lies.  
+
+I will solve this case and I won't come out until I've found the truth. "
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/victim" to="." method="_on_victim_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/alibis" to="." method="_on_alibis_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/suspects" to="." method="_on_suspects_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer/marchosias" to="." method="_on_marchosias_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer/astaroth" to="." method="_on_astaroth_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2/belethara" to="." method="_on_belethara_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2/nabella" to="." method="_on_nabella_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer3/grimory" to="." method="_on_grimory_pressed"]
+[connection signal="tab_changed" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer" to="." method="_on_alibi_tab_container_tab_changed"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
 [connection signal="tab_changed" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Crime Scene/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Dead Body/MarginContainer/VBoxContainer/bodyList" to="." method="_on_body_list_item_selected"]

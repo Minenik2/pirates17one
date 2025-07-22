@@ -32,6 +32,8 @@ func updateClues():
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("tab_menu") and not is_in_main_menu():
 		SfXplayer.playDialogueClick()
+		updateClues()
+		
 		if $".".visible and !$tabTip.visible:
 			$".".hide()
 		elif $tabTip.visible:
@@ -86,15 +88,35 @@ func _on_grimory_pressed() -> void:
 	profile.text = "Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
 	
 
-
 func _on_astaroth_pressed() -> void:
 	SfXplayer.playDialogueClick()
 	textureSprite.texture = load("res://art/scholar.png")
-	profile.text = "Mohammed has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
+	profile.text = "Mohammed has not yet added a description to this character.
+	 Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
 
-func addSceneItem():
-	$MarginContainer/VBoxContainer/Victim/HBoxContainer/PanelContainer/MarginContainer/Tree.create_item()
+func _on_marchosias_pressed() -> void:
+	SfXplayer.playDialogueClick()
+	textureSprite.texture = load("res://art/grimory.png")
+	profile.text = "Journal Entry - Subject: Marchosias
+Location: Apartment, Upper floor
+Date: July 20th
+Filed by: Dalian
 
+Marchosias. No relatives I could trace. Just a name whispered in the halls, the madman on the third floor.
+
+He says he fought in the georgist war, not that most people remember it. A movement built on land reform and righteous ideals, twisted into something bloody by the time it reached the trenches. He was young then. Idealistic. Said he fought 'for the earth beneath all feet to be shared equally.' Now he mutters those same words through rotted teeth, rocking in a wooden chair that creaks louder than his bones.
+
+He is a man who saw his brothers die in muddy fields for something he still believes in. That's rare. He must have carried the weight of their deaths. He also claims no one listens to George's teachings because 'They've never truley heard them' Says the world is deaf. Says we're all parasites sucking on the landowners lies. But he doesn't hate people, he pities them. That's what hassles me."
+	
+func _on_belethara_pressed() -> void:
+	SfXplayer.playDialogueClick()
+	textureSprite.texture = load("res://art/grimory.png")
+	profile.text = "Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
+
+func _on_nabella_pressed() -> void:
+	SfXplayer.playDialogueClick()
+	textureSprite.texture = load("res://art/grimory.png")
+	profile.text = "Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
 
 func _on_tab_container_tab_changed(tab: int) -> void:
 	SfXplayer.playDialogueClick()
@@ -121,4 +143,8 @@ func _on_body_list_item_selected(index: int) -> void:
 func _on_scene_list_item_selected(index: int) -> void:
 	var clue = Database.clueScene[index]
 	infoText.text = clue["description"]
+	SfXplayer.playDialogueClick()
+
+
+func _on_alibi_tab_container_tab_changed(tab: int) -> void:
 	SfXplayer.playDialogueClick()
