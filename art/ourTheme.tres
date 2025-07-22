@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://o6lxivbby83b"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://o6lxivbby83b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnsnn"]
 
@@ -29,6 +29,21 @@ expand_margin_left = 4.0
 expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_muot4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4dtj"]
+bg_color = Color(0.941176, 0.964706, 0.941176, 0.290196)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fpepn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epjyj"]
+bg_color = Color(0.133333, 0.137255, 0.137255, 0.454902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.941176, 0.964706, 0.941176, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anbns"]
 bg_color = Color(0.133333, 0.137255, 0.137255, 1)
@@ -62,6 +77,8 @@ expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8kx5b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ggfuc"]
 
@@ -101,11 +118,19 @@ expand_margin_bottom = 4.0
 Button/styles/focus = SubResource("StyleBoxEmpty_bnsnn")
 Button/styles/hover = SubResource("StyleBoxFlat_ggfuc")
 Button/styles/normal = SubResource("StyleBoxFlat_bnsnn")
+ItemList/colors/font_color = Color(0.941176, 0.964706, 0.941176, 1)
+ItemList/styles/focus = SubResource("StyleBoxEmpty_muot4")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_w4dtj")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_fpepn")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_epjyj")
 TabBar/styles/button_pressed = SubResource("StyleBoxFlat_anbns")
 TabBar/styles/tab_focus = SubResource("StyleBoxEmpty_0mgju")
 TabBar/styles/tab_hovered = SubResource("StyleBoxFlat_muot4")
 TabBar/styles/tab_selected = SubResource("StyleBoxFlat_3kc7q")
 TabBar/styles/tab_unselected = SubResource("StyleBoxFlat_8kx5b")
+TabContainer/colors/font_selected_color = Color(0.780392, 0.0117647, 0.0117647, 1)
+TabContainer/colors/font_unselected_color = Color(1, 1, 1, 1)
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_8kx5b")
 UImenuButton/base_type = &"Button"
 UImenuButton/styles/focus = SubResource("StyleBoxEmpty_ggfuc")
 UImenuButton/styles/hover = SubResource("StyleBoxFlat_0mgju")

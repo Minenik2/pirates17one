@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://caf1pui883e4g"]
+[gd_scene load_steps=7 format=3 uid="uid://caf1pui883e4g"]
 
 [ext_resource type="Script" uid="uid://dqj87f4nxemx5" path="res://scenes/tab_menu.gd" id="1_loes4"]
 [ext_resource type="Texture2D" uid="uid://6ksuubr74tqy" path="res://art/dalian.png" id="1_wvjo1"]
@@ -32,11 +32,30 @@ border_color = Color(0.941176, 0.964706, 0.941176, 1)
 corner_radius_top_left = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqsr2"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+
 [node name="tab_menu" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_loes4")
 
+[node name="tabTip" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/outline_size = 4
+text = "Press TAB To access Crime Journal "
+horizontal_alignment = 2
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0.949346, 0.86223, 0.838549, 1)
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,6 +65,7 @@ grow_vertical = 2
 texture = ExtResource("3_tqsr2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -98,6 +118,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wvjo1")
 text = "Suspects"
 
 [node name="Suspects" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -206,15 +227,134 @@ size_flags_horizontal = 3
 texture = ExtResource("1_wvjo1")
 
 [node name="Victim" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Victim"]
+visible = false
 modulate = Color(0.390454, 0.460261, 0.795632, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("1_wvjo1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Victim"]
+layout_mode = 2
+alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+
+[node name="Crime Scene" type="PanelContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Crime Scene"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Crime Scene/MarginContainer"]
+layout_mode = 2
+
+[node name="scene" type="Label" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Crime Scene/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Crime Scene"
+horizontal_alignment = 1
+
+[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Crime Scene/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+allow_search = false
+
+[node name="Dead Body" type="PanelContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Dead Body"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Dead Body/MarginContainer"]
+layout_mode = 2
+
+[node name="body" type="Label" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Dead Body/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Victims Dead Body"
+horizontal_alignment = 1
+
+[node name="bodyList" type="ItemList" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Dead Body/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+allow_search = false
+
+[node name="???" type="PanelContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/???"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/???/MarginContainer"]
+layout_mode = 2
+
+[node name="occult" type="Label" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/???/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "???"
+horizontal_alignment = 1
+
+[node name="occultList" type="ItemList" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/???/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+allow_search = false
+
+[node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/PanelContainer4"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/PanelContainer4/MarginContainer"]
+layout_mode = 2
+
+[node name="info" type="Label" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Info"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Victim/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tqsr2")
+text = "test"
 
 [node name="Info" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 visible = false
@@ -232,3 +372,7 @@ texture = ExtResource("1_wvjo1")
 [connection signal="pressed" from="MarginContainer/VBoxContainer/top_menu/suspects" to="." method="_on_suspects_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer/astaroth" to="." method="_on_astaroth_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer3/grimory" to="." method="_on_grimory_pressed"]
+[connection signal="tab_changed" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Crime Scene/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Dead Body/MarginContainer/VBoxContainer/bodyList" to="." method="_on_body_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/???/MarginContainer/VBoxContainer/occultList" to="." method="_on_occult_list_item_selected"]

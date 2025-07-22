@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"commands_raw": "$if bodyDiscoveredTimeKnown {\n ?> Were where you during 7:30 AM today? -> beleth\n}\n?> ",
+		"commands_raw": "$if bodyDiscoveredTimeKnown {\n ?> Were where you during 7:30 AM today? -> beleth\n}\n?> Leave",
 		"gnode_name": "choices",
 		"id": 3.0,
 		"name": "choices",
@@ -40,7 +40,7 @@
 		]
 	},
 	{
-		"commands_raw": "Dalian: According to Belethera you did not clean the victims room today. \n---\nNabella: I was busy in the upper floor, it was quite a mess, Marchosias made it much worse than usual.\n---\nNabella: You can ask him for clarification...\n---\nNabella: Now I'm currently cleaning the middle floor, and I will clean the lower floor after that\n-> choices",
+		"commands_raw": "Dalian: According to Belethera you did not clean the victims room today. \n---\nNabella: I was busy in the upper floor, it was quite a mess, Marchosias made it much worse than usual.\nsignal(set,NabellaSaidMarchoCanConfirm,true)\n---\nNabella: You can ask him for clarification...\n---\nNabella: Now I'm currently cleaning the middle floor, and I will clean the lower floor after that\n-> choices",
 		"gnode_name": "beleth",
 		"id": 4.0,
 		"name": "Beleth",
