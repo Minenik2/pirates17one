@@ -6,7 +6,8 @@ extends CanvasLayer
 	"thornPaperFound": false,
 	"bodyDiscoveredTimeKnown": false,
 	"NabellaSaidMarchoCanConfirm": false,
-	"dayWithoutFootSteps": false
+	"dayWithoutFootSteps": false,
+	"AstarothFirstTime": true
 }
 
 signal dialogue_ended

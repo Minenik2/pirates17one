@@ -1,1 +1,32 @@
-[{"commands_raw":"Astaroth: mohammed please give me dialogue\n---","gnode_name":"start","id":0,"name":"start","position":[1340.0,240.0]}]
+[
+	{
+		"commands_raw": "$if AstarothFirstTime {\n-> firstTime\n} $else {\nsignal(set,AstarothFirstTime,false)\n-> secondTime\n}",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			1340.0,
+			240.0
+		]
+	},
+	{
+		"commands_raw": "Astaroth: *mumbling*\n---\nDalian: Excuse me, are you a resident here?\n---\n\n",
+		"gnode_name": "firsttime",
+		"id": 1.0,
+		"name": "firstTime",
+		"position": [
+			1480.0,
+			160.0
+		]
+	},
+	{
+		"commands_raw": "",
+		"gnode_name": "secondtime",
+		"id": 2.0,
+		"name": "secondTime",
+		"position": [
+			1480.0,
+			300.0
+		]
+	}
+]
