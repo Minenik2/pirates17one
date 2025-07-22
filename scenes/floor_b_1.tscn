@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://bxys6vqn5ihmp"]
+[gd_scene load_steps=9 format=4 uid="uid://bxys6vqn5ihmp"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_jwuu1"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_vjeuj"]
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="3_pe1at"]
 [ext_resource type="PackedScene" uid="uid://btdjf2xexm50" path="res://scenes/teleporter_spawn.tscn" id="4_pe1at"]
-[ext_resource type="PackedScene" uid="uid://bmhstkm0tu2g7" path="res://character/single_mother.tscn" id="5_temop"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="6_igqgt"]
-[ext_resource type="JSON" path="res://dialogue/1St meet lady Gremory.json" id="7_f16tm"]
 [ext_resource type="PackedScene" uid="uid://dg6egrpwowgr1" path="res://furniture/door.tscn" id="8_igqgt"]
 [ext_resource type="JSON" path="res://dialogue/victim_door.json" id="9_f16tm"]
 
@@ -47,13 +45,6 @@ position = Vector2(304, 146.917)
 code = "lol"
 player = NodePath("../player")
 
-[node name="SingleMother2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_temop")]
-y_sort_enabled = true
-position = Vector2(366.333, 240)
-script = ExtResource("6_igqgt")
-dialogue_resource = ExtResource("7_f16tm")
-player = NodePath("../player")
-
 [node name="victimdoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_igqgt")]
 position = Vector2(119.667, 159.667)
 script = ExtResource("6_igqgt")
@@ -63,12 +54,23 @@ teleporter = true
 check = "keyToBody"
 target_scene = "uid://dlq687qntqrcr"
 
-[node name="grimorydoor" parent="." instance=ExtResource("8_igqgt")]
+[node name="grimorydoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_igqgt")]
 position = Vector2(360.333, 159.667)
+script = ExtResource("6_igqgt")
+dialogue_resource = ExtResource("9_f16tm")
+player = NodePath("../player")
+teleporter = true
+check = "keyToBody"
+target_scene = "uid://cre5i3k3oltg0"
 
 [node name="teleporter_spawn2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_pe1at")]
 position = Vector2(119, 180.667)
 code = "victim"
+player = NodePath("../player")
+
+[node name="teleporter_spawn3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_pe1at")]
+position = Vector2(360, 181.333)
+code = "grimory"
 player = NodePath("../player")
 
 [editable path="teleporter"]

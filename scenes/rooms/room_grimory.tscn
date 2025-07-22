@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=4 uid="uid://cre5i3k3oltg0"]
+[gd_scene load_steps=7 format=4 uid="uid://cre5i3k3oltg0"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_p1kq4"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_doaqg"]
+[ext_resource type="PackedScene" uid="uid://bmhstkm0tu2g7" path="res://character/single_mother.tscn" id="3_7dtck"]
+[ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="4_puykb"]
+[ext_resource type="JSON" path="res://dialogue/1St meet lady Gremory.json" id="5_hpds7"]
+[ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="6_puykb"]
 
 [node name="room" type="Node2D"]
 y_sort_enabled = true
@@ -12,7 +16,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAHAAAAAAAAAAEAAAAHAAAAAAAAAAIAAAAHAAA
 tile_set = ExtResource("1_p1kq4")
 
 [node name="player" parent="." instance=ExtResource("2_doaqg")]
-position = Vector2(167.333, 141)
+position = Vector2(167.667, 212)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 limit_left = 10
@@ -22,3 +26,14 @@ limit_bottom = 790
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
+
+[node name="SingleMother2" parent="." instance=ExtResource("3_7dtck")]
+y_sort_enabled = true
+position = Vector2(209, 169.333)
+script = ExtResource("4_puykb")
+dialogue_resource = ExtResource("5_hpds7")
+
+[node name="teleporter" parent="." instance=ExtResource("6_puykb")]
+position = Vector2(167.667, 240)
+target_scene = "uid://bxys6vqn5ihmp"
+code = "grimory"

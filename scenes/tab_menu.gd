@@ -52,7 +52,8 @@ func updateClues():
 func addClues(list, clueList):
 	for clue in clueList:
 		if clue["discovered"]:
-			list.add_item(clue["title"])
+			var index = list.add_item(clue["title"])
+			list.set_item_metadata(index, clue["title"])
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("tab_menu") and not is_in_main_menu():
@@ -171,19 +172,19 @@ func _on_tab_container_tab_changed(tab: int) -> void:
 			occult_list.deselect_all()
 
 func _on_occult_list_item_selected(index: int) -> void:
-	var clue = Database.clueOccult[index]
+	var clue = findSameTitle(Database.clueOccult, occult_list.get_item_metadata(index))
 	infoText.text = clue["description"]
 	SfXplayer.playDialogueClick()
 
 
 func _on_body_list_item_selected(index: int) -> void:
-	var clue = Database.clueBody[index]
+	var clue = findSameTitle(Database.clueBody, body_list.get_item_metadata(index))
 	infoText.text = clue["description"]
 	SfXplayer.playDialogueClick()
 
 
 func _on_scene_list_item_selected(index: int) -> void:
-	var clue = Database.clueScene[index]
+	var clue = findSameTitle(Database.clueScene, scene_list.get_item_metadata(index))
 	infoText.text = clue["description"]
 	SfXplayer.playDialogueClick()
 
@@ -204,30 +205,35 @@ func _on_alibi_tab_container_tab_changed(tab: int) -> void:
 
 # alibis buttons
 func _on_grimory_list_item_selected(index: int) -> void:
-	var clue = Database.clueGrimory[index]
+	var clue = findSameTitle(Database.clueGrimory, grimory_list.get_item_metadata(index))
 	alibiInfoText.text = clue["description"]
 	SfXplayer.playDialogueClick()
 
 
 func _on_astaroth_list_item_selected(index: int) -> void:
-	var clue = Database.clueAstaroth[index]
+	var clue = findSameTitle(Database.clueAstaroth, astaroth_list.get_item_metadata(index))
 	alibiInfoText.text = clue["description"]
 	SfXplayer.playDialogueClick()
 
 
 func _on_marchosias_list_item_selected(index: int) -> void:
-	var clue = Database.clueMarchosias[index]
+	var clue = findSameTitle(Database.clueMarchosias, marchosias_list.get_item_metadata(index))
 	alibiInfoText.text = clue["description"]
 	SfXplayer.playDialogueClick()
 
 
 func _on_nabella_list_item_selected(index: int) -> void:
-	var clue = Database.clueNabella[index]
+	var clue = findSameTitle(Database.clueNabella, nabella_list.get_item_metadata(index))
 	alibiInfoText.text = clue["description"]
 	SfXplayer.playDialogueClick()
 
 
 func _on_belethara_list_item_selected(index: int) -> void:
-	var clue = Database.clueBelethara[index]
+	var clue = findSameTitle(Database.clueBelethara, belethara_list.get_item_metadata(index))
 	alibiInfoText.text = clue["description"]
 	SfXplayer.playDialogueClick()
+
+func findSameTitle(clueList, title):
+	for clue in clueList:
+		if clue["title"] == title:
+			return clue

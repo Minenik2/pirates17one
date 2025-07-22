@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "Marchosias: Yes, I can confirm that.\n---\nMarchosias: I was on the upper floor, inside my room. \n---\nMarchosias: I saw a shadow true the door, calling my name.\n---\nMarchosias: A female voice knocked on the door saying \"room service\".\n---\nMarchosias: It was the cleaning lady for sure I can recognize her name instantly.\n---\nDalian: Was this around 8:12 AM when the body was discovered?\n---\nMachosias: Yes I confirm my statement, this was at the same time.\n---\nMachosias: You see Nabella is a cleaning maid.\n---\nMarchosias: She start cleaning at 7:30, not finishes cleaning at 7:30, and she always start cleaning upper floor first.\n---\nMarchosias: I know this because I always hear footsteps in the upper floor. Every day, and there hasn't been a day where I haven't heard them.\nsignal(set,dayWithoutFootSteps,true)\n-> choices\n",
+		"commands_raw": "Marchosias: Yes, I can confirm that.\n---\nMarchosias: I was on the upper floor, inside my room. \n---\nMarchosias: I saw a shadow true the door, calling my name.\n---\nMarchosias: A female voice knocked on the door saying \"room service\".\n---\nMarchosias: It was the cleaning lady for sure I can recognize her name instantly.\n---\nDalian: Was this around 8:12 AM when the body was discovered?\n---\nMachosias: Yes I confirm my statement, this was at the same time.\n---\nMachosias: You see Nabella is a cleaning maid.\n---\nMarchosias: She starts cleaning at 7:30, not finishes cleaning at 7:30, and she always start cleaning upper floor first.\n---\nMarchosias: I know this because I always hear footsteps in the upper floor. Every day...\n---\nMarchosias: But now that I think about it... there has been a day where I haven't heard them. That was yesterday.\nsignal(set,dayWithoutFootSteps,true)\n-> choices\n",
 		"gnode_name": "ask about nabella 730",
 		"id": 1.0,
 		"name": "ask about nabella 730",
@@ -20,13 +20,13 @@
 		]
 	},
 	{
-		"commands_raw": "",
+		"commands_raw": "Dalian: Where were you yesterday?\n---",
 		"gnode_name": "where were you?",
 		"id": 2.0,
 		"name": "where were you?",
 		"position": [
 			540.0,
-			320.0
+			340.0
 		]
 	},
 	{

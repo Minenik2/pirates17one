@@ -5,19 +5,20 @@ extends CanvasLayer
 	"bodyInvestigated": false,
 	"thornPaperFound": false,
 	"bodyDiscoveredTimeKnown": false,
-	"NabellaSaidMarchoCanConfirm": false,
-	"dayWithoutFootSteps": false,
+	"NabellaSaidMarchoCanConfirm": false, #
+	"dayWithoutFootSteps": false, #
+	
+	# first time checks
 	"AstarothFirstTime": true,
 	
 	#clues
 	# Crime scene
 	"clueWindowOpen": true,
 	# body
-	"clueBlood": true,
-	"clueDragged": true,
-	"clueMetallic": true,
+	"clueBlood": false,
+	"clueRigor": false,
+	"clueMetallic": true #
 	# occult
-	"cluePaper": true
 }
 
 signal dialogue_ended

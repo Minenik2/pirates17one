@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=4 uid="uid://c2y24vhmvdgmt"]
+[gd_scene load_steps=10 format=4 uid="uid://c2y24vhmvdgmt"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_q4x5x"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_qpu62"]
+[ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="3_qpu62"]
+[ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="4_gropv"]
+[ext_resource type="JSON" path="res://dialogue/Marchosias.json" id="5_vnrjk"]
+[ext_resource type="Texture2D" uid="uid://c3p24g4yc6sb6" path="res://art/marchosisas.png" id="6_xy818"]
+[ext_resource type="PackedScene" uid="uid://ca7apex6snhgp" path="res://furniture/tablesmall.tscn" id="7_xy818"]
+[ext_resource type="JSON" path="res://dialogue/chair.json" id="8_x4qsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4qsu"]
+size = Vector2(11, 12)
 
 [node name="room" type="Node2D"]
 y_sort_enabled = true
@@ -12,7 +21,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAHAAAAAAAAAAEAAAAHAAAAAAAAAAIAAAAHAAA
 tile_set = ExtResource("1_q4x5x")
 
 [node name="player" parent="." instance=ExtResource("2_qpu62")]
-position = Vector2(167.333, 141)
+position = Vector2(167.667, 211)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 limit_left = 10
@@ -22,3 +31,25 @@ limit_bottom = 790
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
+
+[node name="teleporter" parent="." instance=ExtResource("3_qpu62")]
+position = Vector2(167.667, 240)
+target_scene = "uid://dkds2t0667xjc"
+code = "marchosias"
+
+[node name="Marchosias" type="StaticBody2D" parent="."]
+position = Vector2(133.333, 151.333)
+script = ExtResource("4_gropv")
+dialogue_resource = ExtResource("5_vnrjk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Marchosias"]
+texture = ExtResource("6_xy818")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marchosias"]
+position = Vector2(-0.5, 10)
+shape = SubResource("RectangleShape2D_x4qsu")
+
+[node name="StaticBody2D" parent="Marchosias" instance=ExtResource("7_xy818")]
+position = Vector2(63.6666, -40)
+script = ExtResource("4_gropv")
+dialogue_resource = ExtResource("8_x4qsu")

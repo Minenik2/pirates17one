@@ -1,10 +1,8 @@
-[gd_scene load_steps=21 format=4 uid="uid://du6vavag3aihq"]
+[gd_scene load_steps=19 format=4 uid="uid://du6vavag3aihq"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_umyxb"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_defln"]
-[ext_resource type="PackedScene" uid="uid://ca7apex6snhgp" path="res://furniture/tablesmall.tscn" id="3_dwjiw"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="4_gys8b"]
-[ext_resource type="JSON" path="res://dialogue/chair.json" id="5_ynp5j"]
 [ext_resource type="PackedScene" uid="uid://bkj8kjy44kn6b" path="res://dialogue/standingEvent.tscn" id="7_u37v1"]
 [ext_resource type="JSON" path="res://dialogue/dialogue.json" id="8_mjx5b"]
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="9_ea672"]
@@ -57,11 +55,6 @@ limit_bottom = 878
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
-
-[node name="StaticBody2D" parent="." instance=ExtResource("3_dwjiw")]
-position = Vector2(220.667, 42.3333)
-script = ExtResource("4_gys8b")
-dialogue_resource = ExtResource("5_ynp5j")
 
 [node name="standingEvent" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_u37v1")]
 position = Vector2(202.667, 156)
