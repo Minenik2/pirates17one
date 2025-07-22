@@ -19,6 +19,10 @@ func _ready():
 	updateClues()
 	
 func updateClues():
+	scene_list.clear()
+	body_list.clear()
+	occult_list.clear()
+	
 	for clue in Database.clueScene:
 		if clue["discovered"]:
 			scene_list.add_item(clue["title"])
