@@ -7,7 +7,17 @@ extends CanvasLayer
 	"bodyDiscoveredTimeKnown": false,
 	"NabellaSaidMarchoCanConfirm": false,
 	"dayWithoutFootSteps": false,
-	"AstarothFirstTime": true
+	"AstarothFirstTime": true,
+	
+	#clues
+	# Crime scene
+	"clueWindowOpen": true,
+	# body
+	"clueBlood": true,
+	"clueDragged": true,
+	"clueMetallic": true,
+	# occult
+	"cluePaper": true
 }
 
 signal dialogue_ended
@@ -36,6 +46,7 @@ func _on_ez_dialogue_custom_signal_received(value: Variant) -> void:
 		var variable_name = params[1]
 		var variable_value = params[2]
 		state[variable_name] = variable_value
+		Database.updateClue(variable_name)
 
 
 func _on_ez_dialogue_end_of_dialogue_reached() -> void:

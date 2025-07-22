@@ -7,13 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://bi8if0baxa6we" path="res://art/scholar.png" id="5_3os2r"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="5_cjv0t"]
 [ext_resource type="JSON" path="res://dialogue/scholarAstaroth.json" id="6_q0yum"]
-[ext_resource type="Texture2D" uid="uid://6ksuubr74tqy" path="res://art/dalian.png" id="8_6lvpw"]
 [ext_resource type="JSON" path="res://dialogue/Marchosias.json" id="8_lx8wg"]
+[ext_resource type="Texture2D" uid="uid://c3p24g4yc6sb6" path="res://art/marchosisas.png" id="9_lx8wg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjv0t"]
 size = Vector2(9, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lvpw"]
+size = Vector2(11, 12)
 
 [node name="floor_upper" type="Node2D"]
 y_sort_enabled = true
@@ -70,7 +71,8 @@ dialogue_resource = ExtResource("8_lx8wg")
 player = NodePath("../player")
 
 [node name="Sprite2D" type="Sprite2D" parent="Marchosias"]
-texture = ExtResource("8_6lvpw")
+texture = ExtResource("9_lx8wg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Marchosias"]
+position = Vector2(-0.5, 10)
 shape = SubResource("RectangleShape2D_6lvpw")

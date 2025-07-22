@@ -1,6 +1,6 @@
 [
 	{
-		"commands_raw": "Belethera: Hello...\n---\nBelethera: May I help you?\n\n?> My name is Dalian I am here investigating the murder -> pre-choices",
+		"commands_raw": "Belethera: Hello... \n---\nBelethera: May I help you?\n\n?> My name is Dalian I am here investigating the murder -> pre-choices",
 		"gnode_name": "start",
 		"id": 0.0,
 		"name": "start",

@@ -13,6 +13,14 @@ extends CanvasLayer
 @onready var occult_list: ItemList = $"MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/???/MarginContainer/VBoxContainer/occultList"
 
 @onready var infoText: RichTextLabel = $MarginContainer/VBoxContainer/Victim/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/RichTextLabel
+# alibis
+@onready var belethara_list: ItemList = $MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara/MarginContainer/VBoxContainer/beletharaList
+@onready var nabella_list: ItemList = $MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella/MarginContainer/VBoxContainer/nabellaList
+@onready var marchosias_list: ItemList = $MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias/MarginContainer/VBoxContainer/marchosiasList
+@onready var astaroth_list: ItemList = $MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth/MarginContainer/VBoxContainer/astarothList
+@onready var grimory_list: ItemList = $MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer/VBoxContainer/grimoryList
+
+@onready var alibiInfoText: RichTextLabel = $MarginContainer/VBoxContainer/Alibis/HBoxContainer/PanelContainer4/MarginContainer/VBoxContainer/RichTextLabel
 
 
 func _ready():
@@ -23,15 +31,28 @@ func updateClues():
 	body_list.clear()
 	occult_list.clear()
 	
-	for clue in Database.clueScene:
+	# alibi
+	nabella_list.clear()
+	marchosias_list.clear()
+	belethara_list.clear()
+	grimory_list.clear()
+	astaroth_list.clear()
+	
+	addClues(scene_list, Database.clueScene)
+	addClues(body_list, Database.clueBody)
+	addClues(occult_list, Database.clueOccult)
+	
+	# alibi
+	addClues(nabella_list, Database.clueNabella)
+	addClues(marchosias_list, Database.clueMarchosias)
+	addClues(belethara_list, Database.clueBelethara)
+	addClues(grimory_list, Database.clueGrimory)
+	addClues(astaroth_list, Database.clueAstaroth)
+
+func addClues(list, clueList):
+	for clue in clueList:
 		if clue["discovered"]:
-			scene_list.add_item(clue["title"])
-	for clue in Database.clueBody:
-		if clue["discovered"]:
-			body_list.add_item(clue["title"])
-	for clue in Database.clueOccult:
-		if clue["discovered"]:
-			occult_list.add_item(clue["title"])
+			list.add_item(clue["title"])
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("tab_menu") and not is_in_main_menu():
@@ -51,6 +72,8 @@ func is_in_main_menu() -> bool:
 	var current_scene = get_tree().current_scene
 	return current_scene.scene_file_path == "res://scenes/main_menu.tscn"
 
+func is_tip_showing() -> bool:
+	return $tabTip.visible
 
 func _on_suspects_pressed() -> void:
 	SfXplayer.playDialogueClick()
@@ -90,11 +113,11 @@ func _on_grimory_pressed() -> void:
 	SfXplayer.playDialogueClick()
 	textureSprite.texture = load("res://art/grimory.png")
 	profile.text = "Journal Entry - Subject: Grimory
-Location: Apartment, Upper floor
+Location: Apartment, Lower floor
 Date: July 20th
 Filed by: Dalian
 
-	Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
+Grimory. She is a seamstress proficient in sewing. Hired by Belethera to make the perfect dress for her majesty."
 	
 
 func _on_astaroth_pressed() -> void:
@@ -104,43 +127,38 @@ func _on_astaroth_pressed() -> void:
 Location: Apartment, Upper floor
 Date: July 20th
 Filed by: Dalian
-	
-	Mohammed has not yet added a description to this character.
-	 Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
+
+Astaroth. He seems to be hungry, hungry for knowledge. He hoards countless amounts of books and texts, foolishly trying to research some kind of ancient language."
 
 func _on_marchosias_pressed() -> void:
 	SfXplayer.playDialogueClick()
-	textureSprite.texture = load("res://art/grimory.png")
-	profile.text = "Journal Entry - Subject: Marchosias
+	textureSprite.texture = load("res://art/marchosisas.png")
+	profile.text = "Journal Entry - Subject: Marchosisas
 Location: Apartment, Upper floor
 Date: July 20th
 Filed by: Dalian
 
-Marchosias. No relatives I could trace. Just a name whispered in the halls, the madman on the third floor.
-
-He says he fought in the georgist war, not that most people remember it. A movement built on land reform and righteous ideals, twisted into something bloody by the time it reached the trenches. He was young then. Idealistic. Said he fought 'for the earth beneath all feet to be shared equally.' Now he mutters those same words through rotted teeth, rocking in a wooden chair that creaks louder than his bones.
-
-He is a man who saw his brothers die in muddy fields for something he still believes in. That's rare. He must have carried the weight of their deaths. He also claims no one listens to George's teachings because 'They've never truley heard them' Says the world is deaf. Says we're all parasites sucking on the landowners lies. But he doesn't hate people, he pities them. That's what hassles me."
+Marchosisas. Rather ideologistic person, with an ideology that lives with him to this day. He said he proudly believes in georgism and mutters those words through his rotted teeth, rocking in a wooden chair that creaks louder than his bones."
 	
 func _on_belethara_pressed() -> void:
 	SfXplayer.playDialogueClick()
-	textureSprite.texture = load("res://art/grimory.png")
+	textureSprite.texture = load("res://art/beleth.png")
 	profile.text = "Journal Entry - Subject: Belethara
-Location: Apartment, Upper floor
+Location: Apartment, Middle floor
 Date: July 20th
 Filed by: Dalian
-	
-	Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
+
+Belethara. The owner of this crooked building, I don't think any sane soul would want to live in a place like this - let alone be the owner of it. Her song has long played and she uses the last moments of her life to prickly take care of a useless building"
 
 func _on_nabella_pressed() -> void:
 	SfXplayer.playDialogueClick()
-	textureSprite.texture = load("res://art/grimory.png")
+	textureSprite.texture = load("res://art/nabella.png")
 	profile.text = "Journal Entry - Subject: Nabella
-Location: Apartment, Upper floor
+Location: Apartment, Middle floor
 Date: July 20th
 Filed by: Dalian
-	
-	Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
+
+Nabella. The timid cleaning lady, she comes from a poor family and doesn't have many ambitions. Can you imagine that - living life without any goals - must be a pity of a woman. "
 
 func _on_tab_container_tab_changed(tab: int) -> void:
 	SfXplayer.playDialogueClick()
@@ -171,4 +189,45 @@ func _on_scene_list_item_selected(index: int) -> void:
 
 
 func _on_alibi_tab_container_tab_changed(tab: int) -> void:
+	SfXplayer.playDialogueClick()
+	match tab:
+		0:	
+			belethara_list.deselect_all()
+		1:
+			nabella_list.deselect_all()
+		2:
+			marchosias_list.deselect_all()
+		3:
+			astaroth_list.deselect_all()
+		4:
+			grimory_list.deselect_all()
+
+# alibis buttons
+func _on_grimory_list_item_selected(index: int) -> void:
+	var clue = Database.clueGrimory[index]
+	alibiInfoText.text = clue["description"]
+	SfXplayer.playDialogueClick()
+
+
+func _on_astaroth_list_item_selected(index: int) -> void:
+	var clue = Database.clueAstaroth[index]
+	alibiInfoText.text = clue["description"]
+	SfXplayer.playDialogueClick()
+
+
+func _on_marchosias_list_item_selected(index: int) -> void:
+	var clue = Database.clueMarchosias[index]
+	alibiInfoText.text = clue["description"]
+	SfXplayer.playDialogueClick()
+
+
+func _on_nabella_list_item_selected(index: int) -> void:
+	var clue = Database.clueNabella[index]
+	alibiInfoText.text = clue["description"]
+	SfXplayer.playDialogueClick()
+
+
+func _on_belethara_list_item_selected(index: int) -> void:
+	var clue = Database.clueBelethara[index]
+	alibiInfoText.text = clue["description"]
 	SfXplayer.playDialogueClick()

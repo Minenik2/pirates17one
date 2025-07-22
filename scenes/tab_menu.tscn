@@ -256,7 +256,7 @@ theme_override_constants/outline_size = 4
 text = "Belethara - Building Owner"
 horizontal_alignment = 1
 
-[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara/MarginContainer/VBoxContainer"]
+[node name="beletharaList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
@@ -285,7 +285,7 @@ theme_override_constants/outline_size = 4
 text = "Nabella - Cleaning Maid"
 horizontal_alignment = 1
 
-[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella/MarginContainer/VBoxContainer"]
+[node name="nabellaList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
@@ -314,7 +314,7 @@ theme_override_constants/outline_size = 4
 text = "Marchosias - War Veteran"
 horizontal_alignment = 1
 
-[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias/MarginContainer/VBoxContainer"]
+[node name="marchosiasList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
@@ -342,7 +342,7 @@ size_flags_vertical = 0
 text = "Astaroth - Scholar"
 horizontal_alignment = 1
 
-[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth/MarginContainer/VBoxContainer"]
+[node name="astarothList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
@@ -367,10 +367,10 @@ layout_mode = 2
 [node name="scene" type="Label" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Grimory - Old Lady"
+text = "Grimory - Seamstress"
 horizontal_alignment = 1
 
-[node name="sceneList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer/VBoxContainer"]
+[node name="grimoryList" type="ItemList" parent="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_mode = 0
@@ -600,11 +600,11 @@ I will solve this case and I won't come out until I've found the truth. "
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer2/nabella" to="." method="_on_nabella_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Suspects/HBoxContainer/VBoxContainer/HBoxContainer3/grimory" to="." method="_on_grimory_pressed"]
 [connection signal="tab_changed" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer" to="." method="_on_alibi_tab_container_tab_changed"]
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Belethara/MarginContainer/VBoxContainer/beletharaList" to="." method="_on_belethara_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Nabella/MarginContainer/VBoxContainer/nabellaList" to="." method="_on_nabella_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Marchosias/MarginContainer/VBoxContainer/marchosiasList" to="." method="_on_marchosias_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Astaroth/MarginContainer/VBoxContainer/astarothList" to="." method="_on_astaroth_list_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Alibis/HBoxContainer/TabContainer/Grimory/MarginContainer/VBoxContainer/grimoryList" to="." method="_on_grimory_list_item_selected"]
 [connection signal="tab_changed" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Crime Scene/MarginContainer/VBoxContainer/sceneList" to="." method="_on_scene_list_item_selected"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Victim/HBoxContainer/TabContainer/Dead Body/MarginContainer/VBoxContainer/bodyList" to="." method="_on_body_list_item_selected"]

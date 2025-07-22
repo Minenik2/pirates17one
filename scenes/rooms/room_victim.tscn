@@ -3,11 +3,12 @@
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_4apu0"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="2_e1yr1"]
 [ext_resource type="JSON" path="res://dialogue/investigatebody.json" id="3_bekwk"]
-[ext_resource type="Texture2D" uid="uid://6ksuubr74tqy" path="res://art/dalian.png" id="4_1bw60"]
+[ext_resource type="Texture2D" uid="uid://c2hawjls5h0oc" path="res://art/body.png" id="4_e1yr1"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="5_pchlr"]
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="6_e1yr1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jddsv"]
+size = Vector2(13, 22.6667)
 
 [node name="room" type="Node2D"]
 scale = Vector2(3, 3)
@@ -21,11 +22,12 @@ position = Vector2(168, 142)
 script = ExtResource("2_e1yr1")
 dialogue_resource = ExtResource("3_bekwk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="deadBody"]
-shape = SubResource("RectangleShape2D_jddsv")
-
 [node name="Sprite2D" type="Sprite2D" parent="deadBody"]
-texture = ExtResource("4_1bw60")
+texture = ExtResource("4_e1yr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadBody"]
+position = Vector2(0.5, 4.66667)
+shape = SubResource("RectangleShape2D_jddsv")
 
 [node name="player" parent="." instance=ExtResource("5_pchlr")]
 position = Vector2(168, 206)

@@ -1,1 +1,42 @@
-[{"commands_raw":"Lady Gremory: Well now… what have we here? \n---\nLady Gremory: A young Lady with a look like she’s already seen too much \n---\nDalian:  Evenin’, ma’am\n---\nLady Gremory: Dark eyes like that usually come with secrets.\n You with the law, sweetheart? Or just lost in the wrong part of town?\n---\nDalian: im with the Loen police\n---\nLady Gremory: Folks around here love to talk \n---\nlady Gremory:  If it’s the body you’re asking about, try the old cat upstairs. She has the key for the room\n?> I have the Key ->  Key\n?> You know anything about the fella? ->  handsome","gnode_name":"start","id":0,"name":"start","position":[380.0,460.0]},{"commands_raw":"Lady Gremory: He loved to talk with that young scholar.\n---\nLady Gremory: Said the kid made him feel like the world hadn’t gone completely rotten.\n---\nLady Gremory: Or maybe that it had gone completely rotten—\n---\nLady Gremory: Hell, I don’t remember.\n---\nLady Gremory: But I do remember this—he was a handsome one. I’ll give him that.\n?> I have the Key ->  Key\n?> Leave -> End\n","gnode_name":"handsome","id":1,"name":"handsome","position":[520.0,400.0]},{"commands_raw":"Lady Gremory: Room’s to the left\n?> You know anything about the fella? ->  handsome\n?> Leave -> End","gnode_name":"key","id":2,"name":"Key","position":[520.0,520.0]},{"commands_raw":"Lady Gremory: Stay sharp, miss <3. \t\n---","gnode_name":"end","id":3,"name":"End","position":[680.0,460.0]}]
+[
+	{
+		"commands_raw": "Lady Gremory: Well now… what have we here? \n---\nLady Gremory: A young Lady with a look like she’s already seen too much \n---\nDalian:  Evenin’, ma’am\n---\nLady Gremory: Dark eyes like that usually come with secrets.\n You with the law, sweetheart? Or just lost in the wrong part of town?\n---\nDalian: im with the Loen police\n---\nLady Gremory: Folks around here love to talk \n---\nlady Gremory:  If it’s the body you’re asking about, try the old cat upstairs. She has the key for the room\n?> I have the Key ->  Key\n?> You know anything about the fella? ->  handsome",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			380.0,
+			460.0
+		]
+	},
+	{
+		"commands_raw": "Lady Gremory: He loved to talk with that young scholar.\n---\nLady Gremory: Said the kid made him feel like the world hadn’t gone completely rotten.\n---\nLady Gremory: Or maybe that it had gone completely rotten—\n---\nLady Gremory: Hell, I don’t remember.\n---\nLady Gremory: But I do remember this—he was a handsome one. I’ll give him that.\n?> I have the Key ->  Key\n?> Leave -> End\n",
+		"gnode_name": "handsome",
+		"id": 1.0,
+		"name": "handsome",
+		"position": [
+			520.0,
+			400.0
+		]
+	},
+	{
+		"commands_raw": "Lady Gremory: Room’s to the left\n?> You know anything about the fella? ->  handsome\n?> Leave -> End",
+		"gnode_name": "key",
+		"id": 2.0,
+		"name": "Key",
+		"position": [
+			520.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Lady Gremory: Stay sharp, miss <3. \t\n---",
+		"gnode_name": "end",
+		"id": 3.0,
+		"name": "End",
+		"position": [
+			680.0,
+			460.0
+		]
+	}
+]

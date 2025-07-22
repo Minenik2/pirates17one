@@ -36,7 +36,7 @@ func _physics_process(delta):
 		animation_player.pause()
 
 func _unhandled_input(event):
-	if event.is_action_pressed(interact_key) and can_interact and !is_interacting and !TabMenu.visible:
+	if event.is_action_pressed(interact_key) and can_interact and !is_interacting and (!TabMenu.visible or TabMenu.is_tip_showing()):
 		interact()
 	
 
