@@ -89,13 +89,23 @@ func _on_victim_pressed() -> void:
 func _on_grimory_pressed() -> void:
 	SfXplayer.playDialogueClick()
 	textureSprite.texture = load("res://art/grimory.png")
-	profile.text = "Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
+	profile.text = "Journal Entry - Subject: Grimory
+Location: Apartment, Upper floor
+Date: July 20th
+Filed by: Dalian
+
+	Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
 	
 
 func _on_astaroth_pressed() -> void:
 	SfXplayer.playDialogueClick()
 	textureSprite.texture = load("res://art/scholar.png")
-	profile.text = "Mohammed has not yet added a description to this character.
+	profile.text = "Journal Entry - Subject: Astaroth
+Location: Apartment, Upper floor
+Date: July 20th
+Filed by: Dalian
+	
+	Mohammed has not yet added a description to this character.
 	 Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
 
 func _on_marchosias_pressed() -> void:
@@ -115,12 +125,22 @@ He is a man who saw his brothers die in muddy fields for something he still beli
 func _on_belethara_pressed() -> void:
 	SfXplayer.playDialogueClick()
 	textureSprite.texture = load("res://art/grimory.png")
-	profile.text = "Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
+	profile.text = "Journal Entry - Subject: Belethara
+Location: Apartment, Upper floor
+Date: July 20th
+Filed by: Dalian
+	
+	Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
 
 func _on_nabella_pressed() -> void:
 	SfXplayer.playDialogueClick()
 	textureSprite.texture = load("res://art/grimory.png")
-	profile.text = "Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
+	profile.text = "Journal Entry - Subject: Nabella
+Location: Apartment, Upper floor
+Date: July 20th
+Filed by: Dalian
+	
+	Abdi has not yet added a description to this character. Maybe one day when the clock strikes twelve he will lift his pen and inspiration to start commencing the bibliographical narrative."
 
 func _on_tab_container_tab_changed(tab: int) -> void:
 	SfXplayer.playDialogueClick()
