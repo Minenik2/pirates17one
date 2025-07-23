@@ -39,7 +39,7 @@ var clueMarchosias = [
 	{"title": "Hearing Footsteps", "description": "Marchosias states that he hears footsteps outside of his room every day. Except for yesterday.", "discovered": false, "tag": "dayWithoutFootSteps"},
 	{"title": "Good Night Sleep", "description": "Marchosias states that he slept very good yesterday.", "discovered": true, "tag": ""},
 	{"title": "No Screaming", "description": "Marchosias states that he has never noticed himself screaming.", "discovered": true, "tag": ""},
-	{"title": "All Day Up", "description": "Marchosias states that he was on the upper floor yesterday.", "discovered": true, "tag": ""},
+	{"title": "All Day Up", "description": "Marchosias states that he was on the upper floor yesterday.", "discovered": false, "tag": "upperFloor"},
 	{"title": "Lost Gun", "description": "Marchosias states that he lost his gun.", "discovered": false, "tag": "lostGun"}
 ]
 var clueAstaroth = [

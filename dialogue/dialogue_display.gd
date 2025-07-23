@@ -26,6 +26,7 @@ extends CanvasLayer
 	"nabellaHearFootsteps": false,
 	# marchosias
 	"lostGun": false,
+	"upperFloor": false,
 	# grimory
 	"clueGun": false
 }

@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "Astaroth: *mumbling*\n---\nDalian: Excuse me, are you a resident here?\n---\nAstaroth: Obviously. Unless you're here to evict me\n---\nDalian: I'm investigating the death of a resident Mr. Solomon here\n---\nAstaroth: Ah. The curious one. I warned him about reading things he didn't understand\n---\nsignal(set,AstarothFirstTime,false)\n-> questions\n",
+		"commands_raw": "Astaroth: *mumbling*\n---\nDalian: Excuse me, are you a resident here?\n---\nAstaroth: Obviously. Unless you're here to evict me.\n---\n$if clueNameSolomon {\nDalian: I'm investigating the death of a resident Mr. Solomon here.\n---\nAstaroth: Ah. The curious one. I warned him about reading things he didn't understand.\n}\n$else {\nDalian: I'm investigating a murder on the lower floor.\n---\nAstaroth: Don't tell me it's about Lady Grimory?\n---\nDalian: No it's the person next room. I don't know his name yet.\n}\nsignal(set,AstarothFirstTime,false)\n-> questions\n",
 		"gnode_name": "firsttime",
 		"id": 1.0,
 		"name": "firstTime",
@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"commands_raw": "Dalian: Where were you around the time 19-20\n---\n Astaroth: Here. With my books. Same as every night\n---\n-> questions",
+		"commands_raw": "Astaroth: Here. With my books. Same as every night.\n-> questions",
 		"gnode_name": "where",
 		"id": 3.0,
 		"name": "where",
@@ -40,7 +40,7 @@
 		]
 	},
 	{
-		"commands_raw": "?> Where were you during the time 19-20 last night? -> where\n?> Did you know the victim personally? -> know\n?> Did you hear or see anything unusual that night? -> hear\n?> Leave",
+		"commands_raw": "$if clueGun {\n?> I heard you visited Grimory yesterday. -> Lying\n}\n?> Where were you during the time 7-9 PM yesterday? -> where\n?> Did you know the victim personally? -> know\n?> Did you hear or see anything unusual yesterday? -> hear\n?> Leave",
 		"gnode_name": "questions",
 		"id": 4.0,
 		"name": "questions",
@@ -50,7 +50,7 @@
 		]
 	},
 	{
-		"commands_raw": "Dalian: Did you know the victim personally\n---\n Astaroth: He borrowed a book once. Didn't return it. That about sums up our relationship\n---\n\n-> questions",
+		"commands_raw": "Astaroth: He borrowed a book once. Didn't return it. That about sums up our relationship.\n\n-> questions",
 		"gnode_name": "know",
 		"id": 5.0,
 		"name": "know",
@@ -60,7 +60,7 @@
 		]
 	},
 	{
-		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: Unusual? For once, the building was quiet. Marchosias didn't have his nightly ravings like he usally does. \n---\nAstaroth: First time in weeks I actually got some sleep\n---\n-> questions",
+		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: Unusual? For once, the building was quiet. Marchosias didn't have his nightly ravings like he usally does. \n---\nAstaroth: First time in weeks I actually got some sleep\n-> questions",
 		"gnode_name": "hear",
 		"id": 6.0,
 		"name": "Hear",
@@ -70,7 +70,7 @@
 		]
 	},
 	{
-		"commands_raw": "Dalian: You said you were in your room that night. But Grimory sayd you visited her around 19:30\n---\nAstaroth: Apparently I can’t loan a book without becoming a suspect. How thrilling.\n---\nDalian: So you lied\n---\nAstaroth: I loaned a book from her. Briefly. I didn’t think it was relevant to a corpse\n---\n",
+		"commands_raw": "Dalian: Grimory said you visited her.\n---\nAstaroth: It was early in the morning, I don't have many books on sewing therefore I wanted to borrow one of her books to know more about the topic.\n---\nDalian: Why are you so interested in sewing?\n---\nAstaroth: I am a scholar, I love knowledge, I'm something of a philomath myself.\n---\nAstaroth: Also some of the knowledge is overlapping with doctors knowledge about sewing wounds. \n---\nAstaroth: You might be suprised how much you can learn by interdisciplinarity.\n-> questions\n",
 		"gnode_name": "lying",
 		"id": 7.0,
 		"name": "Lying",

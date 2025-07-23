@@ -20,7 +20,7 @@
 		]
 	},
 	{
-		"commands_raw": "Marchosias: I was at the upper floor listening to the voices in the walls.\n---\nMarchosias: I do not know if it's them or my head talking.\n---\nMarchosias: All the voices I've lost...\n-> choices\n",
+		"commands_raw": "Marchosias: I was at the upper floor listening to the voices in the walls.\n---\nMarchosias: I do not know if it's them or my head talking.\n---\nMarchosias: All the voices I've lost...\nsignal(set,upperFloor,true)\n-> choices\n",
 		"gnode_name": "where were you?",
 		"id": 2.0,
 		"name": "where were you?",
