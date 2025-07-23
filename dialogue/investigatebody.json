@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "As you inspect the wounds they seem to be very distinctively formed.\n---\nOnly a metallic object could have done this.\n---\nYou get ready to sample the blood\n---\nblood type B-\nsignal(set,clueBlood,true)\n\n-> choices",
+		"commands_raw": "As you inspect the wounds they seem to be very distinctively formed.\n---\nOnly a metallic object could have done this.\n---\nYou get ready to sample the blood.\n---\nBlood type B-.\nsignal(set,clueBlood,true)\n\n-> choices",
 		"gnode_name": "sample blood type",
 		"id": 1.0,
 		"name": "Sample blood type",

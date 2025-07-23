@@ -37,10 +37,11 @@ position = Vector2(167.667, 240)
 target_scene = "uid://dkds2t0667xjc"
 code = "marchosias"
 
-[node name="Marchosias" type="StaticBody2D" parent="."]
+[node name="Marchosias" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(133.333, 151.333)
 script = ExtResource("4_gropv")
 dialogue_resource = ExtResource("5_vnrjk")
+player = NodePath("../player")
 
 [node name="Sprite2D" type="Sprite2D" parent="Marchosias"]
 texture = ExtResource("6_xy818")
