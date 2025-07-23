@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"commands_raw": "$if NabellaSaidMarchoCanConfirm {\n    ?> Nabella says she cleaned your room -> ask about nabella 730\n}\n?> Where were you yesterday? -> where were you?\n?> Could you tell me about yourself? -> war\n?> Leave -> leave",
+		"commands_raw": "$if NabellaSaidMarchoCanConfirm {\n    ?> Nabella says she cleaned your room -> ask about nabella 730\n}\n$if clueGun {\n    ?> Do you have a gun? -> gun\n}\n?> Where were you yesterday? -> where were you?\n?> Could you tell me about yourself? -> war\n?> Leave -> leave",
 		"gnode_name": "choices",
 		"id": 3.0,
 		"name": "choices",
@@ -87,6 +87,16 @@
 		"position": [
 			-20.0,
 			240.0
+		]
+	},
+	{
+		"commands_raw": "Marchosias: Yes, it forever hangs on my wall as a memory of my past.\n---\nMarchosias: But I lost my gun yesterday, I have no idea where it went.\nsignal(set,lostGun,true)\n-> choices",
+		"gnode_name": "gun",
+		"id": 9.0,
+		"name": "gun",
+		"position": [
+			520.0,
+			120.0
 		]
 	}
 ]

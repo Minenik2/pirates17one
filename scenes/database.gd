@@ -16,7 +16,7 @@ var clueBody = [
 	{"title": "Time of Discovery", "description": "Belethara claims she discovered the body first at 8:12 AM Today.", "discovered": false, "tag": "bodyDiscoveredTimeKnown"},
 	{"title": "Solomon", "description": "According to Belethara, the name of the victim was Solomon, he left his name on his receipt.", "discovered": false, "tag": "clueNameSolomon"},
 	{"title": "Fallen Naturally", "description": "There are no signs of dragging the body.", "discovered": false, "tag": "bodyInvestigated"},
-	{"title": "Murder Weapon?", "description": "The wounds seems to be formed by a metallic object.", "discovered": true, "tag": ""}
+	{"title": "Murder Weapon?", "description": "The wounds seems to be formed by a metallic object.", "discovered": false, "tag": "clueBlood"}
 ]
 var clueOccult = [
 	{"title": "Thorn Paper", "description": "Found in the victims pocket, it shows a symbol of an bleeding eye covered in ink.", "discovered": false, "tag": "thornPaperFound"}
@@ -27,7 +27,7 @@ var clueBelethara = [
 	{"title": "First", "description": "Belethara states that she was the first one to discover the body at 8:12 AM.", "discovered": false, "tag": ""},
 	{"title": "I haven't touched anything down there.", "description": "Belethara states that she hasn't touched or moved anything in the room.", "discovered": false, "tag": "keyToBody"},
 	{"title": "Nabella was supposed to clean the victims room.", "description": "Belethara states that Nabella was supposed to clean the victims room at 7:30 AM Today, but she did not.\n\nI should confront Nabella about this.", "discovered": false, "tag": "bodyDiscoveredTimeKnown"},
-	{"title": "I heard screams.", "description": "Belethara states that she heard shouting yesterday.", "discovered": true, "tag": ""}
+	{"title": "I heard screams.", "description": "Belethara states that she heard shouting yesterday.", "discovered": false, "tag": "bodyDiscoveredTimeKnown"}
 ]
 var clueNabella = [
 	{"title": "Extra Cleaning", "description": "Nabella states that she had to clean the upper floor longer than usual due to Marchosias trash piling up.\n\nI should confront Marchosias about this.", "discovered": false, "tag": "NabellaSaidMarchoCanConfirm"},
@@ -36,11 +36,11 @@ var clueNabella = [
 ]
 var clueMarchosias = [
 	{"title": "Cleaning Duties", "description": "Marchosias states that Nabella starts cleaning at 7:30, not finishes cleaning at 7:30, and she always start cleaning upper floor first.", "discovered": false, "tag": "dayWithoutFootSteps"},
-	{"title": "Hearing Footsteps", "description": "Marchosias states that he hears footsteps outside of his room every day. Except for yesterday.\n\nI should confront others about this", "discovered": false, "tag": "dayWithoutFootSteps"},
+	{"title": "Hearing Footsteps", "description": "Marchosias states that he hears footsteps outside of his room every day. Except for yesterday.", "discovered": false, "tag": "dayWithoutFootSteps"},
 	{"title": "Good Night Sleep", "description": "Marchosias states that he slept very good yesterday.", "discovered": true, "tag": ""},
 	{"title": "No Screaming", "description": "Marchosias states that he has never noticed himself screaming.", "discovered": true, "tag": ""},
 	{"title": "All Day Up", "description": "Marchosias states that he was on the upper floor yesterday.", "discovered": true, "tag": ""},
-	{"title": "Lost Gun", "description": "Marchosias states that he lost his gun.", "discovered": true, "tag": ""}
+	{"title": "Lost Gun", "description": "Marchosias states that he lost his gun.", "discovered": false, "tag": "lostGun"}
 ]
 var clueAstaroth = [
 	{"title": "Upper Floor", "description": "Astaroth claims he went to the upper floor yesterday.", "discovered": true, "tag": ""},

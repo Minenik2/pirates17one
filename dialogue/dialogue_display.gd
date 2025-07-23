@@ -21,9 +21,10 @@ extends CanvasLayer
 	# body
 	"clueBlood": false,
 	"clueRigor": false,
-	"clueMetallic": true, #
 	# occult
 	
+	# marchosias
+	"lostGun": false,
 	# grimory
 	"clueGun": false
 }

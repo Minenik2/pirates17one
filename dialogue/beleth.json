@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"commands_raw": "Belethara: I found the body first in the morning at around 8:12 AM. Called the police and waited here for someone to arrive. \nsignal(set,bodyDiscoveredTimeKnown,true) \n---\nBelethara: However the cleaning lady named Nabella, was supposed to clean all the rooms at 7:30 AM.\n---\nBelethara: I haven't confronted her about the fact, but I'm very mad at her. These servants should learn their place.\n\n-> choices",
+		"commands_raw": "Belethara: I found the body first in the morning at around 8:12 AM. Called the police and waited here for someone to arrive. \nsignal(set,bodyDiscoveredTimeKnown,true) \n---\nBelethara: However the cleaning lady named Nabella, was supposed to clean all the rooms at 7:30 AM.\n---\nBelethara: I haven't confronted her about the fact, but I'm very mad at her. These servants should learn their place.\n---\nBelethara: Yesterday I also heard a scream.\n---\nDalian: And you didn't bother to check?\n---\nBelethara: It is fairly frequent among our guests to be rather... strange.\n-> choices",
 		"gnode_name": "hear",
 		"id": 3.0,
 		"name": "hear",
