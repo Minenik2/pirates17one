@@ -49,8 +49,9 @@ var clueAstaroth = [
 	{"title": "Visited The Seamstress", "description": "Astaroth claims that he borrowed books from Grimory yesterday.", "discovered": true, "tag": ""}
 ]
 var clueGrimory = [
-	{"title": "Gun Fire", "description": "Grimory states that she heard a loud gun fire around 8 PM Yesterday", "discovered": true, "tag": ""},
-	{"title": "The only one with the gun", "description": "Grimory states that Marchosias is the only person with a gun.", "discovered": true, "tag": ""}
+	{"title": "Gun Fire", "description": "Grimory states that she heard a loud gun fire around 8 PM Yesterday", "discovered": false, "tag": "clueGun"},
+	{"title": "The only one with the gun", "description": "Grimory states that Marchosias is the only person with a gun.\n\nI should confront Marchosias about this", "discovered": false, "tag": "clueGun"},
+	{"title": "Bookworms visit", "description": "Grimory states that Astaroth visited Grimory to borrow a book from her.\n\nI should confront Astaroth about this", "discovered": false, "tag": "clueGun"}
 ]
 
 func updateClue(tag):

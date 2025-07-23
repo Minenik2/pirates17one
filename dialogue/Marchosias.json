@@ -1,11 +1,11 @@
 [
 	{
-		"commands_raw": "Marchosias: What do you want?\n-> choices",
+		"commands_raw": "$if MachoriasFirstTime {\n    -> hello\n}\n$else {\n    Dalian: Hello\n    ---\n    signal(set,MarchoriasFirstTime,True)\n    Marchosias: Welcome young one.\n    ---\n    Dalian: I am investigating a murder and want to ask a couple of questions\n    ---\n    Marchosias: What do you wish to ask?\n    -> choices\n}\n",
 		"gnode_name": "start",
 		"id": 0.0,
 		"name": "start",
 		"position": [
-			140.0,
+			-240.0,
 			320.0
 		]
 	},
@@ -20,7 +20,7 @@
 		]
 	},
 	{
-		"commands_raw": "Dalian: Where were you yesterday?\n---",
+		"commands_raw": "Marchosias: I was at the upper floor listening to the voices in the walls.\n---\nMarchosias: I do not know if it's them or my head talking.\n---\nMarchosias: All the voices I've lost...\n-> choices\n",
 		"gnode_name": "where were you?",
 		"id": 2.0,
 		"name": "where were you?",
@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"commands_raw": "$if NabellaSaidMarchoCanConfirm {\n    ?> Nabella says she cleaned your room -> ask about nabella 730\n}\n\n?> Could you tell me about yourself? -> war\n?> Leave -> leave",
+		"commands_raw": "$if NabellaSaidMarchoCanConfirm {\n    ?> Nabella says she cleaned your room -> ask about nabella 730\n}\n?> Where were you yesterday? -> where were you?\n?> Could you tell me about yourself? -> war\n?> Leave -> leave",
 		"gnode_name": "choices",
 		"id": 3.0,
 		"name": "choices",
@@ -77,6 +77,16 @@
 		"position": [
 			740.0,
 			540.0
+		]
+	},
+	{
+		"commands_raw": "Marchosias: What do you want?\n-> choices",
+		"gnode_name": "hello",
+		"id": 8.0,
+		"name": "hello",
+		"position": [
+			-20.0,
+			240.0
 		]
 	}
 ]

@@ -10,6 +10,10 @@ extends CanvasLayer
 	
 	# first time checks
 	"AstarothFirstTime": true,
+	"MachoriasFirstTime": false,
+	"BeletharaFirstTime": false,
+	"GrimoryFirstTime": false,
+	"NabellaFirstTime": false,
 	
 	#clues
 	# Crime scene
@@ -17,8 +21,11 @@ extends CanvasLayer
 	# body
 	"clueBlood": false,
 	"clueRigor": false,
-	"clueMetallic": true #
+	"clueMetallic": true, #
 	# occult
+	
+	# grimory
+	"clueGun": false
 }
 
 signal dialogue_ended
