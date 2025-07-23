@@ -45,6 +45,7 @@ var clueMarchosias = [
 var clueAstaroth = [
 	{"title": "Upper Floor", "description": "Astaroth claims he went to the upper floor yesterday.", "discovered": true, "tag": ""},
 	{"title": "Insomnia", "description": "Astaroth claims that he never gets to sleep because Marchosias always screams at night.", "discovered": true, "tag": ""},
+	{"title": "Yesterday Was Quiet.", "description": "Astaroth claims that yesterday he had a good night sleep because Marchosias did not scream.", "discovered": true, "tag": ""},
 	{"title": "Visited The Seamstress", "description": "Astaroth claims that he borrowed books from Grimory yesterday.", "discovered": true, "tag": ""}
 ]
 var clueGrimory = [
