@@ -5,7 +5,7 @@ var triggered_flags := {} # triggered events saving across scenes
 
 # to add clue interaction with dialogue state do for example DialogueDisplay.state["clueBloodType"]
 var clueScene = [
-	{"title": "Open Window", "description": "The window was open in the victims room.", "discovered": true, "tag": ""},
+	{"title": "Locked Window", "description": "The window was locked in the victims room.", "discovered": true, "tag": ""},
 	{"title": "Master Key", "description": "The key that Belethara gave you - can open any door - but she specifically told you to use it on the victims room.", "discovered": false, "tag": "keyToBody"},
 	{"title": "Bloody Knife", "description": "A knife was found in Grimorys room with the blood type B-", "discovered": true, "tag": ""},
 	{"title": "Metallic Bullets", "description": "Marchosias has metallic bullets inside of his room.", "discovered": true, "tag": ""}
@@ -32,7 +32,7 @@ var clueBelethara = [
 var clueNabella = [
 	{"title": "Extra Cleaning", "description": "Nabella states that she had to clean the upper floor longer than usual due to Marchosias trash piling up.\n\nI should confront Marchosias about this.", "discovered": false, "tag": "NabellaSaidMarchoCanConfirm"},
 	{"title": "Middle Cleaning", "description": "Nabella states that today she cleaned the upper floor first, currently is cleaning the middle floor and only after finishing would she start cleaning the lower floor.", "discovered": false, "tag": "NabellaSaidMarchoCanConfirm"},
-	{"title": "Upper Footsteps Cleaning", "description": "Nabella states that she heard footsteps coming from the upper floor yesterday. She believes it was Marchosias but she did not see the person.", "discovered": true, "tag": ""}
+	{"title": "Upper Footsteps", "description": "Nabella states that she heard footsteps coming from the upper floor yesterday. She believes it was Marchosias but she did not see the person.", "discovered": true, "tag": ""}
 ]
 var clueMarchosias = [
 	{"title": "Cleaning Duties", "description": "Marchosias states that Nabella starts cleaning at 7:30, not finishes cleaning at 7:30, and she always start cleaning upper floor first.", "discovered": false, "tag": "dayWithoutFootSteps"},
@@ -44,7 +44,7 @@ var clueMarchosias = [
 ]
 var clueAstaroth = [
 	{"title": "Upper Floor", "description": "Astaroth claims he went to the upper floor yesterday.", "discovered": true, "tag": ""},
-	{"title": "Insomnia", "description": "Astaroth claims that he never gets to sleep because the old man always screams at night.", "discovered": true, "tag": ""},
+	{"title": "Insomnia", "description": "Astaroth claims that he never gets to sleep because Marchosias always screams at night.", "discovered": true, "tag": ""},
 	{"title": "Visited The Seamstress", "description": "Astaroth claims that he borrowed books from Grimory yesterday.", "discovered": true, "tag": ""}
 ]
 var clueGrimory = [

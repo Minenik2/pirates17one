@@ -1,1 +1,72 @@
-[{"commands_raw":"$if AstarothFirstTime == true{\n    -> firstTime\n}\n$else {\n    -> secondTime\n}","gnode_name":"start","id":0,"name":"start","position":[1340.0,240.0]},{"commands_raw":"Astaroth: *mumbling*\n---\nDalian: Excuse me, are you a resident here?\n---\nAstaroth: Obviously. Unless you're here to evict me\n---\nDalian: I'm investigating the death of a resident Mr. Solomon here\n---\nAstaroth: Ah. The curious one. I warned him about reading things he didn't understand\n---\nsignal(set,AstarothFirstTime,false)\n-> questions\n","gnode_name":"firsttime","id":1,"name":"firstTime","position":[1480.0,160.0]},{"commands_raw":"Dalian: I have some question to ask you\n---\n\n-> questions","gnode_name":"secondtime","id":2,"name":"secondTime","position":[1480.0,300.0]},{"commands_raw":"Dalian: Where were you around the time 19-20\n---\n Astaroth: Here. With my books. Same as every night\n---\n-> questions","gnode_name":"where","id":3,"name":"where","position":[1820.0,80.0]},{"commands_raw":"?> Where were you during the time 19-20 last night? -> where\n?> Did you know the victim personally? -> know\n?> Did you hear or see anything unusual that night? -> hear","gnode_name":"questions","id":4,"name":"questions","position":[1620.0,220.0]},{"commands_raw":"Dalian: Did you know the victim personally\n---\n Astaroth: He borrowed a book once. Didn't return it. That about sums up our relationship\n---\n\n-> questions","gnode_name":"know","id":5,"name":"know","position":[1800.0,220.0]},{"commands_raw":"Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: ","gnode_name":"hear","id":6,"name":"Hear","position":[1800.0,300.0]}]
+[
+	{
+		"commands_raw": "$if AstarothFirstTime == true{\n    -> firstTime\n}\n$else {\n    -> secondTime\n}",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			1340.0,
+			240.0
+		]
+	},
+	{
+		"commands_raw": "Astaroth: *mumbling*\n---\nDalian: Excuse me, are you a resident here?\n---\nAstaroth: Obviously. Unless you're here to evict me\n---\nDalian: I'm investigating the death of a resident Mr. Solomon here\n---\nAstaroth: Ah. The curious one. I warned him about reading things he didn't understand\n---\nsignal(set,AstarothFirstTime,false)\n-> questions\n",
+		"gnode_name": "firsttime",
+		"id": 1.0,
+		"name": "firstTime",
+		"position": [
+			1480.0,
+			160.0
+		]
+	},
+	{
+		"commands_raw": "Dalian: I have some question to ask you\n---\n\n-> questions",
+		"gnode_name": "secondtime",
+		"id": 2.0,
+		"name": "secondTime",
+		"position": [
+			1480.0,
+			300.0
+		]
+	},
+	{
+		"commands_raw": "Dalian: Where were you around the time 19-20\n---\n Astaroth: Here. With my books. Same as every night\n---\n-> questions",
+		"gnode_name": "where",
+		"id": 3.0,
+		"name": "where",
+		"position": [
+			1820.0,
+			80.0
+		]
+	},
+	{
+		"commands_raw": "?> Where were you during the time 19-20 last night? -> where\n?> Did you know the victim personally? -> know\n?> Did you hear or see anything unusual that night? -> hear",
+		"gnode_name": "questions",
+		"id": 4.0,
+		"name": "questions",
+		"position": [
+			1620.0,
+			220.0
+		]
+	},
+	{
+		"commands_raw": "Dalian: Did you know the victim personally\n---\n Astaroth: He borrowed a book once. Didn't return it. That about sums up our relationship\n---\n\n-> questions",
+		"gnode_name": "know",
+		"id": 5.0,
+		"name": "know",
+		"position": [
+			1800.0,
+			220.0
+		]
+	},
+	{
+		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: ",
+		"gnode_name": "hear",
+		"id": 6.0,
+		"name": "Hear",
+		"position": [
+			1800.0,
+			300.0
+		]
+	}
+]
