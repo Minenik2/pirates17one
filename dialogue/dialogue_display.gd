@@ -22,7 +22,8 @@ extends CanvasLayer
 	"clueBlood": false,
 	"clueRigor": false,
 	# occult
-	
+	# nabella
+	"nabellaHearFootsteps": false,
 	# marchosias
 	"lostGun": false,
 	# grimory

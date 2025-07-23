@@ -118,7 +118,7 @@ Location: Apartment, Lower floor
 Date: July 20th
 Filed by: Dalian
 
-Grimory. She is a seamstress proficient in sewing. Hired by Belethera to make the perfect dress for her majesty."
+Grimory. She is a seamstress proficient in sewing. Hired by Belethara to make the perfect dress for her majesty."
 	
 
 func _on_astaroth_pressed() -> void:
