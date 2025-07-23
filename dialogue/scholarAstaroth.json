@@ -1,11 +1,7 @@
 [
 	{
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 		"commands_raw": "$if AstarothFirstTime {\n    -> firstTime\n}\n$else {\n    -> secondTime\n}",
-=======
-		"commands_raw": "$if AstarothFirstTime == true{\n    -> firstTime\n}\n$else {\n    -> secondTime\n}",
->>>>>>> Stashed changes
 =======
 		"commands_raw": "$if AstarothFirstTime == true{\n    -> firstTime\n}\n$else {\n    -> secondTime\n}",
 >>>>>>> Stashed changes
@@ -19,11 +15,7 @@
 	},
 	{
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 		"commands_raw": "Astaroth: *mumbling*\n---\nDalian: Excuse me, are you a resident here?\n---\nAstaroth: Obviously. Unless you're here to evict me\n---\nDalian: I'm investigating the death of a resident Mr. Solomon here\n---\nAstaroth: Ah. The curious one. I warned him about reading things he didn't understand\n---\nset_state: AstarothFirstTime\n  value: false\n-> questions\n",
-=======
-		"commands_raw": "signal(set,AstarothFirstTime,false)  \nAstaroth: *mumbling*\n---\nDalian: Excuse me, are you a resident here?\n---\nAstaroth: Obviously. Unless you're here to evict me\n---\nDalian: I'm investigating the death of a resident Mr. Solomon here\n---\nAstaroth: Ah. The curious one. I warned him about reading things he didn't understand\n---\n\n-> questions\n",
->>>>>>> Stashed changes
 =======
 		"commands_raw": "signal(set,AstarothFirstTime,false)  \nAstaroth: *mumbling*\n---\nDalian: Excuse me, are you a resident here?\n---\nAstaroth: Obviously. Unless you're here to evict me\n---\nDalian: I'm investigating the death of a resident Mr. Solomon here\n---\nAstaroth: Ah. The curious one. I warned him about reading things he didn't understand\n---\n\n-> questions\n",
 >>>>>>> Stashed changes
@@ -37,11 +29,7 @@
 	},
 	{
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 		"commands_raw": "hiasodfhiasfhas\n---\n\n-> questions",
-=======
-		"commands_raw": "Dalian: Could I ask you some questions again\n---\n-> questions",
->>>>>>> Stashed changes
 =======
 		"commands_raw": "Dalian: Could I ask you some questions again\n---\n-> questions",
 >>>>>>> Stashed changes
@@ -85,11 +73,7 @@
 	},
 	{
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: ",
-=======
-		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: \n---",
->>>>>>> Stashed changes
 =======
 		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: \n---",
 >>>>>>> Stashed changes
