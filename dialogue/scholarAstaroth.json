@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"commands_raw": "Astaroth: I went to the upper floor into my room.\n---\nAstaroth: And was here. With my books. Same as every night.\nsignal(set,upperWent,true)\n-> questions",
+		"commands_raw": "Astaroth: I went upstairs to my room\n---\nAstaroth: And stayed there. With my books. Same as every night.\nsignal(set,upperWent,true)\n-> questions",
 		"gnode_name": "where",
 		"id": 3.0,
 		"name": "where",
