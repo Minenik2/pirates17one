@@ -16,6 +16,7 @@ size = Vector2(13, 22.6667)
 size = Vector2(16, 15.1667)
 
 [node name="room" type="Node2D"]
+y_sort_enabled = true
 scale = Vector2(3, 3)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

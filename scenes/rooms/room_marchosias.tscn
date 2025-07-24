@@ -55,11 +55,6 @@ texture = ExtResource("6_xy818")
 position = Vector2(-0.5, 10)
 shape = SubResource("RectangleShape2D_x4qsu")
 
-[node name="StaticBody2D" parent="Marchosias" instance=ExtResource("7_xy818")]
-position = Vector2(63.6666, -40)
-script = ExtResource("4_gropv")
-dialogue_resource = ExtResource("8_x4qsu")
-
 [node name="knife" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(227, 156.333)
 scale = Vector2(0.7, 0.7)
@@ -74,3 +69,9 @@ texture = ExtResource("10_q5sgw")
 position = Vector2(-3.05176e-05, 4.00002)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_f0v3i")
+
+[node name="StaticBody2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_xy818")]
+position = Vector2(197, 111.333)
+script = ExtResource("4_gropv")
+dialogue_resource = ExtResource("8_x4qsu")
+player = NodePath("../player")
