@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dlq687qntqrcr"]
+[gd_scene load_steps=11 format=4 uid="uid://dlq687qntqrcr"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_4apu0"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="2_e1yr1"]
@@ -6,9 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://c2hawjls5h0oc" path="res://art/body.png" id="4_e1yr1"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="5_pchlr"]
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="6_e1yr1"]
+[ext_resource type="JSON" path="res://dialogue/window.json" id="7_1bw60"]
+[ext_resource type="Texture2D" uid="uid://dsjn40uvti03m" path="res://art/Window.png" id="8_pchlr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jddsv"]
 size = Vector2(13, 22.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6xbd"]
+size = Vector2(16, 15.1667)
 
 [node name="room" type="Node2D"]
 scale = Vector2(3, 3)
@@ -45,3 +50,16 @@ editor_draw_limits = true
 position = Vector2(167.333, 242)
 target_scene = "uid://bxys6vqn5ihmp"
 code = "victim"
+
+[node name="knife" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(168.333, 89)
+script = ExtResource("2_e1yr1")
+dialogue_resource = ExtResource("7_1bw60")
+player = NodePath("../player")
+
+[node name="Sprite2D" type="Sprite2D" parent="knife"]
+texture = ExtResource("8_pchlr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="knife"]
+position = Vector2(-0.333328, 15.3333)
+shape = SubResource("RectangleShape2D_p6xbd")

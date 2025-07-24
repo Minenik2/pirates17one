@@ -5,10 +5,10 @@ var triggered_flags := {} # triggered events saving across scenes
 
 # to add clue interaction with dialogue state do for example DialogueDisplay.state["clueBloodType"]
 var clueScene = [
-	{"title": "Locked Window", "description": "The window was locked in the victims room.", "discovered": true, "tag": ""},
+	{"title": "Locked Window", "description": "The window was locked in the victims room.", "discovered": false, "tag": "clueWindowOpen"},
 	{"title": "Master Key", "description": "The key that Belethara gave you - can open any door - but she specifically told you to use it on the victims room.", "discovered": false, "tag": "keyToBody"},
-	{"title": "Bloody Knife", "description": "A knife was found in Grimorys room with the blood type B-", "discovered": true, "tag": ""},
-	{"title": "Metallic Bullets", "description": "Marchosias has metallic bullets inside of his room.", "discovered": true, "tag": ""}
+	{"title": "Bloody Knife", "description": "A knife was found in Grimorys room with the blood type B-", "discovered": false, "tag": "clueBloodKnife"},
+	{"title": "Metallic Bullets", "description": "Marchosias has metallic bullets inside of his room.", "discovered": false, "tag": "clueMetallicBullets"}
 ]
 var clueBody = [
 	{"title": "Blood Type", "description": "Victims blood type is B-.", "discovered": false, "tag": "clueBlood"},
@@ -37,8 +37,8 @@ var clueNabella = [
 var clueMarchosias = [
 	{"title": "Cleaning Duties", "description": "Marchosias states that Nabella starts cleaning at 7:30, not finishes cleaning at 7:30, and she always start cleaning upper floor first.", "discovered": false, "tag": "dayWithoutFootSteps"},
 	{"title": "Hearing Footsteps", "description": "Marchosias states that he hears footsteps outside of his room every day. Except for yesterday.", "discovered": false, "tag": "dayWithoutFootSteps"},
-	{"title": "Good Night Sleep", "description": "Marchosias states that he slept very good yesterday.", "discovered": true, "tag": ""},
-	{"title": "No Screaming", "description": "Marchosias states that he has never noticed himself screaming.", "discovered": true, "tag": ""},
+	{"title": "Good Night Sleep", "description": "Marchosias states that he slept very good yesterday.", "discovered": false, "tag": "goodSleep"},
+	{"title": "No Screaming", "description": "Marchosias states that he has never noticed himself screaming.", "discovered": false, "tag": "goodSleep"},
 	{"title": "All Day Up", "description": "Marchosias states that he was on the upper floor yesterday.", "discovered": false, "tag": "upperFloor"},
 	{"title": "Lost Gun", "description": "Marchosias states that he lost his gun.", "discovered": false, "tag": "lostGun"}
 ]

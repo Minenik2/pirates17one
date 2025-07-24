@@ -17,7 +17,9 @@ extends CanvasLayer
 	
 	#clues
 	# Crime scene
-	"clueWindowOpen": true,
+	"clueWindowOpen": false,
+	"clueMetallicBullets": false,
+	"clueBloodKnife": false,
 	# body
 	"clueBlood": false,
 	"clueRigor": false,
@@ -32,6 +34,7 @@ extends CanvasLayer
 	# marchosias
 	"lostGun": false,
 	"upperFloor": false,
+	"goodSleep": false,
 	# grimory
 	"clueGun": false
 }
@@ -63,6 +66,8 @@ func _on_ez_dialogue_custom_signal_received(value: Variant) -> void:
 		var variable_value = params[2]
 		state[variable_name] = variable_value
 		Database.updateClue(variable_name)
+	elif params[0] == "tp":
+		get_tree().change_scene_to_file("res://scenes/act2/act2.tscn")
 
 
 func _on_ez_dialogue_end_of_dialogue_reached() -> void:

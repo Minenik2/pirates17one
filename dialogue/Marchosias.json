@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"commands_raw": "$if NabellaSaidMarchoCanConfirm {\n    ?> Nabella says she cleaned your room -> ask about nabella 730\n}\n$if clueGun {\n    ?> Do you have a gun? -> gun\n}\n?> Where were you yesterday? -> where were you?\n?> Could you tell me about yourself? -> war\n?> Leave -> leave",
+		"commands_raw": "$if NabellaSaidMarchoCanConfirm {\n    ?> Nabella says she cleaned your room -> ask about nabella 730\n}\n$if clueGun {\n    ?> Do you have a gun? -> gun\n}\n$if hearsMarchosiasScreams {\n    ?> Do you scream every night? -> scream\n}\n?> Where were you yesterday? -> where were you?\n?> Could you tell me about yourself? -> war\n?> Leave -> leave",
 		"gnode_name": "choices",
 		"id": 3.0,
 		"name": "choices",
@@ -97,6 +97,16 @@
 		"position": [
 			520.0,
 			120.0
+		]
+	},
+	{
+		"commands_raw": "Dalian: Astaroth states you scream every night. But you did not do it yesterday.\n---\nMarchosias: I have no idea what he is talking about.\n---\nMarchosias: I've never noticed myself screaming.\n---\nMarchosias: I also feel like I had a very good night sleep yesterday.\nsignal(set,goodSleep,true)\n-> choices",
+		"gnode_name": "scream",
+		"id": 10.0,
+		"name": "scream",
+		"position": [
+			360.0,
+			60.0
 		]
 	}
 ]

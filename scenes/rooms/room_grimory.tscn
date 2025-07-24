@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cre5i3k3oltg0"]
+[gd_scene load_steps=10 format=4 uid="uid://cre5i3k3oltg0"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_p1kq4"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_doaqg"]
@@ -6,6 +6,11 @@
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="4_puykb"]
 [ext_resource type="JSON" path="res://dialogue/1St meet lady Gremory.json" id="5_hpds7"]
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="6_puykb"]
+[ext_resource type="JSON" path="res://dialogue/bloodknife.json" id="7_5mml6"]
+[ext_resource type="Texture2D" uid="uid://bbpjc21diny6p" path="res://art/knife.png" id="7_hpds7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puykb"]
+size = Vector2(16, 15.1667)
 
 [node name="room" type="Node2D"]
 y_sort_enabled = true
@@ -37,3 +42,17 @@ dialogue_resource = ExtResource("5_hpds7")
 position = Vector2(167.667, 240)
 target_scene = "uid://bxys6vqn5ihmp"
 code = "grimory"
+
+[node name="knife" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(109, 168)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("4_puykb")
+dialogue_resource = ExtResource("7_5mml6")
+player = NodePath("../player")
+
+[node name="Sprite2D" type="Sprite2D" parent="knife"]
+texture = ExtResource("7_hpds7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="knife"]
+position = Vector2(-1.52588e-05, 0.416672)
+shape = SubResource("RectangleShape2D_puykb")

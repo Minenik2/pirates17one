@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://c2y24vhmvdgmt"]
+[gd_scene load_steps=13 format=4 uid="uid://c2y24vhmvdgmt"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_q4x5x"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_qpu62"]
@@ -8,9 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://c3p24g4yc6sb6" path="res://art/marchosisas.png" id="6_xy818"]
 [ext_resource type="PackedScene" uid="uid://ca7apex6snhgp" path="res://furniture/tablesmall.tscn" id="7_xy818"]
 [ext_resource type="JSON" path="res://dialogue/chair.json" id="8_x4qsu"]
+[ext_resource type="JSON" path="res://dialogue/bullets.json" id="9_q5sgw"]
+[ext_resource type="Texture2D" uid="uid://df6kshsd8fa5y" path="res://art/bullets.png" id="10_q5sgw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4qsu"]
 size = Vector2(11, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0v3i"]
+size = Vector2(16, 7.99999)
 
 [node name="room" type="Node2D"]
 y_sort_enabled = true
@@ -54,3 +59,18 @@ shape = SubResource("RectangleShape2D_x4qsu")
 position = Vector2(63.6666, -40)
 script = ExtResource("4_gropv")
 dialogue_resource = ExtResource("8_x4qsu")
+
+[node name="knife" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(227, 156.333)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("4_gropv")
+dialogue_resource = ExtResource("9_q5sgw")
+player = NodePath("../player")
+
+[node name="Sprite2D" type="Sprite2D" parent="knife"]
+texture = ExtResource("10_q5sgw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="knife"]
+position = Vector2(-3.05176e-05, 4.00002)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_f0v3i")

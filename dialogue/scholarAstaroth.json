@@ -60,7 +60,7 @@
 		]
 	},
 	{
-		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: Unusual? For once, the building was quiet. Marchosias didn't have his nightly ravings like he usally does. \nsignal(set,hearsMarchosiasScreams,true)\n---\nAstaroth: First time in weeks I actually got some sleep\n-> questions",
+		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: Unusual? For once, the building was quiet. Marchosias didn't have his nightly ravings like he usally does. \nsignal(set,hearsMarchosiasScreams,true) \n---\nAstaroth: First time in weeks I actually got some sleep\n-> questions",
 		"gnode_name": "hear",
 		"id": 6.0,
 		"name": "Hear",
