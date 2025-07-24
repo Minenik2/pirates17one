@@ -15,6 +15,10 @@ extends CanvasLayer
 	"GrimoryFirstTime": false,
 	"NabellaFirstTime": false,
 	
+	# act2
+	"leftAct2": "0",
+	"rightAct2": "0",
+	
 	#clues
 	# Crime scene
 	"clueWindowOpen": false,

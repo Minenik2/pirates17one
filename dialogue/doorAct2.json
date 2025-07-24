@@ -1,0 +1,12 @@
+[
+	{
+		"commands_raw": "I propose a thesis.\n---\nTruth is subjective.\n---\nEverything you see is just a by product of your interpretation.\n---\nThere is no view without a viewer.\n---\nNo answer without a question.\n---\nNo murder... without someone to say it happened.\n---\nChoose a path, either left or right... and reveal the truth.\n---",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			0.0,
+			0.0
+		]
+	}
+]
