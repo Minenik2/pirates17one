@@ -22,6 +22,11 @@ extends CanvasLayer
 	"clueBlood": false,
 	"clueRigor": false,
 	# occult
+	# astaroth
+	"hearsMarchosiasScreams": false,
+	"upperWent": false,
+	"victimBorrowed": false,
+	"bookConfirm": false,
 	# nabella
 	"nabellaHearFootsteps": false,
 	# marchosias

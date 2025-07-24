@@ -30,7 +30,7 @@
 		]
 	},
 	{
-		"commands_raw": "Astaroth: Here. With my books. Same as every night.\n-> questions",
+		"commands_raw": "Astaroth: I went to the upper floor into my room.\n---\nAstaroth: And was here. With my books. Same as every night.\nsignal(set,upperWent,true)\n-> questions",
 		"gnode_name": "where",
 		"id": 3.0,
 		"name": "where",
@@ -50,7 +50,7 @@
 		]
 	},
 	{
-		"commands_raw": "Astaroth: He borrowed a book once. Didn't return it. That about sums up our relationship.\n\n-> questions",
+		"commands_raw": "Astaroth: He borrowed a book once. Didn't return it. That about sums up our relationship.\nsignal(set,victimBorrowed,true)\n-> questions",
 		"gnode_name": "know",
 		"id": 5.0,
 		"name": "know",
@@ -60,7 +60,7 @@
 		]
 	},
 	{
-		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: Unusual? For once, the building was quiet. Marchosias didn't have his nightly ravings like he usally does. \n---\nAstaroth: First time in weeks I actually got some sleep\n-> questions",
+		"commands_raw": "Dalian: Did you hear or see anything unusual that night?\n---\nAstaroth: Unusual? For once, the building was quiet. Marchosias didn't have his nightly ravings like he usally does. \nsignal(set,hearsMarchosiasScreams,true)\n---\nAstaroth: First time in weeks I actually got some sleep\n-> questions",
 		"gnode_name": "hear",
 		"id": 6.0,
 		"name": "Hear",
@@ -70,7 +70,7 @@
 		]
 	},
 	{
-		"commands_raw": "Dalian: Grimory said you visited her.\n---\nAstaroth: It was early in the morning, I don't have many books on sewing therefore I wanted to borrow one of her books to know more about the topic.\n---\nDalian: Why are you so interested in sewing?\n---\nAstaroth: I am a scholar, I love knowledge, I'm something of a philomath myself.\n---\nAstaroth: Also some of the knowledge is overlapping with doctors knowledge about sewing wounds. \n---\nAstaroth: You might be suprised how much you can learn by interdisciplinarity.\n-> questions\n",
+		"commands_raw": "Dalian: Grimory said you visited her.\n---\nAstaroth: It was early in the morning, I don't have many books on sewing therefore I wanted to borrow one of her books to know more about the topic.\n---\nDalian: Why are you so interested in sewing?\n---\nAstaroth: I am a scholar, I love knowledge, I'm something of a philomath myself.\n---\nAstaroth: Also some of the knowledge is overlapping with doctors knowledge about sewing wounds. \n---\nAstaroth: You might be suprised how much you can learn by interdisciplinarity.\nsignal(set,bookConfirm,true)\n-> questions\n",
 		"gnode_name": "lying",
 		"id": 7.0,
 		"name": "Lying",

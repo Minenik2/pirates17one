@@ -43,10 +43,11 @@ var clueMarchosias = [
 	{"title": "Lost Gun", "description": "Marchosias states that he lost his gun.", "discovered": false, "tag": "lostGun"}
 ]
 var clueAstaroth = [
-	{"title": "Upper Floor", "description": "Astaroth claims he went to the upper floor yesterday.", "discovered": true, "tag": ""},
-	{"title": "Insomnia", "description": "Astaroth claims that he never gets to sleep because Marchosias always screams at night.", "discovered": true, "tag": ""},
-	{"title": "Yesterday Was Quiet.", "description": "Astaroth claims that yesterday he had a good night sleep because Marchosias did not scream.", "discovered": true, "tag": ""},
-	{"title": "Visited The Seamstress", "description": "Astaroth claims that he borrowed books from Grimory yesterday.", "discovered": true, "tag": ""}
+	{"title": "Upper Floor", "description": "Astaroth claims he went to the upper floor yesterday.", "discovered": false, "tag": "upperWent"},
+	{"title": "Insomnia", "description": "Astaroth claims that he never gets to sleep because Marchosias always screams at night.\n\nI should confront Marchosias about this", "discovered": false, "tag": "hearsMarchosiasScreams"},
+	{"title": "Yesterday Was Quiet.", "description": "Astaroth claims that yesterday he had a good night sleep because Marchosias did not scream.", "discovered": false, "tag": "hearsMarchosiasScreams"},
+	{"title": "Visited The Seamstress", "description": "Astaroth confirms the claim that he borrowed books from Grimory yesterday.", "discovered": false, "tag": "bookConfirm"},
+	{"title": "Victim Borrowed his book.", "description": "Astaroth claims that the victim went to borrow a book from him, but did not return it.", "discovered": false, "tag": "victimBorrowed"}
 ]
 var clueGrimory = [
 	{"title": "Gun Fire", "description": "Grimory states that she heard a loud gun fire around 8 PM Yesterday", "discovered": false, "tag": "clueGun"},
