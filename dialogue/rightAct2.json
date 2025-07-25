@@ -1,1 +1,22 @@
-[{"commands_raw":"","gnode_name":"start","id":0,"name":"start","position":[0.0,0.0]}]
+[
+	{
+		"commands_raw": "$if rightAct2 == \"0\" {\nAstaroth killed the victim.\nsignal(set,rightAct2,1)\n---\n-> end\n} \n$if rightAct2 == \"1\" {\nHe tried to frame Marchosias by spreading lies.\nsignal(set,rightAct2,2)\n---\n-> end\n}\n$if rightAct2 == \"2\" {\nHe even hid Marchosias gun.\nsignal(set,rightAct2,3)\n---\n-> end\n}\n$if rightAct2 == \"3\" {\nAfter killing the victim with the knife. He made sure to hide it in Grimorys room.\nsignal(set,rightAct2,4)\n---\n-> end\n}\n$if rightAct2 == \"4\" {\nThe loud gunfire Grimory heard was Astaroth making it sound like Marchosias is doing something.\nsignal(set,rightAct2,5)\n---\n-> end\n}",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			0.0,
+			0.0
+		]
+	},
+	{
+		"commands_raw": "",
+		"gnode_name": "end",
+		"id": 1.0,
+		"name": "end",
+		"position": [
+			1700.0,
+			160.0
+		]
+	}
+]

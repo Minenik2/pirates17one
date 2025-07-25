@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dd6fh8108eo3g"]
+[gd_scene load_steps=10 format=4 uid="uid://dd6fh8108eo3g"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_ww30k"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_1c1wq"]
@@ -6,6 +6,7 @@
 [ext_resource type="JSON" path="res://dialogue/doorAct2.json" id="4_8efsp"]
 [ext_resource type="PackedScene" uid="uid://bkj8kjy44kn6b" path="res://dialogue/standingEvent.tscn" id="5_567uk"]
 [ext_resource type="JSON" path="res://dialogue/leftAct2.json" id="6_567uk"]
+[ext_resource type="JSON" path="res://dialogue/rightAct2.json" id="7_ylmxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_567uk"]
 
@@ -103,11 +104,51 @@ shape = SubResource("RectangleShape2D_1y6r5")
 
 [node name="standingEvent7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_567uk")]
 position = Vector2(451.667, 154.333)
-dialogue_resource = ExtResource("6_567uk")
+dialogue_resource = ExtResource("7_ylmxu")
 trigger_id = "right1"
 player = NodePath("../player")
 
 [node name="CollisionShape2D" parent="standingEvent7" index="0"]
+position = Vector2(45, -8.66666)
+shape = SubResource("RectangleShape2D_1y6r5")
+
+[node name="standingEvent8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_567uk")]
+position = Vector2(506, 153.667)
+dialogue_resource = ExtResource("7_ylmxu")
+trigger_id = "right2"
+player = NodePath("../player")
+
+[node name="CollisionShape2D" parent="standingEvent8" index="0"]
+position = Vector2(45, -8.66666)
+shape = SubResource("RectangleShape2D_1y6r5")
+
+[node name="standingEvent9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_567uk")]
+position = Vector2(561.667, 153.667)
+dialogue_resource = ExtResource("7_ylmxu")
+trigger_id = "right3"
+player = NodePath("../player")
+
+[node name="CollisionShape2D" parent="standingEvent9" index="0"]
+position = Vector2(45, -8.66666)
+shape = SubResource("RectangleShape2D_1y6r5")
+
+[node name="standingEvent10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_567uk")]
+position = Vector2(627.667, 153.667)
+dialogue_resource = ExtResource("7_ylmxu")
+trigger_id = "right4"
+player = NodePath("../player")
+
+[node name="CollisionShape2D" parent="standingEvent10" index="0"]
+position = Vector2(45, -8.66666)
+shape = SubResource("RectangleShape2D_1y6r5")
+
+[node name="standingEvent11" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_567uk")]
+position = Vector2(711.667, 153)
+dialogue_resource = ExtResource("7_ylmxu")
+trigger_id = "right5"
+player = NodePath("../player")
+
+[node name="CollisionShape2D" parent="standingEvent11" index="0"]
 position = Vector2(45, -8.66666)
 shape = SubResource("RectangleShape2D_1y6r5")
 
@@ -118,3 +159,7 @@ shape = SubResource("RectangleShape2D_1y6r5")
 [editable path="standingEvent5"]
 [editable path="standingEvent6"]
 [editable path="standingEvent7"]
+[editable path="standingEvent8"]
+[editable path="standingEvent9"]
+[editable path="standingEvent10"]
+[editable path="standingEvent11"]
