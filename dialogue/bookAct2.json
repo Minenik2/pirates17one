@@ -1,1 +1,22 @@
-[{"commands_raw":"You hold the book in your hands.\n---\nYou can see the mark of a pentagram\n---\nShape of a goat you hear its crying...\n---\nDalian: This book will lead me to the killer...\n---\nThere is no killer anymore Dalian.\n---\nDalian: No you're wrong.\n---\nDalian: I am the only one, who can see the truth.\n---\nDalian: And there's only one truth.\n---\nsignal(tp,act3)\n-> end","gnode_name":"start","id":0,"name":"start","position":[1520.0,280.0]},{"commands_raw":"","gnode_name":"end","id":1,"name":"end","position":[1680.0,280.0]}]
+[
+	{
+		"commands_raw": "You hold the book in your hands.\n---\nYou can see the mark of a pentagram.\n---\nShape of a goat you hear its crying...\n---\nDalian: This book will lead me to the killer...\n---\nThere is no killer anymore Dalian.\n---\nDalian: No you're wrong.\n---\nDalian: I am the only one, who can see the truth.\n---\nDalian: And there's only one truth.\n---\nsignal(tp,act3)\n-> end",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			1520.0,
+			280.0
+		]
+	},
+	{
+		"commands_raw": "",
+		"gnode_name": "end",
+		"id": 1.0,
+		"name": "end",
+		"position": [
+			1680.0,
+			280.0
+		]
+	}
+]
