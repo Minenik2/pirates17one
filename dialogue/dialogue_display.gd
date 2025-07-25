@@ -71,6 +71,7 @@ func _on_ez_dialogue_custom_signal_received(value: Variant) -> void:
 		state[variable_name] = variable_value
 		Database.updateClue(variable_name)
 	elif params[0] == "tp":
+		await get_tree().create_timer(0.1).timeout
 		if params[1] == "act3":
 			get_tree().change_scene_to_file("res://scenes/bad_end_all.tscn")
 		else:

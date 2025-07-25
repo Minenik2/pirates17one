@@ -28,11 +28,10 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
 
-[node name="book" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+[node name="book" type="StaticBody2D" parent="."]
 position = Vector2(447, 59)
 script = ExtResource("3_73naw")
 dialogue_resource = ExtResource("4_cyt7j")
-player = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="book"]
 texture = ExtResource("5_3wtwj")
