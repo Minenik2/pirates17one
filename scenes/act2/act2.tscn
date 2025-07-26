@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dd6fh8108eo3g"]
+[gd_scene load_steps=12 format=4 uid="uid://dd6fh8108eo3g"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_ww30k"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_1c1wq"]
@@ -7,11 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://bkj8kjy44kn6b" path="res://dialogue/standingEvent.tscn" id="5_567uk"]
 [ext_resource type="JSON" path="res://dialogue/leftAct2.json" id="6_567uk"]
 [ext_resource type="JSON" path="res://dialogue/rightAct2.json" id="7_ylmxu"]
+[ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="8_1y6r5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_567uk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y6r5"]
 size = Vector2(10, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogajx"]
+size = Vector2(20.695, 40)
 
 [node name="Act2" type="Node2D"]
 scale = Vector2(3, 3)
@@ -152,6 +156,13 @@ player = NodePath("../player")
 position = Vector2(45, -8.66666)
 shape = SubResource("RectangleShape2D_1y6r5")
 
+[node name="teleporter" parent="." instance=ExtResource("8_1y6r5")]
+position = Vector2(-0.666667, 142)
+target_scene = "uid://ctyl1ehwcevcc"
+
+[node name="CollisionShape2D" parent="teleporter" index="0"]
+shape = SubResource("RectangleShape2D_ogajx")
+
 [editable path="standingEvent"]
 [editable path="standingEvent2"]
 [editable path="standingEvent3"]
@@ -163,3 +174,4 @@ shape = SubResource("RectangleShape2D_1y6r5")
 [editable path="standingEvent9"]
 [editable path="standingEvent10"]
 [editable path="standingEvent11"]
+[editable path="teleporter"]
