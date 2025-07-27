@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c2y24vhmvdgmt"]
+[gd_scene load_steps=11 format=4 uid="uid://c2y24vhmvdgmt"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_q4x5x"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_qpu62"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="4_gropv"]
 [ext_resource type="JSON" path="res://dialogue/Marchosias.json" id="5_vnrjk"]
 [ext_resource type="Texture2D" uid="uid://c3p24g4yc6sb6" path="res://art/marchosisas.png" id="6_xy818"]
-[ext_resource type="PackedScene" uid="uid://ca7apex6snhgp" path="res://furniture/tablesmall.tscn" id="7_xy818"]
-[ext_resource type="JSON" path="res://dialogue/chair.json" id="8_x4qsu"]
 [ext_resource type="JSON" path="res://dialogue/bullets.json" id="9_q5sgw"]
 [ext_resource type="Texture2D" uid="uid://df6kshsd8fa5y" path="res://art/bullets.png" id="10_q5sgw"]
 
@@ -68,9 +66,3 @@ texture = ExtResource("10_q5sgw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knife"]
 position = Vector2(-3.05176e-05, 4.00002)
 shape = SubResource("RectangleShape2D_f0v3i")
-
-[node name="StaticBody2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_xy818")]
-position = Vector2(197, 111.333)
-script = ExtResource("4_gropv")
-dialogue_resource = ExtResource("8_x4qsu")
-player = NodePath("../player")
