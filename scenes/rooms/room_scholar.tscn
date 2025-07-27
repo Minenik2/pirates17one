@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bbl7icxkbny3l"]
+[gd_scene load_steps=12 format=4 uid="uid://bbl7icxkbny3l"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_bmmjn"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_ibqer"]
@@ -6,9 +6,17 @@
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="4_8enl5"]
 [ext_resource type="JSON" path="res://dialogue/scholarAstaroth.json" id="5_grlp7"]
 [ext_resource type="Texture2D" uid="uid://bi8if0baxa6we" path="res://art/scholar.png" id="6_3jho5"]
+[ext_resource type="Texture2D" uid="uid://lifc8nxq75su" path="res://art/Bed.png" id="7_3jho5"]
+[ext_resource type="Texture2D" uid="uid://ce0orjrmlonxk" path="res://art/Sink.png" id="8_20we3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20we3"]
 size = Vector2(9, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyi42"]
+size = Vector2(30.3333, 17.6666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihf3i"]
+size = Vector2(15.5, 16.3333)
 
 [node name="room" type="Node2D"]
 y_sort_enabled = true
@@ -42,7 +50,28 @@ dialogue_resource = ExtResource("5_grlp7")
 
 [node name="Sprite2D" type="Sprite2D" parent="scholar"]
 texture = ExtResource("6_3jho5")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scholar"]
 position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_20we3")
+
+[node name="Bed" type="StaticBody2D" parent="."]
+position = Vector2(110.333, 144.667)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bed"]
+texture = ExtResource("7_3jho5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
+position = Vector2(0.333336, 9.5)
+shape = SubResource("RectangleShape2D_jyi42")
+
+[node name="Sink" type="StaticBody2D" parent="."]
+position = Vector2(199.333, 109.333)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sink"]
+texture = ExtResource("8_20we3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sink"]
+position = Vector2(0.666672, 7.16667)
+shape = SubResource("RectangleShape2D_ihf3i")
