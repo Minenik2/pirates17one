@@ -2,6 +2,8 @@ extends StaticBody2D
 
 @export var dialogue_resource: JSON
 @export var player: CharacterBody2D
+@export var destroy: bool = false
+@export var trigger_event: bool = false
 
 @export_group("Teleporter Settings")
 @export var teleporter: bool = false
@@ -18,6 +20,19 @@ func _ready():
 		player = get_node("../player")
 
 func on_interact():
+	if Database.hasKnife:
+		SfXplayer.playStairs()
+		$Sprite2D.texture = load("res://art/body.png")
+		Database.killedAmount += 1
+		if Database.killedAmount > 4:
+			DialogueDisplay.show()
+			DialogueDisplay.start_dialogue(load("res://dialogue/endingSequence.json"))
+			player.is_interacting = true
+		return
+	
+	if trigger_event:
+		Database.hasKnife = true
+	
 	if teleporter and DialogueDisplay.state[check]:
 		SfXplayer.playStairs()
 		Database.teleportCode = code
@@ -28,3 +43,6 @@ func on_interact():
 		DialogueDisplay.show()
 		DialogueDisplay.start_dialogue(dialogue_resource)
 		player.is_interacting = true
+	
+	if destroy:
+		queue_free()

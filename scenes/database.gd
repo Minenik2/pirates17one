@@ -2,6 +2,8 @@ extends Node
 
 var teleportCode = ""
 var triggered_flags := {} # triggered events saving across scenes
+var hasKnife = false
+var killedAmount = 0
 
 # to add clue interaction with dialogue state do for example DialogueDisplay.state["clueBloodType"]
 var clueScene = [
@@ -75,3 +77,25 @@ func _set_clue_discovered(tag, clue_list):
 		if clue["tag"] == tag:
 			clue["discovered"] = true
 			print("added a new clue called: ", clue["title"])
+
+func reset():
+	teleportCode = ""
+	triggered_flags.clear()
+	hasKnife = false
+	killedAmount = 0
+
+	# Reset all clues' discovered state to false
+	var all_clue_lists = [
+		clueScene,
+		clueBody,
+		clueOccult,
+		clueBelethara,
+		clueNabella,
+		clueMarchosias,
+		clueAstaroth,
+		clueGrimory
+	]
+
+	for clue_list in all_clue_lists:
+		for clue in clue_list:
+			clue["discovered"] = false

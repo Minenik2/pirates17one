@@ -1,19 +1,22 @@
-[gd_scene load_steps=12 format=4 uid="uid://po7phdbdq3y5"]
+[gd_scene load_steps=15 format=4 uid="uid://po7phdbdq3y5"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_ofo3p"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_ymnuq"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="3_73naw"]
-[ext_resource type="JSON" path="res://dialogue/bookAct2.json" id="4_cyt7j"]
-[ext_resource type="Texture2D" uid="uid://d4d4b5jn1d8a0" path="res://art/book.png" id="5_3wtwj"]
+[ext_resource type="JSON" path="res://dialogue/killedhim.json" id="4_b3g24"]
 [ext_resource type="Texture2D" uid="uid://c3p24g4yc6sb6" path="res://art/marchosisas.png" id="5_73naw"]
 [ext_resource type="Texture2D" uid="uid://irk4phksecjr" path="res://art/beleth.png" id="6_cyt7j"]
 [ext_resource type="Texture2D" uid="uid://bbpjc21diny6p" path="res://art/knife.png" id="6_ymnuq"]
+[ext_resource type="Texture2D" uid="uid://bi8if0baxa6we" path="res://art/scholar.png" id="7_3wtwj"]
+[ext_resource type="Texture2D" uid="uid://bu6sue1xf141w" path="res://art/nabella.png" id="8_h0lbg"]
+[ext_resource type="JSON" path="res://dialogue/knife.json" id="9_b3g24"]
+[ext_resource type="Texture2D" uid="uid://cc8apf4432ij1" path="res://art/grimory.png" id="9_h0lbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73naw"]
 size = Vector2(14.25, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0lbg"]
-size = Vector2(13, 6.5)
+size = Vector2(10.75, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ymnuq"]
 size = Vector2(15.25, 14.25)
@@ -38,10 +41,11 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
 
-[node name="book" type="StaticBody2D" parent="."]
+[node name="book" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(446.75, 68.25)
 script = ExtResource("3_73naw")
-dialogue_resource = ExtResource("4_cyt7j")
+dialogue_resource = ExtResource("4_b3g24")
+player = NodePath("../player")
 
 [node name="Sprite2D" type="Sprite2D" parent="book"]
 texture = ExtResource("5_73naw")
@@ -52,51 +56,60 @@ shape = SubResource("RectangleShape2D_73naw")
 
 [node name="book2" type="StaticBody2D" parent="."]
 position = Vector2(392.75, 79.75)
+script = ExtResource("3_73naw")
 
 [node name="Sprite2D" type="Sprite2D" parent="book2"]
 texture = ExtResource("6_cyt7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="book2"]
-position = Vector2(0, 5.25)
+position = Vector2(0.5, 11)
 shape = SubResource("RectangleShape2D_h0lbg")
 
 [node name="book3" type="StaticBody2D" parent="."]
 position = Vector2(391.5, 122.5)
+script = ExtResource("3_73naw")
 
 [node name="Sprite2D" type="Sprite2D" parent="book3"]
-texture = ExtResource("5_3wtwj")
+texture = ExtResource("7_3wtwj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="book3"]
-position = Vector2(0, 5.25)
+position = Vector2(1.25, 12)
 shape = SubResource("RectangleShape2D_h0lbg")
 
 [node name="book4" type="StaticBody2D" parent="."]
 position = Vector2(499, 124.5)
+script = ExtResource("3_73naw")
 
 [node name="Sprite2D" type="Sprite2D" parent="book4"]
-texture = ExtResource("5_3wtwj")
+texture = ExtResource("8_h0lbg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="book4"]
-position = Vector2(0, 5.25)
+position = Vector2(1.25, 9.75)
 shape = SubResource("RectangleShape2D_h0lbg")
 
 [node name="book5" type="StaticBody2D" parent="."]
 position = Vector2(501, 73)
+script = ExtResource("3_73naw")
 
 [node name="Sprite2D" type="Sprite2D" parent="book5"]
-texture = ExtResource("5_3wtwj")
+texture = ExtResource("9_h0lbg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="book5"]
-position = Vector2(0, 5.25)
+position = Vector2(-0.25, 12)
 shape = SubResource("RectangleShape2D_h0lbg")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="knife" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(448, 92)
 scale = Vector2(0.8, 0.8)
+script = ExtResource("3_73naw")
+dialogue_resource = ExtResource("9_b3g24")
+player = NodePath("../player")
+destroy = true
+trigger_event = true
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="knife"]
 texture = ExtResource("6_ymnuq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="knife"]
 position = Vector2(-0.375, 0.125)
 shape = SubResource("RectangleShape2D_ymnuq")

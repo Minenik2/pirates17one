@@ -1,6 +1,5 @@
 extends CanvasLayer
-
-@onready var state = {
+const DEFAULT_STATE := {
 	"keyToBody": false,
 	"bodyInvestigated": false,
 	"thornPaperFound": false,
@@ -18,6 +17,8 @@ extends CanvasLayer
 	# act2
 	"leftAct2": "0",
 	"rightAct2": "0",
+	# easter egg
+	"solvedMurder": false,
 	
 	#clues
 	# Crime scene
@@ -42,6 +43,8 @@ extends CanvasLayer
 	# grimory
 	"clueGun": false
 }
+
+@onready var state = DEFAULT_STATE.duplicate()
 
 signal dialogue_ended
 
@@ -74,6 +77,10 @@ func _on_ez_dialogue_custom_signal_received(value: Variant) -> void:
 		await get_tree().create_timer(0.1).timeout
 		if params[1] == "act3":
 			get_tree().change_scene_to_file("res://scenes/bad_end_all.tscn")
+		elif params[1] == "mainMenu":
+			Database.reset()
+			reset_state()
+			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		else:
 			get_tree().change_scene_to_file("res://scenes/act2/act2.tscn")
 
@@ -81,3 +88,6 @@ func _on_ez_dialogue_custom_signal_received(value: Variant) -> void:
 func _on_ez_dialogue_end_of_dialogue_reached() -> void:
 	$DialogueBox.is_dialogue_done = true
 	dialogue_ended.emit()
+	
+func reset_state():
+	state = DEFAULT_STATE.duplicate()
