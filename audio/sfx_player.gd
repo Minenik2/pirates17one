@@ -31,3 +31,6 @@ func playStairs2():
 
 func stopIntro():
 	$musicIntro.stop()
+
+func playIntro():
+	$musicIntro.play()

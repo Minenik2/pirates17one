@@ -79,6 +79,7 @@ func _on_ez_dialogue_custom_signal_received(value: Variant) -> void:
 		if params[1] == "act3":
 			get_tree().change_scene_to_file("res://scenes/bad_end_all.tscn")
 		elif params[1] == "mainMenu":
+			SfXplayer.stop_music()
 			Database.reset()
 			reset_state()
 			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

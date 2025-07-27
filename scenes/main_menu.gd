@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var blur_mat := $blur.material as ShaderMaterial
 
 func _ready():
+	SfXplayer.playIntro()
 	blur_mat.set_shader_parameter("blur_amount", 6.0)
 	await get_tree().create_timer(0.2).timeout  # Optional delay
 	var tween = create_tween()
