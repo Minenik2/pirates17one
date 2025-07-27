@@ -1,1 +1,12 @@
-[{"commands_raw":"You pick up the knife.\n---","gnode_name":"start","id":0,"name":"start","position":[0.0,0.0]}]
+[
+	{
+		"commands_raw": "You pick up the knife.\n---",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			0.0,
+			0.0
+		]
+	}
+]

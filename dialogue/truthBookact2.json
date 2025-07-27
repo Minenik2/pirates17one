@@ -1,0 +1,22 @@
+[
+	{
+		"commands_raw": "You hold the book in your hands.\n---\nSomething feels off...\n---\nAs you open to read the book. You spot pages full of rituals for summonening the ancient one.\n---\nDalian: It seems that this book speaks of something ancient. Ancient language. Older than choice.\n---\nAs you flip the pages. You spot a name - a familiar one. A name that suffocates your breath after it's spoken.\n---\nCthulhu.\n---\nYou flip the pages landing on a ritual that has ink freshly pressed on a page marked with jagged lines and annotations.\n---\nThe writing seems oddly familiar.\n---\nIt's the same writing of Solomons name from the receipt\n---\nThis ritual. It binds minds and unifies. Not physically - no. Conceptually.\n---\nThoughts merging. Will dissolved. A single mind, rippling across many bodies.\n---\nDalian: That's what I was missing...\n---\nDalian: If somebody shot a gun in a three floor apartment why did only one person hear it?\n---\nAs you're reading you start to uncover the truth.\n---\nThis ritual transforms minds into one.\n---\nThey will begin to act like you, be like you. They are you. You will be one. The only one.\n---\nDalian: But why was Solomon interested in such knowledge?\n---\nAs you flip the page you notice notes written hastly on top.\n---\n\"One cannot steer their own fate, if there are others\"\n---\n\"One must become the only one. To be able to choose their own fate.\"\n---\n\"I Solomon must be the only one to know the truth - for I shall be the only one controlling my fate - Cthulhus call shall answer me, I will become one with thy ancient god\"\n---\nDalian: This is ancient knowledge has he been festering in the minds of others for countless of centuries? And using this book to reach immortality?\n---\nYou start to remember an old case of a person being murdered in an apartment complex. 4 out of 5 people confessed only one child was innocent.\n---\nYou remember their name. Solomon.\n---\nAs you continue reading something fills your mind.\n---\nsignal(cut)\nYou're the only one deciding the fate of this story.\n---\nOnly you know the ending.\n---\nYou're the only one.\n---\nsignal(tp,mainMenu)\n-> end",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			1620.0,
+			300.0
+		]
+	},
+	{
+		"commands_raw": "",
+		"gnode_name": "end",
+		"id": 1.0,
+		"name": "end",
+		"position": [
+			1760.0,
+			260.0
+		]
+	}
+]

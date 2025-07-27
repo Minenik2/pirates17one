@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dd6fh8108eo3g"]
+[gd_scene load_steps=13 format=4 uid="uid://dd6fh8108eo3g"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_ww30k"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_1c1wq"]
@@ -16,6 +16,9 @@ size = Vector2(10, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogajx"]
 size = Vector2(20.695, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1hic"]
+size = Vector2(20, 40)
 
 [node name="Act2" type="Node2D"]
 scale = Vector2(3, 3)
@@ -163,6 +166,14 @@ target_scene = "uid://ctyl1ehwcevcc"
 [node name="CollisionShape2D" parent="teleporter" index="0"]
 shape = SubResource("RectangleShape2D_ogajx")
 
+[node name="teleporter2" parent="." instance=ExtResource("8_1y6r5")]
+position = Vector2(845, 140.667)
+target_scene = "uid://d3kh14owaupoi"
+
+[node name="CollisionShape2D" parent="teleporter2" index="0"]
+position = Vector2(-12.3333, 3.33333)
+shape = SubResource("RectangleShape2D_q1hic")
+
 [editable path="standingEvent"]
 [editable path="standingEvent2"]
 [editable path="standingEvent3"]
@@ -175,3 +186,4 @@ shape = SubResource("RectangleShape2D_ogajx")
 [editable path="standingEvent10"]
 [editable path="standingEvent11"]
 [editable path="teleporter"]
+[editable path="teleporter2"]

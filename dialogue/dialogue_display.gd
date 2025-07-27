@@ -47,6 +47,7 @@ const DEFAULT_STATE := {
 @onready var state = DEFAULT_STATE.duplicate()
 
 signal dialogue_ended
+signal cutscene_start
 
 #func _ready() -> void:
 	
@@ -83,6 +84,8 @@ func _on_ez_dialogue_custom_signal_received(value: Variant) -> void:
 			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		else:
 			get_tree().change_scene_to_file("res://scenes/act2/act2.tscn")
+	elif params[0] == "cut":
+		cutscene_start.emit()
 
 
 func _on_ez_dialogue_end_of_dialogue_reached() -> void:
