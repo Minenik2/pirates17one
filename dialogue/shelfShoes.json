@@ -1,6 +1,6 @@
 [
 	{
-		"commands_raw": "A shelf filled with shoes. Black muddy shoes...\n---\nAbove it is a raincoat.\n---",
+		"commands_raw": "A shelf filled with shoes. Black muddy shoes...\n---\nAbove it is a raincoat. Judging by how often it rains, this raincoat might as well have been used 5 hours ago.\n---",
 		"gnode_name": "start",
 		"id": 0.0,
 		"name": "start",
