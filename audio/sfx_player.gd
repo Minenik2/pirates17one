@@ -34,3 +34,7 @@ func stopIntro():
 
 func playIntro():
 	$musicIntro.play()
+
+
+func _on_music_intro_finished() -> void:
+	$musicIntro.play()

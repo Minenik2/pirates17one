@@ -45,3 +45,5 @@ volume_db = -13.0
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 pitch_scale = 0.6
+
+[connection signal="finished" from="musicIntro" to="." method="_on_music_intro_finished"]

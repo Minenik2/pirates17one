@@ -1,0 +1,12 @@
+[
+	{
+		"commands_raw": "A shelf filled with shoes. Black muddy shoes...\n---\nAbove it is a raincoat.\n---",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			320.0,
+			280.0
+		]
+	}
+]

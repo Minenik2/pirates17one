@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://bxys6vqn5ihmp"]
+[gd_scene load_steps=11 format=4 uid="uid://bxys6vqn5ihmp"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_jwuu1"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_vjeuj"]
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="3_pe1at"]
 [ext_resource type="PackedScene" uid="uid://btdjf2xexm50" path="res://scenes/teleporter_spawn.tscn" id="4_pe1at"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="6_igqgt"]
+[ext_resource type="PackedScene" uid="uid://ca7apex6snhgp" path="res://furniture/tablesmall.tscn" id="8_f16tm"]
 [ext_resource type="PackedScene" uid="uid://dg6egrpwowgr1" path="res://furniture/door.tscn" id="8_igqgt"]
 [ext_resource type="JSON" path="res://dialogue/victim_door.json" id="9_f16tm"]
+[ext_resource type="JSON" path="res://dialogue/chair2.json" id="9_qovq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyo78"]
 size = Vector2(26.135, 20)
@@ -23,10 +25,10 @@ tile_set = ExtResource("1_jwuu1")
 position = Vector2(359.5, 237.417)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-limit_left = -170
-limit_top = -355
-limit_right = 1510
-limit_bottom = 875
+limit_left = 15
+limit_top = 30
+limit_right = 1275
+limit_bottom = 930
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
@@ -71,6 +73,12 @@ player = NodePath("../player")
 [node name="teleporter_spawn3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_pe1at")]
 position = Vector2(360, 181.333)
 code = "grimory"
+player = NodePath("../player")
+
+[node name="chair" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_f16tm")]
+position = Vector2(265.333, 142.667)
+script = ExtResource("6_igqgt")
+dialogue_resource = ExtResource("9_qovq3")
 player = NodePath("../player")
 
 [editable path="teleporter"]

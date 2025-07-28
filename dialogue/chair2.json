@@ -1,0 +1,42 @@
+[
+	{
+		"commands_raw": "An ordinary chair.\n?> Hello Chair -> hello\n?> Leave -> leave",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			200.0,
+			260.0
+		]
+	},
+	{
+		"commands_raw": "Did you just try talking to a chair?\n?> Maybe it feels lonely - like the other chair. -> feels",
+		"gnode_name": "hello",
+		"id": 1.0,
+		"name": "hello",
+		"position": [
+			360.0,
+			180.0
+		]
+	},
+	{
+		"commands_raw": "As you finish your sentence, a breathless hush curls through the air - cold whisper as coming from a graveyard. The vocie seeps from the shadows behind you.\n---\nI thought nobody would notice me uwu.\n---\nIt seems like this ancient chair answered your prayer.\n---",
+		"gnode_name": "feels",
+		"id": 2.0,
+		"name": "feels",
+		"position": [
+			520.0,
+			220.0
+		]
+	},
+	{
+		"commands_raw": "",
+		"gnode_name": "leave",
+		"id": 3.0,
+		"name": "leave",
+		"position": [
+			360.0,
+			300.0
+		]
+	}
+]

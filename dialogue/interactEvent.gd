@@ -3,7 +3,7 @@ extends StaticBody2D
 @export var dialogue_resource: JSON
 @export var player: CharacterBody2D
 @export var destroy: bool = false
-@export var trigger_event: bool = false
+@export var trigger_event: bool = false # only for the knife sequence in ending
 
 @export_group("Teleporter Settings")
 @export var teleporter: bool = false

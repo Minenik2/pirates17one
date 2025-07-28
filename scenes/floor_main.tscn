@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://du6vavag3aihq"]
+[gd_scene load_steps=24 format=4 uid="uid://du6vavag3aihq"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_umyxb"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_defln"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://ca7apex6snhgp" path="res://furniture/tablesmall.tscn" id="14_mjx5b"]
 [ext_resource type="Texture2D" uid="uid://bu6sue1xf141w" path="res://art/nabella.png" id="14_u37v1"]
 [ext_resource type="JSON" path="res://dialogue/chair.json" id="15_ea672"]
+[ext_resource type="JSON" path="res://dialogue/shelfShoes.json" id="16_ea672"]
+[ext_resource type="Texture2D" uid="uid://dquphy34xu2i7" path="res://art/furni/shelf.png" id="16_mjx5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcd4p"]
 size = Vector2(100, 20)
@@ -28,6 +30,9 @@ size = Vector2(24.63, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gys8b"]
 size = Vector2(12.6667, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea672"]
+size = Vector2(16, 17)
 
 [node name="floor_main" type="Node2D"]
 y_sort_enabled = true
@@ -135,11 +140,23 @@ repeating = true
 player = NodePath("../player")
 walk_right = true
 
-[node name="StaticBody2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_mjx5b")]
+[node name="StaticBody2D" parent="." instance=ExtResource("14_mjx5b")]
 position = Vector2(222, 44.6667)
 script = ExtResource("4_gys8b")
 dialogue_resource = ExtResource("15_ea672")
-player = NodePath("")
+
+[node name="shoeShelf" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(155.333, 143.667)
+script = ExtResource("4_gys8b")
+dialogue_resource = ExtResource("16_ea672")
+player = NodePath("../player")
+
+[node name="Sprite2D" type="Sprite2D" parent="shoeShelf"]
+texture = ExtResource("16_mjx5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shoeShelf"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_ea672")
 
 [editable path="standingEvent"]
 [editable path="teleporter"]
