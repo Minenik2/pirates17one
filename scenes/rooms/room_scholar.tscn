@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bbl7icxkbny3l"]
+[gd_scene load_steps=14 format=4 uid="uid://bbl7icxkbny3l"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_bmmjn"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_ibqer"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bi8if0baxa6we" path="res://art/scholar.png" id="6_3jho5"]
 [ext_resource type="Texture2D" uid="uid://lifc8nxq75su" path="res://art/Bed.png" id="7_3jho5"]
 [ext_resource type="Texture2D" uid="uid://ce0orjrmlonxk" path="res://art/Sink.png" id="8_20we3"]
+[ext_resource type="Texture2D" uid="uid://cw8cewo4csdjy" path="res://art/Bookcase.png" id="9_20we3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20we3"]
 size = Vector2(9, 11)
@@ -17,6 +18,9 @@ size = Vector2(30.3333, 17.6666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihf3i"]
 size = Vector2(15.5, 16.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxunm"]
+size = Vector2(45.6667, 36.6667)
 
 [node name="room" type="Node2D"]
 y_sort_enabled = true
@@ -75,3 +79,13 @@ texture = ExtResource("8_20we3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sink"]
 position = Vector2(0.666672, 7.16667)
 shape = SubResource("RectangleShape2D_ihf3i")
+
+[node name="Bookcase" type="StaticBody2D" parent="."]
+position = Vector2(152, 104)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bookcase"]
+texture = ExtResource("9_20we3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bookcase"]
+position = Vector2(0.166672, 5)
+shape = SubResource("RectangleShape2D_rxunm")

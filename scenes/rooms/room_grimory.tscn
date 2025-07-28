@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cre5i3k3oltg0"]
+[gd_scene load_steps=15 format=4 uid="uid://cre5i3k3oltg0"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_p1kq4"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_doaqg"]
@@ -8,9 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="6_puykb"]
 [ext_resource type="JSON" path="res://dialogue/bloodknife.json" id="7_5mml6"]
 [ext_resource type="Texture2D" uid="uid://bbpjc21diny6p" path="res://art/knife.png" id="7_hpds7"]
+[ext_resource type="Texture2D" uid="uid://ce0orjrmlonxk" path="res://art/Sink.png" id="9_1xu3x"]
+[ext_resource type="Texture2D" uid="uid://cc2jpkam6hoim" path="res://art/Cabinet.png" id="10_xiyky"]
+[ext_resource type="Texture2D" uid="uid://lifc8nxq75su" path="res://art/Bed.png" id="11_xiyky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puykb"]
 size = Vector2(16, 15.1667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndgo0"]
+size = Vector2(15.5, 16.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28q3b"]
+size = Vector2(30.3333, 17.6666)
 
 [node name="room" type="Node2D"]
 y_sort_enabled = true
@@ -44,7 +53,7 @@ target_scene = "uid://bxys6vqn5ihmp"
 code = "grimory"
 
 [node name="knife" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(109, 168)
+position = Vector2(118.667, 135)
 scale = Vector2(0.7, 0.7)
 script = ExtResource("4_puykb")
 dialogue_resource = ExtResource("7_5mml6")
@@ -56,3 +65,45 @@ texture = ExtResource("7_hpds7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knife"]
 position = Vector2(-1.52588e-05, 0.416672)
 shape = SubResource("RectangleShape2D_puykb")
+
+[node name="Sink" type="StaticBody2D" parent="."]
+position = Vector2(184.667, 109.333)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sink"]
+texture = ExtResource("9_1xu3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sink"]
+position = Vector2(0.666672, 7.16667)
+shape = SubResource("RectangleShape2D_ndgo0")
+
+[node name="Sink2" type="StaticBody2D" parent="."]
+position = Vector2(199.667, 109)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sink2"]
+position = Vector2(0, 0.333333)
+texture = ExtResource("10_xiyky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sink2"]
+position = Vector2(0.666672, 7.16667)
+shape = SubResource("RectangleShape2D_ndgo0")
+
+[node name="Sink3" type="StaticBody2D" parent="."]
+position = Vector2(169.667, 109)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sink3"]
+position = Vector2(0, 0.333333)
+texture = ExtResource("10_xiyky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sink3"]
+position = Vector2(0.666672, 7.16667)
+shape = SubResource("RectangleShape2D_ndgo0")
+
+[node name="Bed" type="StaticBody2D" parent="."]
+position = Vector2(110, 149)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bed"]
+texture = ExtResource("11_xiyky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
+position = Vector2(0.333336, 9.5)
+shape = SubResource("RectangleShape2D_28q3b")
