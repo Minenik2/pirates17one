@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://du6vavag3aihq"]
+[gd_scene load_steps=30 format=4 uid="uid://du6vavag3aihq"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_umyxb"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_defln"]
@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="9_ea672"]
 [ext_resource type="PackedScene" uid="uid://btdjf2xexm50" path="res://scenes/teleporter_spawn.tscn" id="10_defln"]
 [ext_resource type="JSON" path="res://dialogue/door.json" id="10_dwjiw"]
+[ext_resource type="Texture2D" uid="uid://cgabqa5rmidy1" path="res://art/beleth-Sheet.png" id="10_ea672"]
 [ext_resource type="JSON" path="res://dialogue/beleth.json" id="11_gys8b"]
-[ext_resource type="Texture2D" uid="uid://irk4phksecjr" path="res://art/beleth.png" id="12_u37v1"]
+[ext_resource type="Texture2D" uid="uid://u10xy32qgg3j" path="res://art/nabella-Sheet.png" id="12_ea672"]
 [ext_resource type="JSON" path="res://dialogue/nabella1.json" id="13_ynp5j"]
 [ext_resource type="JSON" path="res://dialogue/seeBodyFirst.json" id="14_26b08"]
 [ext_resource type="PackedScene" uid="uid://ca7apex6snhgp" path="res://furniture/tablesmall.tscn" id="14_mjx5b"]
-[ext_resource type="Texture2D" uid="uid://bu6sue1xf141w" path="res://art/nabella.png" id="14_u37v1"]
 [ext_resource type="JSON" path="res://dialogue/chair.json" id="15_ea672"]
 [ext_resource type="JSON" path="res://dialogue/shelfShoes.json" id="16_ea672"]
 [ext_resource type="Texture2D" uid="uid://dquphy34xu2i7" path="res://art/furni/shelf.png" id="16_mjx5b"]
@@ -28,8 +28,83 @@ size = Vector2(24.63, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_defln"]
 
+[sub_resource type="Animation" id="Animation_yh6jt"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_j7nls"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsu3j"]
+_data = {
+&"Idle": SubResource("Animation_yh6jt"),
+&"RESET": SubResource("Animation_j7nls")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gys8b"]
 size = Vector2(12.6667, 10)
+
+[sub_resource type="Animation" id="Animation_nsu3j"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_u7b3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ji61r"]
+_data = {
+&"Idle": SubResource("Animation_nsu3j"),
+&"RESET": SubResource("Animation_u7b3a")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ea672"]
 size = Vector2(16, 17)
@@ -114,10 +189,17 @@ dialogue_resource = ExtResource("11_gys8b")
 player = NodePath("../player")
 
 [node name="Sprite2D" type="Sprite2D" parent="beleth"]
-texture = ExtResource("12_u37v1")
+texture = ExtResource("10_ea672")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="beleth"]
 shape = SubResource("RectangleShape2D_defln")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="beleth"]
+libraries = {
+&"": SubResource("AnimationLibrary_nsu3j")
+}
+autoplay = "Idle"
 
 [node name="Nabella" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(50.6667, 142)
@@ -126,11 +208,18 @@ dialogue_resource = ExtResource("13_ynp5j")
 player = NodePath("../player")
 
 [node name="Sprite2D" type="Sprite2D" parent="Nabella"]
-texture = ExtResource("14_u37v1")
+texture = ExtResource("12_ea672")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nabella"]
 position = Vector2(-0.333363, 10)
 shape = SubResource("RectangleShape2D_gys8b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nabella"]
+libraries = {
+&"": SubResource("AnimationLibrary_ji61r")
+}
+autoplay = "Idle"
 
 [node name="seeBodyFirst" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_u37v1")]
 position = Vector2(52, 54)
