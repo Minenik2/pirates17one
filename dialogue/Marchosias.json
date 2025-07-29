@@ -40,7 +40,7 @@
 		]
 	},
 	{
-		"commands_raw": "Marchosias: Long time ago... I fought in a war\n---\nMarchosias: I fought for georgism.\n---\nMarchosias: People do not argue with the teaching of George; they simply do not know it. And it is impossible to do otherwise with his teaching, for he who becomes acquainted with it cannot but agree.\n?> If it’s so convincing, why didn’t the world change? -> skeptical\n?> What was it like? Fighting for land justice? -> curious",
+		"commands_raw": "Marchosias: Long time ago... I fought in a war\n---\nMarchosias: I fought for georgism.\n---\nMarchosias: People do not argue with the teaching of George; they simply do not know it. And it is impossible to do otherwise with his teaching, for he who becomes acquainted with it cannot but agree.\n?> If it's so convincing, why didn't the world change? -> skeptical\n?> What was it like? Fighting for land justice? -> curious",
 		"gnode_name": "war",
 		"id": 4.0,
 		"name": "war",
