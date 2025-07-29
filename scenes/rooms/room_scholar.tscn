@@ -1,17 +1,55 @@
-[gd_scene load_steps=14 format=4 uid="uid://bbl7icxkbny3l"]
+[gd_scene load_steps=17 format=4 uid="uid://bbl7icxkbny3l"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_bmmjn"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_ibqer"]
 [ext_resource type="PackedScene" uid="uid://bx3symmpiokrd" path="res://scenes/teleporter.tscn" id="3_ibqer"]
 [ext_resource type="Script" uid="uid://bl50exqahe4h0" path="res://dialogue/interactEvent.gd" id="4_8enl5"]
 [ext_resource type="JSON" path="res://dialogue/scholarAstaroth.json" id="5_grlp7"]
-[ext_resource type="Texture2D" uid="uid://bi8if0baxa6we" path="res://art/scholar.png" id="6_3jho5"]
+[ext_resource type="Texture2D" uid="uid://vqkk56l2slg2" path="res://art/scholar-Sheet.png" id="6_20we3"]
 [ext_resource type="Texture2D" uid="uid://lifc8nxq75su" path="res://art/Bed.png" id="7_3jho5"]
 [ext_resource type="Texture2D" uid="uid://ce0orjrmlonxk" path="res://art/Sink.png" id="8_20we3"]
 [ext_resource type="Texture2D" uid="uid://cw8cewo4csdjy" path="res://art/Bookcase.png" id="9_20we3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20we3"]
 size = Vector2(9, 11)
+
+[sub_resource type="Animation" id="Animation_jyi42"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.398938),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_ihf3i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rxunm"]
+_data = {
+&"Idle": SubResource("Animation_jyi42"),
+&"RESET": SubResource("Animation_ihf3i")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyi42"]
 size = Vector2(30.3333, 17.6666)
@@ -53,12 +91,19 @@ script = ExtResource("4_8enl5")
 dialogue_resource = ExtResource("5_grlp7")
 
 [node name="Sprite2D" type="Sprite2D" parent="scholar"]
-texture = ExtResource("6_3jho5")
+texture = ExtResource("6_20we3")
 flip_h = true
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scholar"]
 position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_20we3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="scholar"]
+libraries = {
+&"": SubResource("AnimationLibrary_rxunm")
+}
+autoplay = "Idle"
 
 [node name="Bed" type="StaticBody2D" parent="."]
 position = Vector2(110.333, 144.667)
