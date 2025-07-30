@@ -34,6 +34,9 @@ func stopIntro():
 
 func playIntro():
 	$musicIntro.play()
+	
+func playKnifeStab():
+	$stabknife.play()
 
 
 func _on_music_intro_finished() -> void:

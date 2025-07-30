@@ -21,7 +21,7 @@ func _ready():
 
 func on_interact():
 	if Database.hasKnife:
-		SfXplayer.playStairs()
+		SfXplayer.playKnifeStab()
 		$Sprite2D.texture = load("res://art/body.png")
 		Database.killedAmount += 1
 		if Database.killedAmount > 4:
