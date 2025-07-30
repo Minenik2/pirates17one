@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bxys6vqn5ihmp"]
+[gd_scene load_steps=12 format=4 uid="uid://bxys6vqn5ihmp"]
 
 [ext_resource type="TileSet" uid="uid://bl22ojktmg30c" path="res://art/tileSet.tres" id="1_jwuu1"]
 [ext_resource type="PackedScene" uid="uid://dtj68veqtvcfo" path="res://character/player.tscn" id="2_vjeuj"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dg6egrpwowgr1" path="res://furniture/door.tscn" id="8_igqgt"]
 [ext_resource type="JSON" path="res://dialogue/victim_door.json" id="9_f16tm"]
 [ext_resource type="JSON" path="res://dialogue/chair2.json" id="9_qovq3"]
+[ext_resource type="Texture2D" uid="uid://cfcaj2vs2uqdj" path="res://art/HousePainting.png" id="10_qovq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyo78"]
 size = Vector2(26.135, 20)
@@ -80,5 +81,10 @@ position = Vector2(265.333, 142.667)
 script = ExtResource("6_igqgt")
 dialogue_resource = ExtResource("9_qovq3")
 player = NodePath("../player")
+
+[node name="HousePainting" type="Sprite2D" parent="."]
+position = Vector2(231.667, 216.667)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_qovq3")
 
 [editable path="teleporter"]
